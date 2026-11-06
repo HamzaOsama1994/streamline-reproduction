@@ -1,0 +1,69 @@
+skip existing p1_r1000_rep1
+skip existing p2_r1000_rep1
+skip existing p4_r1000_rep1
+skip existing p8_r1000_rep1
+{"label": "p1_r1000_rep2", "parallelism": 1, "rate_target": 1000, "n_vertices": 2, "vertex_names": ["Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/", "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc"], "source_out_rate_mean": 681.5430555555555, "sink_in_rate_mean": 689.4659722222223, "max_backpressured_ms_per_s": 309.0, "max_busy_ms_per_s": 1000.0, "latency_marker_p50_ms_mean_of_max": 201.20833333333334, "latency_marker_p99_ms_mean_of_max": 2000.0, "tm_cpu_cores_mean": 1.05233368225, "taskmanagers_used": 1, "tm_cpu_utilisation_of_used": 1.05233368225, "emulated_cost_per_h": 0.192, "input_produced": 143778, "output_written": 129349, "input_rate_achieved": 756.5823281561482, "per_vertex": {"Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {"parallelism": 1, "out_rate_mean": 681.5430555555555, "busy_ms_per_s_avg": 694.7083333333334, "busy_ms_per_s_max": 694.7083333333334, "backpressured_ms_per_s_max": 293.9166666666667}, "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {"parallelism": 1, "out_rate_mean": 0.0, "busy_ms_per_s_avg": 985.0, "busy_ms_per_s_max": 985.0, "backpressured_ms_per_s_max": 0.0}}, "final_state": "RUNNING", "deploy_seconds": 40.3, "warmup_s": 60, "n_samples_after_warmup": 24}
+{"label": "p2_r1000_rep2", "parallelism": 2, "rate_target": 1000, "n_vertices": 2, "vertex_names": ["Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/", "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc"], "source_out_rate_mean": 682.8256944444444, "sink_in_rate_mean": 696.6979166666666, "max_backpressured_ms_per_s": 302.0, "max_busy_ms_per_s": 1000.0, "latency_marker_p50_ms_mean_of_max": 318.3958333333333, "latency_marker_p99_ms_mean_of_max": 2701.0, "tm_cpu_cores_mean": 1.0512957017916666, "taskmanagers_used": 1, "tm_cpu_utilisation_of_used": 1.0512957017916666, "emulated_cost_per_h": 0.192, "input_produced": 143781, "output_written": 127710, "input_rate_achieved": 761.9932163409132, "per_vertex": {"Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {"parallelism": 2, "out_rate_mean": 682.8256944444444, "busy_ms_per_s_avg": 706.75, "busy_ms_per_s_max": 706.75, "backpressured_ms_per_s_max": 284.625}, "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {"parallelism": 2, "out_rate_mean": 0.0, "busy_ms_per_s_avg": 496.2083333333333, "busy_ms_per_s_max": 992.4166666666666, "backpressured_ms_per_s_max": 0.0}}, "final_state": "RUNNING", "deploy_seconds": 43.2, "warmup_s": 60, "n_samples_after_warmup": 24}
+{"label": "p4_r1000_rep2", "parallelism": 4, "rate_target": 1000, "n_vertices": 2, "vertex_names": ["Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/", "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc"], "source_out_rate_mean": 817.5090277777778, "sink_in_rate_mean": 826.2680555555556, "max_backpressured_ms_per_s": 503.0, "max_busy_ms_per_s": 870.0, "latency_marker_p50_ms_mean_of_max": 247.625, "latency_marker_p99_ms_mean_of_max": 2998.0, "tm_cpu_cores_mean": 1.26846450475, "taskmanagers_used": 2, "tm_cpu_utilisation_of_used": 0.634232252375, "emulated_cost_per_h": 0.384, "input_produced": 143762, "output_written": 143760, "input_rate_achieved": 750.5371849995264, "per_vertex": {"Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {"parallelism": 4, "out_rate_mean": 817.5090277777778, "busy_ms_per_s_avg": 623.9583333333334, "busy_ms_per_s_max": 623.9583333333334, "backpressured_ms_per_s_max": 152.41666666666666}, "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {"parallelism": 4, "out_rate_mean": 0.0, "busy_ms_per_s_avg": 158.30208333333334, "busy_ms_per_s_max": 633.2083333333334, "backpressured_ms_per_s_max": 0.0}}, "final_state": "RUNNING", "deploy_seconds": 47.5, "warmup_s": 60, "n_samples_after_warmup": 24}
+FAILED p8_r1000_rep2:    with urllib.request.urlopen(req, timeout=10) as r:
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 187, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 487, in open
+    response = self._open(req, data)
+  File "C:\Python314\Lib\urllib\request.py", line 504, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "C:\Python314\Lib\urllib\request.py", line 464, in _call_chain
+    result = func(*args)
+  File "C:\Python314\Lib\urllib\request.py", line 1350, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 1325, in do_open
+    r = h.getresponse()
+  File "C:\Python314\Lib\http\client.py", line 1450, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\http\client.py", line 336, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\http\client.py", line 297, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\socket.py", line 725, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+TimeoutError: timed out
+
+{"label": "p1_r1000_rep3", "parallelism": 1, "rate_target": 1000, "n_vertices": 2, "vertex_names": ["Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/", "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc"], "source_out_rate_mean": 702.2062500000001, "sink_in_rate_mean": 707.5444444444444, "max_backpressured_ms_per_s": 307.0, "max_busy_ms_per_s": 1000.0, "latency_marker_p50_ms_mean_of_max": 190.10416666666666, "latency_marker_p99_ms_mean_of_max": 1613.0, "tm_cpu_cores_mean": 1.050694693875, "taskmanagers_used": 1, "tm_cpu_utilisation_of_used": 1.050694693875, "emulated_cost_per_h": 0.192, "input_produced": 143790, "output_written": 132640, "input_rate_achieved": 758.3930705143636, "per_vertex": {"Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {"parallelism": 1, "out_rate_mean": 702.2062500000001, "busy_ms_per_s_avg": 713.75, "busy_ms_per_s_max": 713.75, "backpressured_ms_per_s_max": 277.2083333333333}, "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {"parallelism": 1, "out_rate_mean": 0.0, "busy_ms_per_s_avg": 983.75, "busy_ms_per_s_max": 983.75, "backpressured_ms_per_s_max": 0.0}}, "final_state": "RUNNING", "deploy_seconds": 42.4, "warmup_s": 60, "n_samples_after_warmup": 24}
+{"label": "p2_r1000_rep3", "parallelism": 2, "rate_target": 1000, "n_vertices": 2, "vertex_names": ["Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/", "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc"], "source_out_rate_mean": 678.5805555555556, "sink_in_rate_mean": 681.775, "max_backpressured_ms_per_s": 300.0, "max_busy_ms_per_s": 1000.0, "latency_marker_p50_ms_mean_of_max": 140.0, "latency_marker_p99_ms_mean_of_max": 2295.0, "tm_cpu_cores_mean": 1.0511510940833333, "taskmanagers_used": 1, "tm_cpu_utilisation_of_used": 1.0511510940833333, "emulated_cost_per_h": 0.192, "input_produced": 143739, "output_written": 128047, "input_rate_achieved": 759.9856737146775, "per_vertex": {"Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {"parallelism": 2, "out_rate_mean": 678.5805555555556, "busy_ms_per_s_avg": 706.7083333333334, "busy_ms_per_s_max": 706.7083333333334, "backpressured_ms_per_s_max": 283.3333333333333}, "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {"parallelism": 2, "out_rate_mean": 0.0, "busy_ms_per_s_avg": 492.7291666666667, "busy_ms_per_s_max": 982.9166666666666, "backpressured_ms_per_s_max": 0.0}}, "final_state": "RUNNING", "deploy_seconds": 44.6, "warmup_s": 60, "n_samples_after_warmup": 24}
+{"label": "p4_r1000_rep3", "parallelism": 4, "rate_target": 1000, "n_vertices": 2, "vertex_names": ["Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/", "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc"], "source_out_rate_mean": 657.8611111111111, "sink_in_rate_mean": 659.9006944444444, "max_backpressured_ms_per_s": 312.0, "max_busy_ms_per_s": 1000.0, "latency_marker_p50_ms_mean_of_max": 486.6666666666667, "latency_marker_p99_ms_mean_of_max": 3027.0, "tm_cpu_cores_mean": 1.06523702375, "taskmanagers_used": 2, "tm_cpu_utilisation_of_used": 0.532618511875, "emulated_cost_per_h": 0.384, "input_produced": 143769, "output_written": 126515, "input_rate_achieved": 755.5404399499924, "per_vertex": {"Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {"parallelism": 4, "out_rate_mean": 657.8611111111111, "busy_ms_per_s_avg": 697.7083333333334, "busy_ms_per_s_max": 697.7083333333334, "backpressured_ms_per_s_max": 296.5416666666667}, "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {"parallelism": 4, "out_rate_mean": 0.0, "busy_ms_per_s_avg": 247.79166666666666, "busy_ms_per_s_max": 990.4166666666666, "backpressured_ms_per_s_max": 0.0}}, "final_state": "RUNNING", "deploy_seconds": 44.9, "warmup_s": 60, "n_samples_after_warmup": 24}
+FAILED p8_r1000_rep3: ast):
+  File "C:\Users\Hamza\Downloads\University\AI508_Big Data\Assignment 2\streamline_repro\bigdata\scripts\run_fit_experiment.py", line 240, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Hamza\Downloads\University\AI508_Big Data\Assignment 2\streamline_repro\bigdata\scripts\run_fit_experiment.py", line 190, in main
+    rest(f"/jobs/{jid}?mode=cancel", method="PATCH")
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hamza\Downloads\University\AI508_Big Data\Assignment 2\streamline_repro\bigdata\scripts\run_fit_experiment.py", line 59, in rest
+    with urllib.request.urlopen(req, timeout=10) as r:
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 187, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 493, in open
+    response = meth(req, response)
+  File "C:\Python314\Lib\urllib\request.py", line 602, in http_response
+    response = self.parent.error(
+        'http', request, response, code, msg, hdrs)
+  File "C:\Python314\Lib\urllib\request.py", line 531, in error
+    return self._call_chain(*args)
+           ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 464, in _call_chain
+    result = func(*args)
+  File "C:\Python314\Lib\urllib\request.py", line 611, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 409: Conflict
+
+GRID_DONE

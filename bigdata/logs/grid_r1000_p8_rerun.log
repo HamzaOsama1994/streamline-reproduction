@@ -1,0 +1,11 @@
+skip existing p8_r1000_rep1
+FAILED p8_r1000_rep2: Traceback (most recent call last):
+  File "C:\Users\Hamza\Downloads\University\AI508_Big Data\Assignment 2\streamline_repro\bigdata\scripts\run_fit_experiment.py", line 267, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Hamza\Downloads\University\AI508_Big Data\Assignment 2\streamline_repro\bigdata\scripts\run_fit_experiment.py", line 165, in main
+    raise RuntimeError(f"deployment failed twice: {attempts}")
+RuntimeError: deployment failed twice: [{'job_id': 'e3d02f00cf2008a0cb3c9345f776e28b', 'deployed': False, 'state': 'FAILED'}, {'job_id': '9866898584252b31232a2a55bc88f64b', 'deployed': False, 'state': 'FAILED'}]
+
+{"label": "p8_r1000_rep3", "parallelism": 8, "rate_target": 1000, "n_vertices": 2, "vertex_names": ["Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/", "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc"], "source_out_rate_mean": 824.2166666666667, "sink_in_rate_mean": 820.4152777777778, "max_backpressured_ms_per_s": 517.0, "max_busy_ms_per_s": 929.0, "latency_marker_p50_ms_mean_of_max": 4593.958333333333, "latency_marker_p99_ms_mean_of_max": 16186.0, "tm_cpu_cores_mean": 1.2943086934166665, "taskmanagers_used": 4, "tm_cpu_utilisation_of_used": 0.32357717335416664, "emulated_cost_per_h": 0.768, "input_produced": 145903, "output_written": 145900, "input_rate_achieved": 742.4339869091247, "per_vertex": {"Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {"parallelism": 8, "out_rate_mean": 824.2166666666667, "busy_ms_per_s_avg": 617.875, "busy_ms_per_s_max": 617.875, "backpressured_ms_per_s_max": 165.875}, "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {"parallelism": 8, "out_rate_mean": 0.0, "busy_ms_per_s_avg": 80.74479166666667, "busy_ms_per_s_max": 644.125, "backpressured_ms_per_s_max": 0.0}}, "final_state": "RUNNING", "deploy_seconds": 60.2, "warmup_s": 60, "n_samples_after_warmup": 24}
+GRID_DONE

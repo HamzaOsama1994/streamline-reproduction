@@ -1,0 +1,22 @@
+2026-11-05T19:31:00+04:00
+paired 2000000
+paired 4000000
+paired 6000000
+paired 8000000
+paired 10000000
+paired 12000000
+paired 14000000
+paired 14776615 mismatched 0 unpaired 0
+{
+ "source": "archive.org nycTaxiTripData2013 trip_data.7z/trip_fare.7z (MD5 verified)",
+ "rows": 14776615,
+ "mismatched_pairs_dropped": 0,
+ "unpaired_rows": 0,
+ "distinct_medallions": 13426,
+ "distinct_hack_licenses": 32224,
+ "first_pickup": "2013-01-01 00:00:00",
+ "last_pickup": "2013-01-31 23:59:59",
+ "sorted_by": "pickup_datetime (stable)",
+ "id_mapping": "MD5 hash -> integer by first appearance in file order (separate maps for medallion and hack_license)"
+}
+2026-11-05T19:41:47+04:00

@@ -1,0 +1,19 @@
+skip existing p1_r4000_rep1
+skip existing p2_r4000_rep1
+skip existing p4_r4000_rep1
+skip existing p8_r4000_rep1
+FAILED p1_r4000_rep2: command terminated with exit code 1
+Traceback (most recent call last):
+  File "C:\Users\Hamza\Downloads\University\AI508_Big Data\Assignment 2\streamline_repro\bigdata\scripts\run_fit_experiment.py", line 285, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Hamza\Downloads\University\AI508_Big Data\Assignment 2\streamline_repro\bigdata\scripts\run_fit_experiment.py", line 138, in main
+    sh(["kubectl", "cp", os.path.join(REPO, "etl", "build", "FlinkJob.jar"), f"default/{jm}:{JAR_IN_POD}"], timeout=600)
+    ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hamza\Downloads\University\AI508_Big Data\Assignment 2\streamline_repro\bigdata\scripts\run_fit_experiment.py", line 49, in sh
+    raise RuntimeError(f"{cmd}\n{r.stdout}\n{r.stderr}")
+RuntimeError: ['kubectl', 'cp', 'C:\\Users\\Hamza\\Downloads\\University\\AI508_Big Data\\Assignment 2\\streamline_repro\\bigdata\\beam-applications-java\\etl\\build\\FlinkJob.jar', 'default/flink-jobmanager-5d8f94dcc5-tzcfd:/opt/flink/usrlib/FlinkJob.jar']
+
+error: one of src or dest must be a local file specification
+
+

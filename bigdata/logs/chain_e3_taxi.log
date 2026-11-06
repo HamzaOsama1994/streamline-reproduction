@@ -1,0 +1,65 @@
+{"samples": 361, "mean": 975.5032163088345, "min": 0.0, "max": 1726.234993111625}
+ 
+history bins 359 mean 978.5524069411323 max 1726.234993111625
+20:02:54 history done
+22:05:26 profiling done: 12 of 12
+22:05:27 dataset:  "rows": 1002,
+22:15:17 train + decide done
+V0_original orig ok 1042 (7, 4, 16384) {'v_0': 1, 'v_1': 7}
+V0_original 0 ok 1032 (7, 4, 16384) {'v_0': 1, 'v_1': 7}
+V0_original 1 ok 1057 (6, 3, 16384) {'v_0': 1, 'v_1': 6}
+V0_original 2 ok 1033 (7, 4, 16384) {'v_0': 1, 'v_1': 7}
+V0_original 3 ok 1051 (7, 4, 16384) {'v_0': 1, 'v_1': 7}
+V0_original 4 ok 981 (7, 4, 16384) {'v_0': 1, 'v_1': 7}
+V0_original 5 ok 1040 (7, 4, 16384) {'v_0': 1, 'v_1': 7}
+V0_original 6 ok 1032 (6, 3, 16384) {'v_0': 1, 'v_1': 6}
+V0_original 7 ok 1050 (7, 4, 16384) {'v_0': 1, 'v_1': 7}
+V0_original 8 ok 1005 (7, 4, 16384) {'v_0': 1, 'v_1': 7}
+V0_original 9 ok 1018 (6, 3, 16384) {'v_0': 1, 'v_1': 6}
+V4_corrected orig ok 1090 (6, 3, 16384) {'v_0': 1, 'v_1': 6}
+V4_corrected 0 ok 1090 (6, 3, 16384) {'v_0': 1, 'v_1': 6}
+V4_corrected 1 ok 1090 (6, 3, 16384) {'v_0': 1, 'v_1': 6}
+V4_corrected 2 ok 1090 (6, 3, 16384) {'v_0': 1, 'v_1': 6}
+V4_corrected 3 ok 1090 (6, 3, 16384) {'v_0': 1, 'v_1': 6}
+V4_corrected 4 ok 1090 (6, 3, 16384) {'v_0': 1, 'v_1': 6}
+V4_corrected 5 ok 1090 (6, 3, 16384) {'v_0': 1, 'v_1': 6}
+V4_corrected 6 ok 1090 (6, 3, 16384) {'v_0': 1, 'v_1': 6}
+V4_corrected 7 ok 1090 (6, 3, 16384) {'v_0': 1, 'v_1': 6}
+V4_corrected 8 ok 1090 (6, 3, 16384) {'v_0': 1, 'v_1': 6}
+V4_corrected 9 ok 1090 (6, 3, 16384) {'v_0': 1, 'v_1': 6}
+{
+ "p1_tm1_seg32768": [
+  "FD"
+ ],
+ "p6_tm3_seg16384": [
+  "V0_original/1",
+  "V0_original/6",
+  "V0_original/9",
+  "V4_corrected/orig",
+  "V4_corrected/0",
+  "V4_corrected/1",
+  "V4_corrected/2",
+  "V4_corrected/3",
+  "V4_corrected/4",
+  "V4_corrected/5",
+  "V4_corrected/6",
+  "V4_corrected/7",
+  "V4_corrected/8",
+  "V4_corrected/9"
+ ],
+ "p7_tm4_seg16384": [
+  "V0_original/orig",
+  "V0_original/0",
+  "V0_original/2",
+  "V0_original/3",
+  "V0_original/4",
+  "V0_original/5",
+  "V0_original/7",
+  "V0_original/8"
+ ],
+ "p8_tm4_seg32768": [
+  "FMAX"
+ ]
+} 12 runs
+00:14:44 evaluation done: 12 result files
+ALL_DONE

@@ -1,0 +1,23 @@
+[36mINFO[0m[0000] Prep: Network                                
+[36mINFO[0m[0000] Created network 'k3d-streamline'             
+[36mINFO[0m[0000] Created image volume k3d-streamline-images   
+[36mINFO[0m[0000] Starting new tools node...                   
+[36mINFO[0m[0001] Creating node 'k3d-streamline-server-0'      
+[36mINFO[0m[0001] Pulling image 'ghcr.io/k3d-io/k3d-tools:5.9.0' 
+[36mINFO[0m[0004] Pulling image 'docker.io/rancher/k3s:v1.35.5-k3s1' 
+[36mINFO[0m[0030] Starting node 'k3d-streamline-tools'         
+[36mINFO[0m[0071] Creating LoadBalancer 'k3d-streamline-serverlb' 
+[36mINFO[0m[0072] Pulling image 'ghcr.io/k3d-io/k3d-proxy:5.9.0' 
+[36mINFO[0m[0096] Using the k3d-tools node to gather environment information 
+[36mINFO[0m[0096] Starting new tools node...                   
+[36mINFO[0m[0096] Starting node 'k3d-streamline-tools'         
+[36mINFO[0m[0098] Starting cluster 'streamline'                
+[36mINFO[0m[0098] Starting servers...                          
+[36mINFO[0m[0098] Starting node 'k3d-streamline-server-0'      
+[36mINFO[0m[0104] All agents already running.                  
+[36mINFO[0m[0104] Starting helpers...                          
+[36mINFO[0m[0104] Starting node 'k3d-streamline-serverlb'      
+[36mINFO[0m[0110] Injecting records for hostAliases (incl. host.k3d.internal) and for 3 network members into CoreDNS configmap... 
+[36mINFO[0m[0113] Cluster 'streamline' created successfully!   
+[36mINFO[0m[0113] You can now use it like this:                
+kubectl cluster-info

@@ -109,19 +109,26 @@ def fig3():
     forecast_panel(a1, os.path.join(BIG, "results", "E3T_work", "models_main", "decisions.json"), act, t0=150.0)
     a1.lines[0].set_label(None)
     a1.axvspan(0, 150, color=GRID, alpha=0.5, lw=0)
-    a1.text(75, a1.get_ylim()[1] * 0.97, "warm-up (discarded)", ha="center", va="top", fontsize=7, color=INK2)
-    a1.legend(fontsize=7, loc="lower right", ncol=2)
-    # latency: per configuration, median over its runs of the per-5 s-bin median e2e latency (complete traces)
-    names = {}
+    a1.text(75, 120, "warm-up (discarded)", ha="center", va="bottom", fontsize=7, color=INK2)
+    a1.legend(fontsize=7, loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=3)
+    # latency: runs grouped by configuration AND hot-subtask placement (placement, not configuration, decides the outcome);
+    # per group, median over its runs of the per-5 s-bin median e2e latency (complete traces)
+    groups = defaultdict(list)
     for c, who in spec["configs"].items():
-        names[c] = "FD" if who == ["FD"] else ("FMAX" if who == ["FMAX"] else "STREAMLINE " + c.split("_tm")[0].replace("p", "p = "))
-    colours = {}
-    order = sorted(spec["configs"], key=lambda c: (names[c] != "FD", names[c] != "FMAX", c))
-    pal = [ORANGE, BLUE, AQUA, INK2]
-    for k, c in enumerate(order):
-        colours[c] = pal[min(k, 3)]
-        per_run = []
         for tr in sorted(glob.glob(os.path.join(ev, f"{c}_rep*.e2e_trace.csv.gz"))):
+            co = colocated(json.load(open(tr.replace(".e2e_trace.csv.gz", ".json"))))
+            if who == ["FD"]:
+                g = "FD (p = 1, one TaskManager)"
+            elif who == ["FMAX"]:
+                g = "FMAX, hot subtasks " + ("on the same TaskManager" if co else "on different TaskManagers")
+            else:
+                g = "STREAMLINE p = 6 and p = 7" + (", co-located" if co else ", hot subtasks separated")
+            groups[g].append(tr)
+    style = {"FD": (ORANGE, "-"), "FMAX, hot subtasks on the same": (BLUE, "-"), "FMAX, hot subtasks on different": (BLUE, "--"),
+             "STREAMLINE": (AQUA, "-")}
+    for g in sorted(groups, key=lambda g: ("FD" not in g, "FMAX" not in g, g)):
+        per_run = []
+        for tr in groups[g]:
             b = defaultdict(list)
             with gzip.open(tr, "rt") as f:
                 next(f)
@@ -130,11 +137,11 @@ def fig3():
                     if lat:
                         b[int(int(trel) / 1000 // 5)].append(int(lat))
             per_run.append({k2: st.median(v) for k2, v in b.items()})
-        if not per_run:
-            continue
         bins = sorted(set().union(*per_run))
         ys = [st.median([r[k2] for r in per_run if k2 in r]) for k2 in bins]
-        a2.plot([5 * k2 for k2 in bins], ys, color=colours[c], lw=1.4, label=f"{names[c]} ({len(per_run)} runs)")
+        col, ls = next(v for k, v in style.items() if g.startswith(k))
+        n = len(per_run)
+        a2.plot([5 * k2 for k2 in bins], ys, color=col, ls=ls, lw=1.4, label=f"{g} ({n} run{'s' if n > 1 else ''})")
     a2.set_yscale("log")
     a2.set_ylabel("e2e latency, bin median (ms)")
     a2.set_xlabel("Time since start of run (s); horizon = 150–400 s (Fri 14:00 – Sat 05:17)")

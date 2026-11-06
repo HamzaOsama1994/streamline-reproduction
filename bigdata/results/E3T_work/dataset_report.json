@@ -1,0 +1,106 @@
+{
+ "rows": 1002,
+ "cost_ms_per_record": {
+  "v_0": 0.11584679820047214,
+  "v_1": 0.3272957818692011
+ },
+ "cost_ratio_v0_share": 0.26142104914011666,
+ "runs": [
+  {
+   "run": "p1_seg16384.json",
+   "p": 1,
+   "segment": 16384,
+   "intervals_used": 42,
+   "tm_mapped": 4,
+   "colocated": true
+  },
+  {
+   "run": "p1_seg32768.json",
+   "p": 1,
+   "segment": 32768,
+   "intervals_used": 42,
+   "tm_mapped": 4,
+   "colocated": true
+  },
+  {
+   "run": "p1_seg65536.json",
+   "p": 1,
+   "segment": 65536,
+   "intervals_used": 42,
+   "tm_mapped": 4,
+   "colocated": true
+  },
+  {
+   "run": "p2_seg16384.json",
+   "p": 2,
+   "segment": 16384,
+   "intervals_used": 41,
+   "tm_mapped": 4,
+   "colocated": true
+  },
+  {
+   "run": "p2_seg32768.json",
+   "p": 2,
+   "segment": 32768,
+   "intervals_used": 42,
+   "tm_mapped": 4,
+   "colocated": true
+  },
+  {
+   "run": "p2_seg65536.json",
+   "p": 2,
+   "segment": 65536,
+   "intervals_used": 42,
+   "tm_mapped": 4,
+   "colocated": true
+  },
+  {
+   "run": "p4_seg16384.json",
+   "p": 4,
+   "segment": 16384,
+   "intervals_used": 42,
+   "tm_mapped": 4,
+   "colocated": false
+  },
+  {
+   "run": "p4_seg32768.json",
+   "p": 4,
+   "segment": 32768,
+   "intervals_used": 42,
+   "tm_mapped": 4,
+   "colocated": false
+  },
+  {
+   "run": "p4_seg65536.json",
+   "p": 4,
+   "segment": 65536,
+   "intervals_used": 42,
+   "tm_mapped": 4,
+   "colocated": true
+  },
+  {
+   "run": "p8_seg16384.json",
+   "p": 8,
+   "segment": 16384,
+   "intervals_used": 40,
+   "tm_mapped": 4,
+   "colocated": true
+  },
+  {
+   "run": "p8_seg32768.json",
+   "p": 8,
+   "segment": 32768,
+   "intervals_used": 42,
+   "tm_mapped": 4,
+   "colocated": false
+  },
+  {
+   "run": "p8_seg65536.json",
+   "p": 8,
+   "segment": 65536,
+   "intervals_used": 42,
+   "tm_mapped": 4,
+   "colocated": false
+  }
+ ]
+}

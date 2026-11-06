@@ -1,0 +1,69 @@
+skip existing p1_r1000_rep1
+skip existing p4_r1000_rep1
+skip existing p8_r1000_rep1
+skip existing p1_r1000_rep2
+skip existing p4_r1000_rep2
+skip existing p8_r1000_rep2
+{"label": "p1_r1000_rep3", "parallelism": 1, "rate_target": 1000, "n_vertices": 2, "vertex_names": ["Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/", "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc"], "source_out_rate_mean": 791.6198412698412, "sink_in_rate_mean": 789.6630952380953, "max_backpressured_ms_per_s": 320.0, "max_busy_ms_per_s": 1000.0, "latency_marker_p50_ms_mean_of_max": 96.22619047619048, "latency_marker_p99_ms_mean_of_max": 541.1904761904761, "tm_cpu_cores_mean": 1.0385088987142856, "taskmanagers_used": 1, "host_other_cores_mean": 4.273333333333333, "host_other_cores_max": 8.99, "tm_cpu_utilisation_of_used": 1.0385088987142856, "emulated_cost_per_h": 0.192, "input_produced": 290522, "output_written": 290520, "input_rate_achieved": 777.0676904888454, "per_vertex": {"Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {"parallelism": 1, "out_rate_mean": 791.6198412698412, "busy_ms_per_s_avg": 707.6190476190476, "busy_ms_per_s_max": 707.6190476190476, "backpressured_ms_per_s_max": 157.95238095238096}, "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {"parallelism": 1, "out_rate_mean": 0.0, "busy_ms_per_s_avg": 789.547619047619, "busy_ms_per_s_max": 789.547619047619, "backpressured_ms_per_s_max": 0.0}}, "final_state": "RUNNING", "deploy_seconds": 57.5, "warmup_s": 150, "n_samples_after_warmup": 42, "latency_clean_from_s": 210, "latency_interval_ms": 1000, "lat_p50_max_ops_clean": 107.41666666666667, "lat_p99_max_ops_clean": 626.0666666666667, "lat_p50_median_ops_clean": 89.7, "e2e_p50_ms": 1035, "e2e_p95_ms": 4044, "e2e_p99_ms": 4181, "e2e_max_ms": 4285, "e2e_mean_ms": 1752.260520212061, "e2e_order_match": [1.0, 1.0, 1.0], "kafka_backlog_mean": 3754.5714285714284, "kafka_backlog_slope_per_s": 16.160524376309347, "kafka_wait_ms_est": 4831.7173323851175}
+FAILED p4_r1000_rep3: ~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 187, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 487, in open
+    response = self._open(req, data)
+  File "C:\Python314\Lib\urllib\request.py", line 504, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "C:\Python314\Lib\urllib\request.py", line 464, in _call_chain
+    result = func(*args)
+  File "C:\Python314\Lib\urllib\request.py", line 1350, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 1325, in do_open
+    r = h.getresponse()
+  File "C:\Python314\Lib\http\client.py", line 1450, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\http\client.py", line 336, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\http\client.py", line 297, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\socket.py", line 725, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+FAILED p8_r1000_rep3:    with urllib.request.urlopen(req, timeout=30) as r:
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 187, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 487, in open
+    response = self._open(req, data)
+  File "C:\Python314\Lib\urllib\request.py", line 504, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "C:\Python314\Lib\urllib\request.py", line 464, in _call_chain
+    result = func(*args)
+  File "C:\Python314\Lib\urllib\request.py", line 1350, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 1325, in do_open
+    r = h.getresponse()
+  File "C:\Python314\Lib\http\client.py", line 1450, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\http\client.py", line 336, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\http\client.py", line 297, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\socket.py", line 725, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+TimeoutError: timed out
+
+GRID_DONE

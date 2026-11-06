@@ -1,0 +1,46 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:+UnlockDiagnosticVMOptions -XX:-UseAESIntrinsics -XX:-UseGHASHIntrinsics
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.6/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Calculating task graph as no cached configuration is available for tasks: :kafkaProducer:build
+> Task :buildSrc:checkKotlinGradlePluginConfigurationErrors
+> Task :buildSrc:generateExternalPluginSpecBuilders UP-TO-DATE
+> Task :buildSrc:extractPrecompiledScriptPluginPlugins UP-TO-DATE
+> Task :buildSrc:compilePluginsBlocks UP-TO-DATE
+> Task :buildSrc:generatePrecompiledScriptPluginAccessors UP-TO-DATE
+> Task :buildSrc:generateScriptPluginAdapters UP-TO-DATE
+> Task :buildSrc:compileKotlin UP-TO-DATE
+> Task :buildSrc:compileJava NO-SOURCE
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:pluginDescriptors UP-TO-DATE
+> Task :buildSrc:processResources UP-TO-DATE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:jar UP-TO-DATE
+> Task :kafkaProducer:processResources NO-SOURCE
+> Task :kafkaProducer:processTestResources NO-SOURCE
+> Task :spotlessInternalRegisterDependencies UP-TO-DATE
+> Task :kafkaProducer:spotlessMisc FROM-CACHE
+> Task :kafkaProducer:spotlessMiscCheck UP-TO-DATE
+> Task :kafkaProducer:spotlessJava
+> Task :kafkaProducer:spotlessJavaCheck
+
+> Task :kafkaProducer:compileJava
+Picked up JAVA_TOOL_OPTIONS: -XX:+UnlockDiagnosticVMOptions -XX:-UseAESIntrinsics -XX:-UseGHASHIntrinsics
+
+> Task :kafkaProducer:classes
+> Task :kafkaProducer:compileTestJava NO-SOURCE
+> Task :kafkaProducer:testClasses UP-TO-DATE
+> Task :kafkaProducer:test NO-SOURCE
+> Task :kafkaProducer:spotlessKotlinGradle
+> Task :kafkaProducer:spotlessKotlinGradleCheck
+> Task :kafkaProducer:spotlessCheck
+> Task :kafkaProducer:check
+> Task :kafkaProducer:jar
+> Task :kafkaProducer:startScripts
+> Task :kafkaProducer:distTar
+> Task :kafkaProducer:distZip
+> Task :kafkaProducer:assemble
+> Task :kafkaProducer:build
+
+BUILD SUCCESSFUL in 31s
+22 actionable tasks: 10 executed, 1 from cache, 11 up-to-date
+Configuration cache entry stored.

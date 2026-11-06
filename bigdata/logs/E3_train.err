@@ -1,0 +1,14 @@
+2026-11-05 23:02:13,538 - streamline.training_manager - INFO: Starting Workload Predictor training using Transformers...
+2026-11-05 23:02:15,802 - streamline.workload_predictor - INFO: Epoch 0/200, Loss: 0.9748
+2026-11-05 23:02:19,273 - streamline.workload_predictor - INFO: Epoch 50/200, Loss: 0.0218
+2026-11-05 23:02:22,595 - streamline.workload_predictor - INFO: Epoch 100/200, Loss: 0.0130
+2026-11-05 23:02:26,108 - streamline.workload_predictor - INFO: Epoch 150/200, Loss: 0.0090
+2026-11-05 23:02:29,454 - streamline.workload_predictor - INFO: Epoch 200/200, Loss: 0.0060
+2026-11-05 23:02:29,626 - streamline.training_manager - INFO: Starting Neural Network training...
+2026-11-05 23:02:29,680 - streamline.neural_network - INFO: Epoch 0/200, Train Loss: 0.0519, Val Loss: 0.0390
+2026-11-05 23:02:32,054 - streamline.neural_network - INFO: Epoch 50/200, Train Loss: 0.0053, Val Loss: 0.0060
+2026-11-05 23:02:34,575 - streamline.neural_network - INFO: Epoch 100/200, Train Loss: 0.0050, Val Loss: 0.0056
+2026-11-05 23:02:37,168 - streamline.neural_network - INFO: Epoch 150/200, Train Loss: 0.0053, Val Loss: 0.0058
+2026-11-05 23:02:39,682 - streamline.neural_network - INFO: Epoch 200/200, Train Loss: 0.0050, Val Loss: 0.0052
+2026-11-05 23:02:39,725 - streamline.neural_network - INFO: R^2 Score: Train=0.91, Val=0.92
+2026-11-05 23:02:39,725 - streamline.training_manager - INFO: Starting Polynomial Regression training...

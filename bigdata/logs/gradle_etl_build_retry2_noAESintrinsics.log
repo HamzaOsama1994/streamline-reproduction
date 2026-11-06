@@ -1,0 +1,55 @@
+Picked up JAVA_TOOL_OPTIONS: -XX:+UnlockDiagnosticVMOptions -XX:-UseAESIntrinsics -XX:-UseGHASHIntrinsics
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.6/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Calculating task graph as no cached configuration is available for tasks: :etl:build
+> Task :buildSrc:checkKotlinGradlePluginConfigurationErrors
+> Task :buildSrc:generateExternalPluginSpecBuilders UP-TO-DATE
+> Task :buildSrc:extractPrecompiledScriptPluginPlugins UP-TO-DATE
+> Task :buildSrc:compilePluginsBlocks UP-TO-DATE
+> Task :buildSrc:generatePrecompiledScriptPluginAccessors UP-TO-DATE
+> Task :buildSrc:generateScriptPluginAdapters UP-TO-DATE
+> Task :buildSrc:compileKotlin UP-TO-DATE
+> Task :buildSrc:compileJava NO-SOURCE
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:pluginDescriptors UP-TO-DATE
+> Task :buildSrc:processResources UP-TO-DATE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:jar UP-TO-DATE
+> Task :etl:processTestResources NO-SOURCE
+> Task :spotlessInternalRegisterDependencies
+> Task :shared:processResources
+> Task :etl:spotlessMisc
+> Task :etl:spotlessMiscCheck
+> Task :etl:processResources
+> Task :etl:spotlessJava
+> Task :etl:spotlessJavaCheck
+> Task :etl:spotlessKotlinGradle
+> Task :etl:spotlessKotlinGradleCheck
+> Task :etl:spotlessCheck
+
+> Task :shared:compileJava
+Picked up JAVA_TOOL_OPTIONS: -XX:+UnlockDiagnosticVMOptions -XX:-UseAESIntrinsics -XX:-UseGHASHIntrinsics
+
+> Task :shared:classes
+> Task :shared:jar
+> Task :etl:compileJava
+> Task :etl:classes
+> Task :etl:jar SKIPPED
+> Task :etl:assemble UP-TO-DATE
+> Task :etl:compileTestJava
+> Task :etl:testClasses
+
+> Task :etl:test
+Picked up JAVA_TOOL_OPTIONS: -XX:+UnlockDiagnosticVMOptions -XX:-UseAESIntrinsics -XX:-UseGHASHIntrinsics
+
+> Task :etl:check
+> Task :etl:shadowJar
+> Task :etl:build
+
+BUILD SUCCESSFUL in 3m 2s
+25 actionable tasks: 16 executed, 9 up-to-date
+Configuration cache entry stored.
+
+real	3m2.616s
+user	0m0.121s
+sys	0m0.121s

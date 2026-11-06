@@ -1,0 +1,13 @@
+skip existing p2_seg16384
+skip existing p8_seg65536
+skip existing p2_seg32768
+skip existing p8_seg16384
+skip existing p2_seg65536
+skip existing p1_seg65536
+{"label": "p1_seg16384", "parallelism": 1, "rate_target": 0, "n_vertices": 2, "vertex_names": ["Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/", "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc"], "source_out_rate_mean": 808.1537037037037, "sink_in_rate_mean": 813.3217592592592, "max_backpressured_ms_per_s": 320.0, "max_busy_ms_per_s": 1000.0, "latency_marker_p50_ms_mean_of_max": 26.5, "latency_marker_p99_ms_mean_of_max": 115.43055555555556, "tm_cpu_cores_mean": 0.8775297098888889, "taskmanagers_used": 1, "host_other_cores_mean": 3.863888888888889, "host_other_cores_
+{"label": "p1_seg32768", "parallelism": 1, "rate_target": 0, "n_vertices": 2, "vertex_names": ["Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/", "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc"], "source_out_rate_mean": 810.6641203703704, "sink_in_rate_mean": 812.5949074074074, "max_backpressured_ms_per_s": 338.0, "max_busy_ms_per_s": 1000.0, "latency_marker_p50_ms_mean_of_max": 57.0, "latency_marker_p99_ms_mean_of_max": 165.01388888888889, "tm_cpu_cores_mean": 0.8655152966666667, "taskmanagers_used": 1, "host_other_cores_mean": 3.9255555555555555, "host_other_cores
+skip existing p4_seg32768
+skip existing p4_seg16384
+skip existing p8_seg32768
+skip existing p4_seg65536
+GRID_DONE

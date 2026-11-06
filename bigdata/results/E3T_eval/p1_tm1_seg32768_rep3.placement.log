@@ -1,0 +1,5 @@
+# job 540242b997f9dbcc97349e3b6684aadb  label p1_tm1_seg32768_rep3  submitted 2026-11-07 00:16:28
+# REST subtask -> taskmanager-id: {"1f9ad02cd246b23e2f077255eeddb60e": {"0": "10.42.0.101:6122-4495eb"}, "4678b24edcd99b481a38a9bc421b48ce": {"0": "10.42.0.101:6122-4495eb"}}
+# TM pods [name, podIP]: [["flink-taskmanager-6d5c7d978-wwvdk", "10.42.0.101"]]
+# JobManager log lines (DEPLOYING / slot allocation / job id):
+2026-11-06 20:16:44,717 INFO  org.apache.flink.runtime.executiongraph.ExecutionGraph       [] - Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/KafkaIO.Read.ReadFromKafkaViaUnbounded/Read(KafkaUnboundedSource) -> Flat Map -> ReadSenMLSource/Read from Kafka source/Remove Kafka Metadata/ParMultiDo(Anonymous) -> ReadSenMLSource/Values/Values/Map/ParMultiDo(Anonymous) -> ETLPipeline/Parse/Map/ParMultiDo(Anonymous) -> ETLPipeline/RangeFilter/Map/ParMultiDo(Anonymous) -> ETLPipeline/Interpolate/WithKeys/AddKeys/Map/ParMultiDo(Anonymous) (1/1) (e1b8990db78d6d837518bb78061b3b24_1f9ad02cd246b23e2f077255eeddb60e_0_0) switched from DEPLOYING to INITIALIZING.

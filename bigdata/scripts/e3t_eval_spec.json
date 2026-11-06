@@ -1,0 +1,283 @@
+{
+ "out": "results/E3T_eval",
+ "common": [
+  "--workload",
+  "e3t_taxi_eval",
+  "--duration",
+  "400",
+  "--warmup",
+  "150",
+  "--latency-interval",
+  "1000",
+  "--e2e",
+  "--dataset",
+  "TAXI",
+  "--drain",
+  "300",
+  "--trace-full"
+ ],
+ "configs": {
+  "p1_tm1_seg32768": [
+   "FD"
+  ],
+  "p6_tm3_seg16384": [
+   "V0_original/1",
+   "V0_original/6",
+   "V0_original/9",
+   "V4_corrected/orig",
+   "V4_corrected/0",
+   "V4_corrected/1",
+   "V4_corrected/2",
+   "V4_corrected/3",
+   "V4_corrected/4",
+   "V4_corrected/5",
+   "V4_corrected/6",
+   "V4_corrected/7",
+   "V4_corrected/8",
+   "V4_corrected/9"
+  ],
+  "p7_tm4_seg16384": [
+   "V0_original/orig",
+   "V0_original/0",
+   "V0_original/2",
+   "V0_original/3",
+   "V0_original/4",
+   "V0_original/5",
+   "V0_original/7",
+   "V0_original/8"
+  ],
+  "p8_tm4_seg32768": [
+   "FMAX"
+  ]
+ },
+ "runs": [
+  {
+   "label": "p6_tm3_seg16384_rep1",
+   "chosen_by": [
+    "V0_original/1",
+    "V0_original/6",
+    "V0_original/9",
+    "V4_corrected/orig",
+    "V4_corrected/0",
+    "V4_corrected/1",
+    "V4_corrected/2",
+    "V4_corrected/3",
+    "V4_corrected/4",
+    "V4_corrected/5",
+    "V4_corrected/6",
+    "V4_corrected/7",
+    "V4_corrected/8",
+    "V4_corrected/9"
+   ],
+   "args": [
+    "--parallelism",
+    "6",
+    "--taskmanagers",
+    "3",
+    "--segment-size",
+    "16384"
+   ]
+  },
+  {
+   "label": "p8_tm4_seg32768_rep3",
+   "chosen_by": [
+    "FMAX"
+   ],
+   "args": [
+    "--parallelism",
+    "8",
+    "--taskmanagers",
+    "4",
+    "--segment-size",
+    "32768"
+   ]
+  },
+  {
+   "label": "p6_tm3_seg16384_rep2",
+   "chosen_by": [
+    "V0_original/1",
+    "V0_original/6",
+    "V0_original/9",
+    "V4_corrected/orig",
+    "V4_corrected/0",
+    "V4_corrected/1",
+    "V4_corrected/2",
+    "V4_corrected/3",
+    "V4_corrected/4",
+    "V4_corrected/5",
+    "V4_corrected/6",
+    "V4_corrected/7",
+    "V4_corrected/8",
+    "V4_corrected/9"
+   ],
+   "args": [
+    "--parallelism",
+    "6",
+    "--taskmanagers",
+    "3",
+    "--segment-size",
+    "16384"
+   ]
+  },
+  {
+   "label": "p8_tm4_seg32768_rep1",
+   "chosen_by": [
+    "FMAX"
+   ],
+   "args": [
+    "--parallelism",
+    "8",
+    "--taskmanagers",
+    "4",
+    "--segment-size",
+    "32768"
+   ]
+  },
+  {
+   "label": "p6_tm3_seg16384_rep3",
+   "chosen_by": [
+    "V0_original/1",
+    "V0_original/6",
+    "V0_original/9",
+    "V4_corrected/orig",
+    "V4_corrected/0",
+    "V4_corrected/1",
+    "V4_corrected/2",
+    "V4_corrected/3",
+    "V4_corrected/4",
+    "V4_corrected/5",
+    "V4_corrected/6",
+    "V4_corrected/7",
+    "V4_corrected/8",
+    "V4_corrected/9"
+   ],
+   "args": [
+    "--parallelism",
+    "6",
+    "--taskmanagers",
+    "3",
+    "--segment-size",
+    "16384"
+   ]
+  },
+  {
+   "label": "p1_tm1_seg32768_rep3",
+   "chosen_by": [
+    "FD"
+   ],
+   "args": [
+    "--parallelism",
+    "1",
+    "--taskmanagers",
+    "1",
+    "--segment-size",
+    "32768"
+   ]
+  },
+  {
+   "label": "p1_tm1_seg32768_rep1",
+   "chosen_by": [
+    "FD"
+   ],
+   "args": [
+    "--parallelism",
+    "1",
+    "--taskmanagers",
+    "1",
+    "--segment-size",
+    "32768"
+   ]
+  },
+  {
+   "label": "p1_tm1_seg32768_rep2",
+   "chosen_by": [
+    "FD"
+   ],
+   "args": [
+    "--parallelism",
+    "1",
+    "--taskmanagers",
+    "1",
+    "--segment-size",
+    "32768"
+   ]
+  },
+  {
+   "label": "p7_tm4_seg16384_rep2",
+   "chosen_by": [
+    "V0_original/orig",
+    "V0_original/0",
+    "V0_original/2",
+    "V0_original/3",
+    "V0_original/4",
+    "V0_original/5",
+    "V0_original/7",
+    "V0_original/8"
+   ],
+   "args": [
+    "--parallelism",
+    "7",
+    "--taskmanagers",
+    "4",
+    "--segment-size",
+    "16384"
+   ]
+  },
+  {
+   "label": "p7_tm4_seg16384_rep1",
+   "chosen_by": [
+    "V0_original/orig",
+    "V0_original/0",
+    "V0_original/2",
+    "V0_original/3",
+    "V0_original/4",
+    "V0_original/5",
+    "V0_original/7",
+    "V0_original/8"
+   ],
+   "args": [
+    "--parallelism",
+    "7",
+    "--taskmanagers",
+    "4",
+    "--segment-size",
+    "16384"
+   ]
+  },
+  {
+   "label": "p8_tm4_seg32768_rep2",
+   "chosen_by": [
+    "FMAX"
+   ],
+   "args": [
+    "--parallelism",
+    "8",
+    "--taskmanagers",
+    "4",
+    "--segment-size",
+    "32768"
+   ]
+  },
+  {
+   "label": "p7_tm4_seg16384_rep3",
+   "chosen_by": [
+    "V0_original/orig",
+    "V0_original/0",
+    "V0_original/2",
+    "V0_original/3",
+    "V0_original/4",
+    "V0_original/5",
+    "V0_original/7",
+    "V0_original/8"
+   ],
+   "args": [
+    "--parallelism",
+    "7",
+    "--taskmanagers",
+    "4",
+    "--segment-size",
+    "16384"
+   ]
+  }
+ ]
+}

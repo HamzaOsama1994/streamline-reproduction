@@ -1,0 +1,13 @@
+skip existing p2_seg16384
+skip existing p8_seg65536
+skip existing p2_seg32768
+skip existing p8_seg16384
+skip existing p2_seg65536
+skip existing p1_seg65536
+skip existing p1_seg16384
+skip existing p1_seg32768
+{"label": "p4_seg32768", "parallelism": 4, "rate_target": 0, "n_vertices": 2, "vertex_names": ["Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/", "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc"], "source_out_rate_mean": 924.6574879227053, "sink_in_rate_mean": 929.0855072463768, "max_backpressured_ms_per_s": 422.0, "max_busy_ms_per_s": 976.0, "latency_marker_p50_ms_mean_of_max": 59.2536231884058, "latency_marker_p99_ms_mean_of_max": 6474.434782608696, "tm_cpu_cores_mean": 1.0455000875652174, "taskmanagers_used": 2, "host_other_cores_mean": 4.701884057971014, "host_ot
+{"label": "p4_seg16384", "parallelism": 4, "rate_target": 0, "n_vertices": 2, "vertex_names": ["Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/", "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc"], "source_out_rate_mean": 928.5046948356807, "sink_in_rate_mean": 934.3690140845071, "max_backpressured_ms_per_s": 434.0, "max_busy_ms_per_s": 984.0, "latency_marker_p50_ms_mean_of_max": 60.40845070422535, "latency_marker_p99_ms_mean_of_max": 8191.718309859155, "tm_cpu_cores_mean": 1.0611202978450704, "taskmanagers_used": 2, "host_other_cores_mean": 4.1736619718309855, "host_
+{"label": "p8_seg32768", "parallelism": 8, "rate_target": 0, "n_vertices": 2, "vertex_names": ["Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/", "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc"], "source_out_rate_mean": 930.1623188405797, "sink_in_rate_mean": 930.8908212560386, "max_backpressured_ms_per_s": 473.0, "max_busy_ms_per_s": 981.0, "latency_marker_p50_ms_mean_of_max": 839.3913043478261, "latency_marker_p99_ms_mean_of_max": 13755.0, "tm_cpu_cores_mean": 1.0617055261159423, "taskmanagers_used": 4, "host_other_cores_mean": 3.886231884057971, "host_other_cores
+{"label": "p4_seg65536", "parallelism": 4, "rate_target": 0, "n_vertices": 2, "vertex_names": ["Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/", "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc"], "source_out_rate_mean": 920.0868544600938, "sink_in_rate_mean": 926.5056338028169, "max_backpressured_ms_per_s": 462.0, "max_busy_ms_per_s": 978.0, "latency_marker_p50_ms_mean_of_max": 63.943661971830984, "latency_marker_p99_ms_mean_of_max": 7888.056338028169, "tm_cpu_cores_mean": 1.0338568462253521, "taskmanagers_used": 2, "host_other_cores_mean": 4.32056338028169, "host_o
+GRID_DONE

@@ -1,0 +1,62 @@
+FAILED p8_tm4_seg65536_rep2: l last):
+  File "C:\Users\Hamza\Downloads\University\AI508_Big Data\Assignment 2\streamline_repro\bigdata\scripts\run_e3_experiment.py", line 460, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Hamza\Downloads\University\AI508_Big Data\Assignment 2\streamline_repro\bigdata\scripts\run_e3_experiment.py", line 337, in main
+    rest(f"/jobs/{jid}?mode=cancel", method="PATCH")
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hamza\Downloads\University\AI508_Big Data\Assignment 2\streamline_repro\bigdata\scripts\run_e3_experiment.py", line 74, in rest
+    with urllib.request.urlopen(req, timeout=30) as r:
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 187, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 493, in open
+    response = meth(req, response)
+  File "C:\Python314\Lib\urllib\request.py", line 602, in http_response
+    response = self.parent.error(
+        'http', request, response, code, msg, hdrs)
+  File "C:\Python314\Lib\urllib\request.py", line 531, in error
+    return self._call_chain(*args)
+           ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 464, in _call_chain
+    result = func(*args)
+  File "C:\Python314\Lib\urllib\request.py", line 611, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 409: Conflict
+
+{"label": "p8_tm4_seg32768_rep2", "parallelism": 8, "rate_target": 0, "n_vertices": 2, "vertex_names": ["Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/", "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc"], "source_out_rate_mean": 1016.28125, "sink_in_rate_mean": 1017.1958333333333, "max_backpressured_ms_per_s": 175.0, "max_busy_ms_per_s": 891.0, "latency_marker_p50_ms_mean_of_max": 101.0, "latency_marker_p99_ms_mean_of_max": 4017.0, "tm_cpu_cores_mean": 1.0946006541458335, "taskmanagers_used": 4, "host_other_cores_mean": 3.4422916666666663, "host_other_cores_max": 6.
+{"label": "p1_tm1_seg32768_rep2", "parallelism": 1, "rate_target": 0, "n_vertices": 2, "vertex_names": ["Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/", "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc"], "source_out_rate_mean": 982.045, "sink_in_rate_mean": 986.9939999999999, "max_backpressured_ms_per_s": 365.0, "max_busy_ms_per_s": 1000.0, "latency_marker_p50_ms_mean_of_max": 84.96, "latency_marker_p99_ms_mean_of_max": 161.02, "tm_cpu_cores_mean": 0.94102351636, "taskmanagers_used": 1, "host_other_cores_mean": 3.4827999999999997, "host_other_cores_max": 6.2, "tm_c
+{"label": "p1_tm1_seg32768_rep3", "parallelism": 1, "rate_target": 0, "n_vertices": 2, "vertex_names": ["Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/", "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc"], "source_out_rate_mean": 1001.3373333333334, "sink_in_rate_mean": 1005.331, "max_backpressured_ms_per_s": 340.0, "max_busy_ms_per_s": 1000.0, "latency_marker_p50_ms_mean_of_max": 81.02, "latency_marker_p99_ms_mean_of_max": 196.46, "tm_cpu_cores_mean": 0.89720911634, "taskmanagers_used": 1, "host_other_cores_mean": 3.0208, "host_other_cores_max": 5.3, "tm_cpu_utilisa
+{"label": "p8_tm4_seg32768_rep3", "parallelism": 8, "rate_target": 0, "n_vertices": 2, "vertex_names": ["Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/", "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc"], "source_out_rate_mean": 980.1952380952381, "sink_in_rate_mean": 987.7312925170069, "max_backpressured_ms_per_s": 357.0, "max_busy_ms_per_s": 1000.0, "latency_marker_p50_ms_mean_of_max": 94.86734693877551, "latency_marker_p99_ms_mean_of_max": 3434.0, "tm_cpu_cores_mean": 1.0578391562857143, "taskmanagers_used": 4, "host_other_cores_mean": 3.175714285714286, "host_ot
+{"label": "p1_tm1_seg32768_rep1", "parallelism": 1, "rate_target": 0, "n_vertices": 2, "vertex_names": ["Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/", "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc"], "source_out_rate_mean": 997.9046666666666, "sink_in_rate_mean": 995.8783333333333, "max_backpressured_ms_per_s": 352.0, "max_busy_ms_per_s": 1000.0, "latency_marker_p50_ms_mean_of_max": 86.78, "latency_marker_p99_ms_mean_of_max": 227.94, "tm_cpu_cores_mean": 0.9255282853200001, "taskmanagers_used": 1, "host_other_cores_mean": 3.0644, "host_other_cores_max": 6.34, "
+{"label": "p8_tm4_seg32768_rep1", "parallelism": 8, "rate_target": 0, "n_vertices": 2, "vertex_names": ["Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/", "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc"], "source_out_rate_mean": 1006.4979166666667, "sink_in_rate_mean": 1004.2003472222223, "max_backpressured_ms_per_s": 232.0, "max_busy_ms_per_s": 898.0, "latency_marker_p50_ms_mean_of_max": 79.95833333333333, "latency_marker_p99_ms_mean_of_max": 3535.0, "tm_cpu_cores_mean": 1.1111304843958334, "taskmanagers_used": 4, "host_other_cores_mean": 3.5054166666666666, "host_
+{"label": "p8_tm4_seg65536_rep1", "parallelism": 8, "rate_target": 0, "n_vertices": 2, "vertex_names": ["Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/", "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc"], "source_out_rate_mean": 1013.0486111111112, "sink_in_rate_mean": 1007.0868055555555, "max_backpressured_ms_per_s": 5.0, "max_busy_ms_per_s": 825.0, "latency_marker_p50_ms_mean_of_max": 88.0, "latency_marker_p99_ms_mean_of_max": 2415.0, "tm_cpu_cores_mean": 1.0896172270416666, "taskmanagers_used": 4, "host_other_cores_mean": 3.6147916666666666, "host_other_cores_max
+FAILED p8_tm4_seg65536_rep3: l last):
+  File "C:\Users\Hamza\Downloads\University\AI508_Big Data\Assignment 2\streamline_repro\bigdata\scripts\run_e3_experiment.py", line 460, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Hamza\Downloads\University\AI508_Big Data\Assignment 2\streamline_repro\bigdata\scripts\run_e3_experiment.py", line 337, in main
+    rest(f"/jobs/{jid}?mode=cancel", method="PATCH")
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hamza\Downloads\University\AI508_Big Data\Assignment 2\streamline_repro\bigdata\scripts\run_e3_experiment.py", line 74, in rest
+    with urllib.request.urlopen(req, timeout=30) as r:
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 187, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 493, in open
+    response = meth(req, response)
+  File "C:\Python314\Lib\urllib\request.py", line 602, in http_response
+    response = self.parent.error(
+        'http', request, response, code, msg, hdrs)
+  File "C:\Python314\Lib\urllib\request.py", line 531, in error
+    return self._call_chain(*args)
+           ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Python314\Lib\urllib\request.py", line 464, in _call_chain
+    result = func(*args)
+  File "C:\Python314\Lib\urllib\request.py", line 611, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 409: Conflict
+
+GRID_DONE

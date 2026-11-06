@@ -1,0 +1,26 @@
+2026-11-06 06:48:52,543 - streamline.controller - INFO: Predicting workload of operators using Transformers and aspect ratio...
+2026-11-06 06:49:03,016 - streamline.controller - INFO: Best configuration for v_0: {'parallelism': 1.0, 'segment-size': 16384.0, 'est_tp': 738.9708103678844, 'est_l': 27.095339345932008, 'est_cpu': 0.2670722796022892}.
+2026-11-06 06:49:12,999 - streamline.controller - INFO: Best configuration for v_1: {'parallelism': 8.0, 'segment-size': 65536.0, 'est_tp': 929.0435741673311, 'est_l': 68.58986923217773, 'est_cpu': 0.6604992282390595}.
+2026-11-06 06:49:12,999 - streamline.scheduler - INFO: Usable CPU time of already used resources: 0
+2026-11-06 06:49:12,999 - streamline.scheduler - INFO: Total required CPU: 0.9275715078413486
+2026-11-06 06:49:12,999 - streamline.controller - INFO: Predicting workload of operators using Transformers and aspect ratio...
+2026-11-06 06:49:23,163 - streamline.controller - INFO: Best configuration for v_0: {'parallelism': 1.0, 'segment-size': 16384.0, 'est_tp': 723.8568498728893, 'est_l': 27.247664880752563, 'est_cpu': 0.2658920043706894}.
+2026-11-06 06:49:33,535 - streamline.controller - INFO: Best configuration for v_1: {'parallelism': 8.0, 'segment-size': 65536.0, 'est_tp': 924.8227966300246, 'est_l': 68.82940948486328, 'est_cpu': 0.6610925662517547}.
+2026-11-06 06:49:33,535 - streamline.scheduler - INFO: Usable CPU time of already used resources: 0
+2026-11-06 06:49:33,535 - streamline.scheduler - INFO: Total required CPU: 0.9269845706224442
+2026-11-06 06:49:33,545 - streamline.controller - INFO: Predicting workload of operators using Transformers and aspect ratio...
+2026-11-06 06:49:43,472 - streamline.controller - INFO: Best configuration for v_0: {'parallelism': 1.0, 'segment-size': 16384.0, 'est_tp': 737.8296843917915, 'est_l': 26.687451400756835, 'est_cpu': 0.2658713774383068}.
+2026-11-06 06:49:53,515 - streamline.controller - INFO: Best configuration for v_1: {'parallelism': 8.0, 'segment-size': 65536.0, 'est_tp': 913.0833516809143, 'est_l': 68.63137680053711, 'est_cpu': 0.654577625989914}.
+2026-11-06 06:49:53,515 - streamline.scheduler - INFO: Usable CPU time of already used resources: 0
+2026-11-06 06:49:53,515 - streamline.scheduler - INFO: Total required CPU: 0.9204490034282207
+2026-11-06 06:49:53,515 - streamline.controller - INFO: Predicting workload of operators using Transformers and aspect ratio...
+2026-11-06 06:50:03,535 - streamline.controller - INFO: Best configuration for v_0: {'parallelism': 1.0, 'segment-size': 16384.0, 'est_tp': 724.0469752367088, 'est_l': 26.54157461166382, 'est_cpu': 0.2633535611629486}.
+2026-11-06 06:50:13,889 - streamline.controller - INFO: Best configuration for v_1: {'parallelism': 8.0, 'segment-size': 65536.0, 'est_tp': 915.9451789942979, 'est_l': 68.72125930786133, 'est_cpu': 0.6558618426322937}.
+2026-11-06 06:50:13,889 - streamline.scheduler - INFO: Usable CPU time of already used resources: 0
+2026-11-06 06:50:13,889 - streamline.scheduler - INFO: Total required CPU: 0.9192154037952421
+2026-11-06 06:50:13,889 - streamline.controller - INFO: Predicting workload of operators using Transformers and aspect ratio...
+2026-11-06 06:50:24,059 - streamline.controller - INFO: Best configuration for v_0: {'parallelism': 1.0, 'segment-size': 16384.0, 'est_tp': 769.8924226878307, 'est_l': 28.118657836914064, 'est_cpu': 0.27487086951732637}.
+2026-11-06 06:50:34,113 - streamline.controller - INFO: Best configuration for v_1: {'parallelism': 8.0, 'segment-size': 65536.0, 'est_tp': 946.5214895621538, 'est_l': 68.41783248901368, 'est_cpu': 0.6689069956541062}.
+2026-11-06 06:50:34,113 - streamline.scheduler - INFO: Usable CPU time of already used resources: 0
+2026-11-06 06:50:34,113 - streamline.scheduler - INFO: Total required CPU: 0.9437778651714327
+2026-11-06 06:50:34,114 - streamline.controller - INFO: Predicting workload of operators using Transformers and aspect ratio...
