@@ -1,0 +1,18 @@
+# environments and tools (recreate from README / modification log)
+env/
+bigdata/tools/
+__pycache__/
+*.pyc
+
+# datasets and generated replay files (public sources; regenerate with scripts/make_*.py)
+bigdata/data/
+*.7z
+*.zip
+
+# correction-study model checkpoints (regenerate with repro_scripts/train_checkpoints.py)
+correction_study/checkpoints/
+
+# local working notes
+RESUME_HERE.md
+logs/*.tmp
+*.bak

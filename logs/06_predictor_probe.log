@@ -1,0 +1,7 @@
+training_s=27.0
+UPSTREAM predict(): mae=78.7 std=95.0 min=759.7 neg_share=0.000
+mode=train scaled_input=False -> mae_vs_truth=82.898, run_to_run_std_mean=93.919, min_forecast=758.343, share_negative=0.000
+mode=train scaled_input=True  -> mae_vs_truth=19.814, run_to_run_std_mean=79.578, min_forecast=861.091, share_negative=0.000
+mode=eval  scaled_input=False -> mae_vs_truth=95.989, run_to_run_std_mean=0.000, min_forecast=874.987, share_negative=0.000
+mode=eval  scaled_input=True  -> mae_vs_truth=27.623, run_to_run_std_mean=0.000, min_forecast=1027.576, share_negative=0.000
+truth range: 1018.9..2000.0, mean 1644.2

@@ -1,0 +1,127 @@
+{
+ "out": "results/E3T_profile",
+ "common": [
+  "--workload",
+  "e3t_profile_steps",
+  "--duration",
+  "510",
+  "--warmup",
+  "150",
+  "--latency-interval",
+  "1000",
+  "--taskmanagers",
+  "4",
+  "--dataset",
+  "TAXI"
+ ],
+ "runs": [
+  {
+   "label": "p2_seg16384",
+   "args": [
+    "--parallelism",
+    "2",
+    "--segment-size",
+    "16384"
+   ]
+  },
+  {
+   "label": "p8_seg65536",
+   "args": [
+    "--parallelism",
+    "8",
+    "--segment-size",
+    "65536"
+   ]
+  },
+  {
+   "label": "p2_seg32768",
+   "args": [
+    "--parallelism",
+    "2",
+    "--segment-size",
+    "32768"
+   ]
+  },
+  {
+   "label": "p8_seg16384",
+   "args": [
+    "--parallelism",
+    "8",
+    "--segment-size",
+    "16384"
+   ]
+  },
+  {
+   "label": "p2_seg65536",
+   "args": [
+    "--parallelism",
+    "2",
+    "--segment-size",
+    "65536"
+   ]
+  },
+  {
+   "label": "p1_seg65536",
+   "args": [
+    "--parallelism",
+    "1",
+    "--segment-size",
+    "65536"
+   ]
+  },
+  {
+   "label": "p1_seg16384",
+   "args": [
+    "--parallelism",
+    "1",
+    "--segment-size",
+    "16384"
+   ]
+  },
+  {
+   "label": "p1_seg32768",
+   "args": [
+    "--parallelism",
+    "1",
+    "--segment-size",
+    "32768"
+   ]
+  },
+  {
+   "label": "p4_seg32768",
+   "args": [
+    "--parallelism",
+    "4",
+    "--segment-size",
+    "32768"
+   ]
+  },
+  {
+   "label": "p4_seg16384",
+   "args": [
+    "--parallelism",
+    "4",
+    "--segment-size",
+    "16384"
+   ]
+  },
+  {
+   "label": "p8_seg32768",
+   "args": [
+    "--parallelism",
+    "8",
+    "--segment-size",
+    "32768"
+   ]
+  },
+  {
+   "label": "p4_seg65536",
+   "args": [
+    "--parallelism",
+    "4",
+    "--segment-size",
+    "65536"
+   ]
+  }
+ ]
+}

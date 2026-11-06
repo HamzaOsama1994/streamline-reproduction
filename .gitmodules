@@ -1,0 +1,7 @@
+[submodule "Streamline"]
+	path = Streamline
+	url = https://github.com/UIBK-DPS-DC/Streamline.git
+[submodule "bigdata/beam-applications-java"]
+	path = bigdata/beam-applications-java
+	url = https://github.com/DPS-Stream-Processing-Applications/beam-applications-java.git
+	ignore = untracked

@@ -1,0 +1,38 @@
+2026-11-04 23:23:51,037 - streamline.training_manager - INFO: Starting Workload Predictor training using Transformers...
+2026-11-04 23:23:54,967 - streamline.workload_predictor - INFO: Epoch 0/200, Loss: 1.2220
+2026-11-04 23:24:06,923 - streamline.workload_predictor - INFO: Epoch 50/200, Loss: 0.0245
+2026-11-04 23:24:18,249 - streamline.workload_predictor - INFO: Epoch 100/200, Loss: 0.0130
+2026-11-04 23:24:29,893 - streamline.workload_predictor - INFO: Epoch 150/200, Loss: 0.0080
+2026-11-04 23:24:41,940 - streamline.workload_predictor - INFO: Epoch 200/200, Loss: 0.0052
+2026-11-04 23:24:42,108 - streamline.training_manager - INFO: Starting Neural Network training...
+2026-11-04 23:24:42,152 - streamline.neural_network - INFO: Epoch 0/200, Train Loss: 0.0946, Val Loss: 0.0582
+2026-11-04 23:24:43,707 - streamline.neural_network - INFO: Epoch 50/200, Train Loss: 0.0045, Val Loss: 0.0079
+2026-11-04 23:24:45,468 - streamline.neural_network - INFO: Epoch 100/200, Train Loss: 0.0035, Val Loss: 0.0065
+2026-11-04 23:24:47,095 - streamline.neural_network - INFO: Epoch 150/200, Train Loss: 0.0028, Val Loss: 0.0065
+2026-11-04 23:24:48,901 - streamline.neural_network - INFO: Epoch 200/200, Train Loss: 0.0027, Val Loss: 0.0075
+2026-11-04 23:24:48,954 - streamline.neural_network - INFO: R^2 Score: Train=0.96, Val=0.90
+2026-11-04 23:24:48,955 - streamline.training_manager - INFO: Starting Polynomial Regression training...
+2026-11-04 23:24:49,275 - streamline.polynomial_regression - INFO: Finished training for 0: ./polynomial_regeression_0.png
+2026-11-04 23:24:49,505 - streamline.polynomial_regression - INFO: Finished training for 1: ./polynomial_regeression_1.png
+2026-11-04 23:24:49,705 - streamline.polynomial_regression - INFO: Finished training for 2: ./polynomial_regeression_2.png
+2026-11-04 23:24:49,954 - streamline.polynomial_regression - INFO: Finished training for 3: ./polynomial_regeression_3.png
+2026-11-04 23:24:49,954 - streamline.training_manager - INFO: Starting Workload Predictor training using Transformers...
+2026-11-04 23:24:50,335 - streamline.workload_predictor - INFO: Epoch 0/200, Loss: 1.0439
+2026-11-04 23:25:03,121 - streamline.workload_predictor - INFO: Epoch 50/200, Loss: 0.0259
+2026-11-04 23:25:15,592 - streamline.workload_predictor - INFO: Epoch 100/200, Loss: 0.0131
+2026-11-04 23:25:28,091 - streamline.workload_predictor - INFO: Epoch 150/200, Loss: 0.0083
+2026-11-04 23:25:40,747 - streamline.workload_predictor - INFO: Epoch 200/200, Loss: 0.0056
+2026-11-04 23:25:40,792 - streamline.training_manager - INFO: Starting Neural Network training...
+2026-11-04 23:25:40,824 - streamline.neural_network - INFO: Epoch 0/200, Train Loss: 0.1546, Val Loss: 0.0644
+2026-11-04 23:25:42,118 - streamline.neural_network - INFO: Epoch 50/200, Train Loss: 0.0048, Val Loss: 0.0085
+2026-11-04 23:25:43,211 - streamline.neural_network - INFO: Epoch 100/200, Train Loss: 0.0039, Val Loss: 0.0076
+2026-11-04 23:25:44,331 - streamline.neural_network - INFO: Epoch 150/200, Train Loss: 0.0030, Val Loss: 0.0057
+2026-11-04 23:25:45,375 - streamline.neural_network - INFO: Epoch 200/200, Train Loss: 0.0025, Val Loss: 0.0056
+2026-11-04 23:25:45,375 - streamline.neural_network - INFO: R^2 Score: Train=0.96, Val=0.90
+2026-11-04 23:25:45,375 - streamline.training_manager - INFO: Starting Polynomial Regression training...
+2026-11-04 23:25:45,583 - streamline.polynomial_regression - INFO: Finished training for 5: ./polynomial_regeression_5.png
+2026-11-04 23:25:45,806 - streamline.polynomial_regression - INFO: Finished training for 6: ./polynomial_regeression_6.png
+2026-11-04 23:25:46,001 - streamline.polynomial_regression - INFO: Finished training for 7: ./polynomial_regeression_7.png
+[AUDIT] p1_v0: best_epoch_by_train_loss=200 best_loss=0.005212 last_epoch_loss=0.005212 returned_is_last=True returned_equals_best_snapshot=True
+[AUDIT] p2_v5: best_epoch_by_train_loss=200 best_loss=0.005576 last_epoch_loss=0.005576 returned_is_last=True returned_equals_best_snapshot=True
+saved checkpoints to ../correction_study/checkpoints

@@ -1,0 +1,1 @@
+torch 2.4.1+cpu cuda False threads 20 Windows-10-10.0.26200-SP0

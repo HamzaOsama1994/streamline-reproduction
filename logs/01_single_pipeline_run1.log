@@ -1,0 +1,44 @@
+2026-11-04 20:25:57,480 - matplotlib.font_manager - INFO: Generating new fontManager, this may take some time...
+2026-11-04 20:26:03,397 - streamline.training_manager - INFO: Starting Workload Predictor training using Transformers...
+2026-11-04 20:26:09,287 - streamline.workload_predictor - INFO: Epoch 0/200, Loss: 1.2220
+2026-11-04 20:26:19,480 - streamline.workload_predictor - INFO: Epoch 50/200, Loss: 0.0245
+2026-11-04 20:26:29,692 - streamline.workload_predictor - INFO: Epoch 100/200, Loss: 0.0130
+2026-11-04 20:26:37,609 - streamline.workload_predictor - INFO: Epoch 150/200, Loss: 0.0080
+2026-11-04 20:26:43,289 - streamline.workload_predictor - INFO: Epoch 200/200, Loss: 0.0052
+2026-11-04 20:26:43,504 - streamline.training_manager - INFO: Starting Neural Network training...
+2026-11-04 20:26:43,520 - streamline.neural_network - INFO: Epoch 0/200, Train Loss: 0.0946, Val Loss: 0.0582
+2026-11-04 20:26:44,402 - streamline.neural_network - INFO: Epoch 50/200, Train Loss: 0.0045, Val Loss: 0.0079
+2026-11-04 20:26:45,335 - streamline.neural_network - INFO: Epoch 100/200, Train Loss: 0.0035, Val Loss: 0.0065
+2026-11-04 20:26:46,307 - streamline.neural_network - INFO: Epoch 150/200, Train Loss: 0.0028, Val Loss: 0.0065
+2026-11-04 20:26:47,284 - streamline.neural_network - INFO: Epoch 200/200, Train Loss: 0.0027, Val Loss: 0.0075
+2026-11-04 20:26:47,292 - streamline.neural_network - INFO: R^2 Score: Train=0.96, Val=0.90
+2026-11-04 20:26:47,292 - streamline.training_manager - INFO: Starting Polynomial Regression training...
+2026-11-04 20:26:47,401 - streamline.polynomial_regression - INFO: Finished training for 0: ./polynomial_regeression_0.png
+2026-11-04 20:26:47,508 - streamline.polynomial_regression - INFO: Finished training for 1: ./polynomial_regeression_1.png
+2026-11-04 20:26:47,725 - streamline.polynomial_regression - INFO: Finished training for 2: ./polynomial_regeression_2.png
+2026-11-04 20:26:47,851 - streamline.polynomial_regression - INFO: Finished training for 3: ./polynomial_regeression_3.png
+2026-11-04 20:26:47,851 - streamline.controller - INFO: Predicting workload of operators using Transformers and aspect ratio...
+2026-11-04 20:26:57,689 - streamline.controller - INFO: Best configuration for v_0: {'parallelism': 3.0, 'segment-size': 16384.0, 'est_tp': 1614.7250220390395, 'est_l': 170.5886102294922, 'est_cpu': 1.724095482826233}.
+2026-11-04 20:27:09,228 - streamline.controller - INFO: Best configuration for v_1: {'parallelism': 3.0, 'segment-size': 16384.0, 'est_tp': 834.5322991943359, 'est_l': 96.54700088500977, 'est_cpu': 1.3100362777709962}.
+2026-11-04 20:27:20,727 - streamline.controller - INFO: Best configuration for v_2: {'parallelism': 2.0, 'segment-size': 16384.0, 'est_tp': 834.5322991943359, 'est_l': 127.9010952758789, 'est_cpu': 1.0741720938682555}.
+2026-11-04 20:27:31,740 - streamline.controller - INFO: Best configuration for v_3: {'parallelism': 2.0, 'segment-size': 16384.0, 'est_tp': 1319.449833651007, 'est_l': 111.76884460449219, 'est_cpu': 1.6059308052062988}.
+2026-11-04 20:27:31,740 - streamline.scheduler - INFO: Usable CPU time of already used resources: 0
+2026-11-04 20:27:31,740 - streamline.scheduler - INFO: Total required CPU: 5.714234659671783
+{'R11': ['pipeline_1_v_3_0', 'pipeline_1_v_3_1', 'pipeline_1_v_0_0', 'pipeline_1_v_0_1', 'pipeline_1_v_0_2', 'pipeline_1_v_2_0', 'pipeline_1_v_2_1', 'pipeline_1_v_1_0', 'pipeline_1_v_1_1', 'pipeline_1_v_1_2']}
+2026-11-04 20:27:31,740 - streamline.controller - INFO: Predicting workload of operators using Transformers and aspect ratio...
+2026-11-04 20:27:42,225 - streamline.controller - INFO: Best configuration for v_0: {'parallelism': 4.0, 'segment-size': 16384.0, 'est_tp': 1094.1872595930117, 'est_l': 145.1688377380371, 'est_cpu': 1.2794026601314545}.
+2026-11-04 20:27:52,852 - streamline.controller - INFO: Best configuration for v_1: {'parallelism': 4.0, 'segment-size': 16384.0, 'est_tp': 547.9096084371209, 'est_l': 84.4098989868164, 'est_cpu': 1.1060160595178603}.
+2026-11-04 20:28:05,415 - streamline.controller - INFO: Best configuration for v_2: {'parallelism': 4.0, 'segment-size': 16384.0, 'est_tp': 547.9096084371209, 'est_l': 83.03469650268555, 'est_cpu': 1.043462072610855}.
+2026-11-04 20:28:19,028 - streamline.controller - INFO: Best configuration for v_3: {'parallelism': 4.0, 'segment-size': 16384.0, 'est_tp': 1711.6468443607355, 'est_l': 149.4106616973877, 'est_cpu': 2.4172845935076475}.
+2026-11-04 20:28:19,029 - streamline.scheduler - INFO: Usable CPU time of already used resources: 0
+2026-11-04 20:28:19,029 - streamline.scheduler - INFO: Total required CPU: 5.846165385767818
+{'R11': ['pipeline_1_v_3_0', 'pipeline_1_v_3_1', 'pipeline_1_v_3_2', 'pipeline_1_v_3_3', 'pipeline_1_v_0_0', 'pipeline_1_v_0_1', 'pipeline_1_v_0_2', 'pipeline_1_v_0_3', 'pipeline_1_v_1_0', 'pipeline_1_v_1_1', 'pipeline_1_v_1_2', 'pipeline_1_v_1_3', 'pipeline_1_v_2_0', 'pipeline_1_v_2_1', 'pipeline_1_v_2_2', 'pipeline_1_v_2_3']}
+2026-11-04 20:28:19,029 - streamline.controller - INFO: Predicting workload of operators using Transformers and aspect ratio...
+2026-11-04 20:28:31,856 - streamline.controller - INFO: Best configuration for v_0: {'parallelism': 4.0, 'segment-size': 16384.0, 'est_tp': 1138.8653881472367, 'est_l': 147.47802276611327, 'est_cpu': 1.3192157864570617}.
+2026-11-04 20:28:44,804 - streamline.controller - INFO: Best configuration for v_1: {'parallelism': 4.0, 'segment-size': 16384.0, 'est_tp': 569.9217610931396, 'est_l': 85.07041061401367, 'est_cpu': 1.126732759475708}.
+2026-11-04 20:28:57,676 - streamline.controller - INFO: Best configuration for v_2: {'parallelism': 4.0, 'segment-size': 16384.0, 'est_tp': 569.9217610931396, 'est_l': 83.59725357055665, 'est_cpu': 1.0625221586227418}.
+2026-11-04 20:29:07,683 - streamline.controller - INFO: Best configuration for v_3: {'parallelism': 4.0, 'segment-size': 16384.0, 'est_tp': 1786.0463635324506, 'est_l': 154.9013224029541, 'est_cpu': 2.488637581318617}.
+None
+Resources Utilization: 
+	R11: 0.730770673220977
+exit=0 wall_s=197.0

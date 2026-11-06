@@ -1,0 +1,88 @@
+V0_original seed=6 periodic_cost=$0.96/h resources={'R1': 0.0712, 'R11': 0.3458, 'R12': 0.6919} p2_periodic_MAE=[873.9] opt_s=170.2
+V0_original seed=7 periodic_cost=$0.768/h resources={'R11': 0.3348, 'R12': 0.7177} p2_periodic_MAE=[930.3] opt_s=170.3
+V0_original seed=4 periodic_cost=$0.768/h resources={'R11': 0.3112, 'R12': 0.7061} p2_periodic_MAE=[902.7] opt_s=170.5
+V0_original seed=1 periodic_cost=$0.768/h resources={'R11': 0.3533, 'R12': 0.6842} p2_periodic_MAE=[900.1] opt_s=170.8
+V0_original seed=2 periodic_cost=$0.768/h resources={'R1': 0.124, 'R11': 0.3556, 'R2': 0.6111} p2_periodic_MAE=[840.3] opt_s=170.8
+V0_original seed=0 periodic_cost=$0.576/h resources={'R1': 0.6701, 'R11': 0.7209} p2_periodic_MAE=[890.2] opt_s=171.1
+V0_original seed=5 periodic_cost=$0.96/h resources={'R1': 0.0687, 'R11': 0.3463, 'R12': 0.6945} p2_periodic_MAE=[855.4] opt_s=171.7
+V0_original seed=3 periodic_cost=$0.384/h resources={'R11': 0.7243} p2_periodic_MAE=[842.0] opt_s=172.0
+V0_original seed=8 periodic_cost=$0.576/h resources={'R1': 0.6312, 'R11': 0.7241} p2_periodic_MAE=[905.6] opt_s=168.4
+V1_key seed=1 periodic_cost=$0.384/h resources={'R11': 0.6172} p2_periodic_MAE=[139.0] opt_s=168.6
+V1_key seed=3 periodic_cost=$0.384/h resources={'R11': 0.5903} p2_periodic_MAE=[126.6] opt_s=167.9
+V1_key seed=0 periodic_cost=$0.768/h resources={'R1': 0.1249, 'R11': 0.3807, 'R2': 0.6077} p2_periodic_MAE=[132.2] opt_s=169.0
+V0_original seed=9 periodic_cost=$0.768/h resources={'R11': 0.3426, 'R12': 0.7158} p2_periodic_MAE=[921.0] opt_s=170.6
+V1_key seed=orig periodic_cost=$0.384/h resources={'R11': 0.6173} p2_periodic_MAE=[120.8] opt_s=170.5
+V1_key seed=4 periodic_cost=$0.384/h resources={'R11': 0.5921} p2_periodic_MAE=[125.0] opt_s=169.8
+V1_key seed=2 periodic_cost=$0.768/h resources={'R1': 0.124, 'R11': 0.3556, 'R2': 0.6111} p2_periodic_MAE=[152.2] opt_s=171.3
+V1_key seed=5 periodic_cost=$0.384/h resources={'R11': 0.6247} p2_periodic_MAE=[107.1] opt_s=182.8
+V1_key seed=7 periodic_cost=$0.384/h resources={'R11': 0.5998} p2_periodic_MAE=[115.3] opt_s=182.6
+V1_key seed=6 periodic_cost=$0.384/h resources={'R11': 0.6165} p2_periodic_MAE=[110.1] opt_s=183.3
+V1_key seed=8 periodic_cost=$0.768/h resources={'R1': 0.1209, 'R11': 0.3734, 'R2': 0.5808} p2_periodic_MAE=[153.6] opt_s=184.0
+V1_key seed=9 periodic_cost=$0.384/h resources={'R11': 0.5974} p2_periodic_MAE=[127.4] opt_s=183.3
+V2_eval seed=0 periodic_cost=$0.768/h resources={'R11': 0.3341, 'R12': 0.6823} p2_periodic_MAE=[900.7] opt_s=182.7
+V2_eval seed=1 periodic_cost=$0.768/h resources={'R11': 0.3341, 'R12': 0.6823} p2_periodic_MAE=[900.7] opt_s=183.1
+V2_eval seed=orig periodic_cost=$0.768/h resources={'R11': 0.3341, 'R12': 0.6823} p2_periodic_MAE=[900.7] opt_s=185.1
+V2_eval seed=4 periodic_cost=$0.768/h resources={'R11': 0.3341, 'R12': 0.6823} p2_periodic_MAE=[900.7] opt_s=170.7
+V2_eval seed=3 periodic_cost=$0.768/h resources={'R11': 0.3341, 'R12': 0.6823} p2_periodic_MAE=[900.7] opt_s=171.3
+V2_eval seed=5 periodic_cost=$0.768/h resources={'R11': 0.3341, 'R12': 0.6823} p2_periodic_MAE=[900.7] opt_s=170.3
+V2_eval seed=2 periodic_cost=$0.768/h resources={'R11': 0.3341, 'R12': 0.6823} p2_periodic_MAE=[900.7] opt_s=171.9
+V2_eval seed=7 periodic_cost=$0.768/h resources={'R11': 0.3341, 'R12': 0.6823} p2_periodic_MAE=[900.7] opt_s=170.1
+V2_eval seed=8 periodic_cost=$0.768/h resources={'R11': 0.3341, 'R12': 0.6823} p2_periodic_MAE=[900.7] opt_s=170.6
+V2_eval seed=6 periodic_cost=$0.768/h resources={'R11': 0.3341, 'R12': 0.6823} p2_periodic_MAE=[900.7] opt_s=172.1
+V2_eval seed=9 periodic_cost=$0.768/h resources={'R11': 0.3341, 'R12': 0.6823} p2_periodic_MAE=[900.7] opt_s=172.3
+V3_scaling seed=2 periodic_cost=$0.576/h resources={'R1': 0.4241, 'R11': 0.6024} p2_periodic_MAE=[853.5] opt_s=158.8
+V3_scaling seed=orig periodic_cost=$0.576/h resources={'R1': 0.3916, 'R11': 0.6075} p2_periodic_MAE=[858.5] opt_s=159.5
+V3_scaling seed=0 periodic_cost=$0.576/h resources={'R1': 0.7193, 'R11': 0.7853} p2_periodic_MAE=[904.0] opt_s=159.9
+V3_scaling seed=3 periodic_cost=$0.576/h resources={'R1': 0.5277, 'R11': 0.6594} p2_periodic_MAE=[814.1] opt_s=159.2
+V3_scaling seed=1 periodic_cost=$0.576/h resources={'R1': 0.7714, 'R11': 0.4159} p2_periodic_MAE=[897.3] opt_s=160.4
+V3_scaling seed=4 periodic_cost=$0.768/h resources={'R11': 0.4187, 'R12': 0.7391} p2_periodic_MAE=[883.9] opt_s=158.8
+V3_scaling seed=5 periodic_cost=$0.576/h resources={'R1': 0.7779, 'R11': 0.7619} p2_periodic_MAE=[864.6] opt_s=160.3
+V3_scaling seed=6 periodic_cost=$0.96/h resources={'R1': 0.0571, 'R11': 0.4165, 'R12': 0.7423} p2_periodic_MAE=[867.2] opt_s=161.0
+V3_scaling seed=7 periodic_cost=$0.768/h resources={'R11': 0.3935, 'R12': 0.7603} p2_periodic_MAE=[926.7] opt_s=142.1
+V4_all seed=orig periodic_cost=$0.384/h resources={'R11': 0.6715} p2_periodic_MAE=[18.6] opt_s=142.2
+V3_scaling seed=9 periodic_cost=$0.96/h resources={'R1': 0.0744, 'R11': 0.3754, 'R12': 0.7258} p2_periodic_MAE=[906.4] opt_s=143.1
+V4_all seed=1 periodic_cost=$0.384/h resources={'R11': 0.6715} p2_periodic_MAE=[18.6] opt_s=142.1
+V4_all seed=0 periodic_cost=$0.384/h resources={'R11': 0.6715} p2_periodic_MAE=[18.6] opt_s=142.6
+V3_scaling seed=8 periodic_cost=$0.768/h resources={'R11': 0.3758, 'R12': 0.7477} p2_periodic_MAE=[896.5] opt_s=144.7
+V4_all seed=2 periodic_cost=$0.384/h resources={'R11': 0.6715} p2_periodic_MAE=[18.6] opt_s=143.4
+V4_all seed=3 periodic_cost=$0.384/h resources={'R11': 0.6715} p2_periodic_MAE=[18.6] opt_s=143.0
+V4_all seed=5 periodic_cost=$0.384/h resources={'R11': 0.6715} p2_periodic_MAE=[18.6] opt_s=139.9
+V4_all seed=7 periodic_cost=$0.384/h resources={'R11': 0.6715} p2_periodic_MAE=[18.6] opt_s=139.3
+V4_all seed=6 periodic_cost=$0.384/h resources={'R11': 0.6715} p2_periodic_MAE=[18.6] opt_s=139.7
+V4_all seed=4 periodic_cost=$0.384/h resources={'R11': 0.6715} p2_periodic_MAE=[18.6] opt_s=141.1
+V4_all seed=8 periodic_cost=$0.384/h resources={'R11': 0.6715} p2_periodic_MAE=[18.6] opt_s=140.3
+V4_all seed=9 periodic_cost=$0.384/h resources={'R11': 0.6715} p2_periodic_MAE=[18.6] opt_s=142.3
+V5_key+eval seed=0 periodic_cost=$0.384/h resources={'R11': 0.5869} p2_periodic_MAE=[121.6] opt_s=141.6
+V5_key+eval seed=orig periodic_cost=$0.384/h resources={'R11': 0.5869} p2_periodic_MAE=[121.6] opt_s=143.8
+V5_key+eval seed=2 periodic_cost=$0.384/h resources={'R11': 0.5869} p2_periodic_MAE=[121.6] opt_s=149.3
+V5_key+eval seed=4 periodic_cost=$0.384/h resources={'R11': 0.5869} p2_periodic_MAE=[121.6] opt_s=148.9
+V5_key+eval seed=1 periodic_cost=$0.384/h resources={'R11': 0.5869} p2_periodic_MAE=[121.6] opt_s=151.0
+V5_key+eval seed=3 periodic_cost=$0.384/h resources={'R11': 0.5869} p2_periodic_MAE=[121.6] opt_s=151.2
+V5_key+eval seed=5 periodic_cost=$0.384/h resources={'R11': 0.5869} p2_periodic_MAE=[121.6] opt_s=152.5
+V5_key+eval seed=6 periodic_cost=$0.384/h resources={'R11': 0.5869} p2_periodic_MAE=[121.6] opt_s=150.4
+V5_key+eval seed=7 periodic_cost=$0.384/h resources={'R11': 0.5869} p2_periodic_MAE=[121.6] opt_s=151.1
+V5_key+eval seed=8 periodic_cost=$0.384/h resources={'R11': 0.5869} p2_periodic_MAE=[121.6] opt_s=151.9
+V5_key+eval seed=9 periodic_cost=$0.384/h resources={'R11': 0.5869} p2_periodic_MAE=[121.6] opt_s=145.6
+V6_key+scaling seed=orig periodic_cost=$0.384/h resources={'R11': 0.689} p2_periodic_MAE=[54.4] opt_s=145.9
+V6_key+scaling seed=1 periodic_cost=$0.576/h resources={'R1': 0.7714, 'R11': 0.4159} p2_periodic_MAE=[61.4] opt_s=144.9
+V6_key+scaling seed=0 periodic_cost=$0.576/h resources={'R1': 0.7961, 'R11': 0.3952} p2_periodic_MAE=[81.1] opt_s=147.0
+V6_key+scaling seed=2 periodic_cost=$0.384/h resources={'R11': 0.6995} p2_periodic_MAE=[75.0] opt_s=144.9
+V6_key+scaling seed=3 periodic_cost=$0.384/h resources={'R11': 0.6652} p2_periodic_MAE=[78.5] opt_s=147.1
+V6_key+scaling seed=4 periodic_cost=$0.384/h resources={'R11': 0.7098} p2_periodic_MAE=[87.2] opt_s=145.6
+V6_key+scaling seed=5 periodic_cost=$0.576/h resources={'R1': 0.806, 'R11': 0.406} p2_periodic_MAE=[76.0] opt_s=145.8
+V6_key+scaling seed=6 periodic_cost=$0.384/h resources={'R11': 0.7272} p2_periodic_MAE=[72.1] opt_s=147.6
+V6_key+scaling seed=8 periodic_cost=$0.384/h resources={'R11': 0.6945} p2_periodic_MAE=[69.4] opt_s=146.3
+V6_key+scaling seed=7 periodic_cost=$0.384/h resources={'R11': 0.698} p2_periodic_MAE=[56.4] opt_s=148.3
+V7_eval+scaling seed=orig periodic_cost=$0.576/h resources={'R1': 0.6644, 'R12': 0.7795} p2_periodic_MAE=[900.5] opt_s=146.3
+V6_key+scaling seed=9 periodic_cost=$0.384/h resources={'R11': 0.6812} p2_periodic_MAE=[56.7] opt_s=147.5
+V7_eval+scaling seed=0 periodic_cost=$0.576/h resources={'R1': 0.6644, 'R12': 0.7795} p2_periodic_MAE=[900.5] opt_s=145.6
+V7_eval+scaling seed=2 periodic_cost=$0.576/h resources={'R1': 0.6644, 'R12': 0.7795} p2_periodic_MAE=[900.5] opt_s=144.9
+V7_eval+scaling seed=1 periodic_cost=$0.576/h resources={'R1': 0.6644, 'R12': 0.7795} p2_periodic_MAE=[900.5] opt_s=146.0
+V7_eval+scaling seed=3 periodic_cost=$0.576/h resources={'R1': 0.6644, 'R12': 0.7795} p2_periodic_MAE=[900.5] opt_s=25535.3
+V7_eval+scaling seed=4 periodic_cost=$0.576/h resources={'R1': 0.6644, 'R12': 0.7795} p2_periodic_MAE=[900.5] opt_s=25535.7
+V7_eval+scaling seed=5 periodic_cost=$0.576/h resources={'R1': 0.6644, 'R12': 0.7795} p2_periodic_MAE=[900.5] opt_s=25536.0
+V7_eval+scaling seed=6 periodic_cost=$0.576/h resources={'R1': 0.6644, 'R12': 0.7795} p2_periodic_MAE=[900.5] opt_s=25535.2
+V7_eval+scaling seed=7 periodic_cost=$0.576/h resources={'R1': 0.6644, 'R12': 0.7795} p2_periodic_MAE=[900.5] opt_s=25536.5
+V7_eval+scaling seed=8 periodic_cost=$0.576/h resources={'R1': 0.6644, 'R12': 0.7795} p2_periodic_MAE=[900.5] opt_s=25535.1
+V7_eval+scaling seed=9 periodic_cost=$0.576/h resources={'R1': 0.6644, 'R12': 0.7795} p2_periodic_MAE=[900.5] opt_s=25535.7
+BATCH_DONE
