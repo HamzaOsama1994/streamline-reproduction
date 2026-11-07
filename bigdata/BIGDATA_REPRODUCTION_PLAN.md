@@ -7,7 +7,7 @@ Prerequisite done: smoke test of the decision layer (`../SMOKE_TEST_REPORT.md`) 
 
 | Element | Paper (§5, Table 1) | Our plan | Deviation to report |
 |---|---|---|---|
-| Cluster | Grid'5000 Nancy "Gros", Kubernetes, 30 VMs | k3d (k3s in Docker) on one laptop: Core Ultra 7 255HX, 20 threads, 31 GB RAM | ~1/10 of the compute |
+| Cluster | Grid'5000 Nancy "Gros", Kubernetes, 30 VMs | k3d (k3s in Docker) on one laptop: Core Ultra 7 255HX, 20 threads, 31 GB RAM | TaskManagers: 4 cores vs the paper's 248 (28 worker nodes of 10× type 1, 10× type 2, 8× type 3); whole laptop < 1/10 of the paper's 280 cores |
 | Node types | T1 4c/8 GB ($0.192/h) · T2 8c/16 GB ($0.384/h) · T3 16c/24 GB ($0.768/h), 10 of each | TaskManager pods with CPU/memory limits, scaled ÷4: T1 1c/2 GB · T2 2c/4 GB · T3 4c/6 GB. **Keep the paper's AWS prices** as emulated cost | Scaled capacity; cost emulated |
 | Stream engine | Apache Flink 1.19.1 | Flink 1.18 (what `beam-applications-java` targets: `flink:1.18`, Beam 2.57.0 `beam-runners-flink-1.18`) | Minor version |
 | Messaging | Kafka 3.7.0 | Strimzi 0.41 + Kafka 3.7.0, **1 broker** (the chart default is 3) | Replication factor |
