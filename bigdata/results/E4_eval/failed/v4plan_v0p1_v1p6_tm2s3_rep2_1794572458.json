@@ -1,0 +1,3458 @@
+{
+ "label": "v4plan_v0p1_v1p6_tm2s3_rep2",
+ "config": {
+  "parallelism": 6,
+  "rate": 0,
+  "workload": "e3t_taxi_eval",
+  "taskmanagers": 2,
+  "segment_size": 16384,
+  "duration": 400,
+  "warmup": 150,
+  "producer_threads": 4,
+  "latency_interval": 1000,
+  "e2e": true,
+  "dataset": "TAXI",
+  "drain": 300,
+  "trace_full": true,
+  "overrides": "1f9ad02cd246b23e2f077255eeddb60e:1",
+  "slots": 3,
+  "label": "v4plan_v0p1_v1p6_tm2s3_rep2",
+  "out": "results/E4_eval"
+ },
+ "samples": [
+  {
+   "t": 0.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 0.04204845428466797,
+   "t_abs": 0.04205012321472168,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "input_end": 0,
+   "input_end_t": 1.98,
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.3291390728476821,
+    "flink-taskmanager-759d96c765-wfbkb": 0.1334056399132321
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.46002157800000004,
+    "flink-taskmanager-759d96c765-l4bh5": 0.07729672400000001,
+    "flink-taskmanager-759d96c765-wfbkb": 0.019473571000000002,
+    "kafka-647b767b5-r9z49": 0.009931424000000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.005082779
+   },
+   "host": null,
+   "state": "FAILED"
+  },
+  {
+   "t": 5.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 5.02529239654541,
+   "t_abs": 5.025293588638306,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.06551724137931035,
+    "flink-taskmanager-759d96c765-wfbkb": 0.025
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.46002157800000004,
+    "flink-taskmanager-759d96c765-l4bh5": 0.07729672400000001,
+    "flink-taskmanager-759d96c765-wfbkb": 0.019473571000000002,
+    "kafka-647b767b5-r9z49": 0.009931424000000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.005082779
+   },
+   "host": {
+    "total_cores": 2.99,
+    "vm_cores": 0.64,
+    "other_cores": 2.35
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 10.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 10.06389331817627,
+   "t_abs": 10.063895463943481,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.016666666666666666,
+    "flink-taskmanager-759d96c765-wfbkb": 0.019148936170212766
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.46002157800000004,
+    "flink-taskmanager-759d96c765-l4bh5": 0.07729672400000001,
+    "flink-taskmanager-759d96c765-wfbkb": 0.019473571000000002,
+    "kafka-647b767b5-r9z49": 0.009931424000000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.005082779
+   },
+   "host": {
+    "total_cores": 3.04,
+    "vm_cores": 0.57,
+    "other_cores": 2.47
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 15.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 15.068309307098389,
+   "t_abs": 15.068310737609863,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.02127659574468085,
+    "flink-taskmanager-759d96c765-wfbkb": 0.020833333333333332
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.046621319,
+    "flink-taskmanager-759d96c765-l4bh5": 0.5346258340000001,
+    "flink-taskmanager-759d96c765-wfbkb": 0.019391166,
+    "kafka-647b767b5-r9z49": 0.32431566100000003,
+    "mongodb-79b7cc8c98-dhkhn": 0.005912421
+   },
+   "host": {
+    "total_cores": 4.81,
+    "vm_cores": 0.65,
+    "other_cores": 4.16
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 20.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 20.029401540756226,
+   "t_abs": 20.029402256011963,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.014285714285714285,
+    "flink-taskmanager-759d96c765-wfbkb": 0.014583333333333334
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.046621319,
+    "flink-taskmanager-759d96c765-l4bh5": 0.5346258340000001,
+    "flink-taskmanager-759d96c765-wfbkb": 0.019391166,
+    "kafka-647b767b5-r9z49": 0.32431566100000003,
+    "mongodb-79b7cc8c98-dhkhn": 0.005912421
+   },
+   "host": {
+    "total_cores": 4.62,
+    "vm_cores": 0.71,
+    "other_cores": 3.91
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 25.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 25.039254903793335,
+   "t_abs": 25.039259433746338,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.06666666666666667
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.046621319,
+    "flink-taskmanager-759d96c765-l4bh5": 0.5346258340000001,
+    "flink-taskmanager-759d96c765-wfbkb": 0.019391166,
+    "kafka-647b767b5-r9z49": 0.32431566100000003,
+    "mongodb-79b7cc8c98-dhkhn": 0.005912421
+   },
+   "host": {
+    "total_cores": 4.37,
+    "vm_cores": 1.35,
+    "other_cores": 3.02
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 30.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 30.03764057159424,
+   "t_abs": 30.037642002105713,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "input_end": 11246,
+   "input_end_t": 32.1,
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.02727272727272727,
+    "flink-taskmanager-759d96c765-wfbkb": 0.025
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.014046447,
+    "flink-taskmanager-759d96c765-l4bh5": 0.029968159,
+    "flink-taskmanager-759d96c765-wfbkb": 0.019212543000000002,
+    "kafka-647b767b5-r9z49": 0.06293491400000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.00526271
+   },
+   "host": {
+    "total_cores": 6.84,
+    "vm_cores": 1.36,
+    "other_cores": 5.48
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 35.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 35.050121784210205,
+   "t_abs": 35.05012392997742,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.13333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.014046447,
+    "flink-taskmanager-759d96c765-l4bh5": 0.029968159,
+    "flink-taskmanager-759d96c765-wfbkb": 0.019212543000000002,
+    "kafka-647b767b5-r9z49": 0.06293491400000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.00526271
+   },
+   "host": {
+    "total_cores": 7.62,
+    "vm_cores": 1.2,
+    "other_cores": 6.42
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 40.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 40.05605149269104,
+   "t_abs": 40.0560519695282,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.0
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.014046447,
+    "flink-taskmanager-759d96c765-l4bh5": 0.029968159,
+    "flink-taskmanager-759d96c765-wfbkb": 0.019212543000000002,
+    "kafka-647b767b5-r9z49": 0.06293491400000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.00526271
+   },
+   "host": {
+    "total_cores": 6.28,
+    "vm_cores": 0.79,
+    "other_cores": 5.49
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 45.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 45.03494310379028,
+   "t_abs": 45.03494381904602,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.019145661,
+    "flink-taskmanager-759d96c765-l4bh5": 0.021397741,
+    "flink-taskmanager-759d96c765-wfbkb": 0.022467397,
+    "kafka-647b767b5-r9z49": 0.308922813,
+    "mongodb-79b7cc8c98-dhkhn": 0.005607998
+   },
+   "host": {
+    "total_cores": 6.01,
+    "vm_cores": 0.95,
+    "other_cores": 5.06
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 50.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 50.0359525680542,
+   "t_abs": 50.03595328330994,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.85,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.019145661,
+    "flink-taskmanager-759d96c765-l4bh5": 0.021397741,
+    "flink-taskmanager-759d96c765-wfbkb": 0.022467397,
+    "kafka-647b767b5-r9z49": 0.308922813,
+    "mongodb-79b7cc8c98-dhkhn": 0.005607998
+   },
+   "host": {
+    "total_cores": 4.58,
+    "vm_cores": 1.04,
+    "other_cores": 3.54
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 55.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 55.05084681510925,
+   "t_abs": 55.05084753036499,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.1,
+    "flink-taskmanager-759d96c765-wfbkb": 0.025
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.019145661,
+    "flink-taskmanager-759d96c765-l4bh5": 0.021397741,
+    "flink-taskmanager-759d96c765-wfbkb": 0.022467397,
+    "kafka-647b767b5-r9z49": 0.308922813,
+    "mongodb-79b7cc8c98-dhkhn": 0.005607998
+   },
+   "host": {
+    "total_cores": 5.0,
+    "vm_cores": 0.87,
+    "other_cores": 4.13
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 60.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 60.03851771354675,
+   "t_abs": 60.03851866722107,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "input_end": 47842,
+   "input_end_t": 62.17,
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.022727272727272728,
+    "flink-taskmanager-759d96c765-wfbkb": 0.029166666666666667
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.017432378000000002,
+    "flink-taskmanager-759d96c765-l4bh5": 0.031980907,
+    "flink-taskmanager-759d96c765-wfbkb": 0.025572984,
+    "kafka-647b767b5-r9z49": 0.10212625600000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.005310395000000001
+   },
+   "host": {
+    "total_cores": 4.76,
+    "vm_cores": 1.45,
+    "other_cores": 3.3
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 65.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 65.03986954689026,
+   "t_abs": 65.03987050056458,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.15
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.017432378000000002,
+    "flink-taskmanager-759d96c765-l4bh5": 0.031980907,
+    "flink-taskmanager-759d96c765-wfbkb": 0.025572984,
+    "kafka-647b767b5-r9z49": 0.10212625600000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.005310395000000001
+   },
+   "host": {
+    "total_cores": 5.93,
+    "vm_cores": 1.08,
+    "other_cores": 4.85
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 70.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 70.06287360191345,
+   "t_abs": 70.06287479400635,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.025
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.017432378000000002,
+    "flink-taskmanager-759d96c765-l4bh5": 0.031980907,
+    "flink-taskmanager-759d96c765-wfbkb": 0.025572984,
+    "kafka-647b767b5-r9z49": 0.10212625600000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.005310395000000001
+   },
+   "host": {
+    "total_cores": 3.93,
+    "vm_cores": 1.04,
+    "other_cores": 2.9
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 75.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 75.03141212463379,
+   "t_abs": 75.03141260147095,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.1
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.026787553000000002,
+    "flink-taskmanager-759d96c765-l4bh5": 0.031980907,
+    "flink-taskmanager-759d96c765-wfbkb": 0.021907205000000003,
+    "kafka-647b767b5-r9z49": 0.232791509,
+    "mongodb-79b7cc8c98-dhkhn": 0.005732312000000001
+   },
+   "host": {
+    "total_cores": 4.15,
+    "vm_cores": 1.04,
+    "other_cores": 3.12
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 80.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 80.05906462669373,
+   "t_abs": 80.05906534194946,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.06666666666666667
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.026787553000000002,
+    "flink-taskmanager-759d96c765-l4bh5": 0.031980907,
+    "flink-taskmanager-759d96c765-wfbkb": 0.021907205000000003,
+    "kafka-647b767b5-r9z49": 0.232791509,
+    "mongodb-79b7cc8c98-dhkhn": 0.005732312000000001
+   },
+   "host": {
+    "total_cores": 4.63,
+    "vm_cores": 0.99,
+    "other_cores": 3.64
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 85.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 85.03766250610352,
+   "t_abs": 85.03766322135925,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.0,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.026787553000000002,
+    "flink-taskmanager-759d96c765-l4bh5": 0.031980907,
+    "flink-taskmanager-759d96c765-wfbkb": 0.021907205000000003,
+    "kafka-647b767b5-r9z49": 0.232791509,
+    "mongodb-79b7cc8c98-dhkhn": 0.005732312000000001
+   },
+   "host": {
+    "total_cores": 4.66,
+    "vm_cores": 0.93,
+    "other_cores": 3.73
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 90.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 90.03387928009033,
+   "t_abs": 90.0338807106018,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "input_end": 87800,
+   "input_end_t": 91.97,
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.02,
+    "flink-taskmanager-759d96c765-wfbkb": 0.01904761904761905
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.015196032000000002,
+    "flink-taskmanager-759d96c765-l4bh5": 0.023537222,
+    "flink-taskmanager-759d96c765-wfbkb": 0.022394823,
+    "kafka-647b767b5-r9z49": 0.232791509,
+    "mongodb-79b7cc8c98-dhkhn": 0.005458813000000001
+   },
+   "host": {
+    "total_cores": 4.94,
+    "vm_cores": 1.39,
+    "other_cores": 3.55
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 95.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 95.05092334747314,
+   "t_abs": 95.05092430114746,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.0,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.015196032000000002,
+    "flink-taskmanager-759d96c765-l4bh5": 0.023537222,
+    "flink-taskmanager-759d96c765-wfbkb": 0.022394823,
+    "kafka-647b767b5-r9z49": 0.232791509,
+    "mongodb-79b7cc8c98-dhkhn": 0.005458813000000001
+   },
+   "host": {
+    "total_cores": 4.49,
+    "vm_cores": 1.35,
+    "other_cores": 3.14
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 100.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 100.0412917137146,
+   "t_abs": 100.04129242897034,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.0,
+    "flink-taskmanager-759d96c765-wfbkb": 0.06666666666666667
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.015196032000000002,
+    "flink-taskmanager-759d96c765-l4bh5": 0.023537222,
+    "flink-taskmanager-759d96c765-wfbkb": 0.022394823,
+    "kafka-647b767b5-r9z49": 0.232791509,
+    "mongodb-79b7cc8c98-dhkhn": 0.005458813000000001
+   },
+   "host": {
+    "total_cores": 4.04,
+    "vm_cores": 1.06,
+    "other_cores": 2.98
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 105.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 105.06651020050049,
+   "t_abs": 105.06651091575623,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.1,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.017549454000000003,
+    "flink-taskmanager-759d96c765-l4bh5": 0.019969098,
+    "flink-taskmanager-759d96c765-wfbkb": 0.020009923000000002,
+    "kafka-647b767b5-r9z49": 0.230803203,
+    "mongodb-79b7cc8c98-dhkhn": 0.005557892
+   },
+   "host": {
+    "total_cores": 3.73,
+    "vm_cores": 0.9,
+    "other_cores": 2.83
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 110.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 110.05343270301819,
+   "t_abs": 110.05343341827393,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.95,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.017549454000000003,
+    "flink-taskmanager-759d96c765-l4bh5": 0.019969098,
+    "flink-taskmanager-759d96c765-wfbkb": 0.020009923000000002,
+    "kafka-647b767b5-r9z49": 0.230803203,
+    "mongodb-79b7cc8c98-dhkhn": 0.005557892
+   },
+   "host": {
+    "total_cores": 3.96,
+    "vm_cores": 1.06,
+    "other_cores": 2.9
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 115.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 115.05843663215637,
+   "t_abs": 115.05843758583069,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.15,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.017549454000000003,
+    "flink-taskmanager-759d96c765-l4bh5": 0.019969098,
+    "flink-taskmanager-759d96c765-wfbkb": 0.020009923000000002,
+    "kafka-647b767b5-r9z49": 0.230803203,
+    "mongodb-79b7cc8c98-dhkhn": 0.005557892
+   },
+   "host": {
+    "total_cores": 3.42,
+    "vm_cores": 0.85,
+    "other_cores": 2.57
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 120.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 120.05148482322693,
+   "t_abs": 120.05148577690125,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "input_end": 124850,
+   "input_end_t": 122.14,
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.014285714285714285,
+    "flink-taskmanager-759d96c765-wfbkb": 0.01818181818181818
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.016150141,
+    "flink-taskmanager-759d96c765-l4bh5": 0.018421117,
+    "flink-taskmanager-759d96c765-wfbkb": 0.024491493000000003,
+    "kafka-647b767b5-r9z49": 0.09849466800000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.00573027
+   },
+   "host": {
+    "total_cores": 5.55,
+    "vm_cores": 1.41,
+    "other_cores": 4.14
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 125.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 125.0549247264862,
+   "t_abs": 125.05492520332336,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.1,
+    "flink-taskmanager-759d96c765-wfbkb": 0.06666666666666667
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.016150141,
+    "flink-taskmanager-759d96c765-l4bh5": 0.018421117,
+    "flink-taskmanager-759d96c765-wfbkb": 0.024491493000000003,
+    "kafka-647b767b5-r9z49": 0.09849466800000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.00573027
+   },
+   "host": {
+    "total_cores": 4.43,
+    "vm_cores": 0.71,
+    "other_cores": 3.72
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 130.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 130.04088425636292,
+   "t_abs": 130.04088473320007,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.016150141,
+    "flink-taskmanager-759d96c765-l4bh5": 0.018421117,
+    "flink-taskmanager-759d96c765-wfbkb": 0.024491493000000003,
+    "kafka-647b767b5-r9z49": 0.09849466800000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.00573027
+   },
+   "host": {
+    "total_cores": 3.61,
+    "vm_cores": 0.99,
+    "other_cores": 2.62
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 135.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 135.05408191680908,
+   "t_abs": 135.05408239364624,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.0,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.020347678,
+    "flink-taskmanager-759d96c765-l4bh5": 0.040736139000000005,
+    "flink-taskmanager-759d96c765-wfbkb": 0.024491493000000003,
+    "kafka-647b767b5-r9z49": 0.150268976,
+    "mongodb-79b7cc8c98-dhkhn": 0.005888547
+   },
+   "host": {
+    "total_cores": 3.26,
+    "vm_cores": 0.88,
+    "other_cores": 2.38
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 140.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 140.03298783302307,
+   "t_abs": 140.0329885482788,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.020347678,
+    "flink-taskmanager-759d96c765-l4bh5": 0.040736139000000005,
+    "flink-taskmanager-759d96c765-wfbkb": 0.024491493000000003,
+    "kafka-647b767b5-r9z49": 0.150268976,
+    "mongodb-79b7cc8c98-dhkhn": 0.005888547
+   },
+   "host": {
+    "total_cores": 3.51,
+    "vm_cores": 0.99,
+    "other_cores": 2.52
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 145.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 145.04609394073486,
+   "t_abs": 145.04609441757202,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.0,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.020347678,
+    "flink-taskmanager-759d96c765-l4bh5": 0.040736139000000005,
+    "flink-taskmanager-759d96c765-wfbkb": 0.024491493000000003,
+    "kafka-647b767b5-r9z49": 0.150268976,
+    "mongodb-79b7cc8c98-dhkhn": 0.005888547
+   },
+   "host": {
+    "total_cores": 3.95,
+    "vm_cores": 0.93,
+    "other_cores": 3.01
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 150.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 150.0347237586975,
+   "t_abs": 150.03472423553467,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "input_end": 163008,
+   "input_end_t": 152.91,
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.020689655172413793,
+    "flink-taskmanager-759d96c765-wfbkb": 0.016666666666666666
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.017439639,
+    "flink-taskmanager-759d96c765-l4bh5": 0.017478544000000002,
+    "flink-taskmanager-759d96c765-wfbkb": 0.017923513000000002,
+    "kafka-647b767b5-r9z49": 0.218073445,
+    "mongodb-79b7cc8c98-dhkhn": 0.0055418460000000004
+   },
+   "host": {
+    "total_cores": 5.92,
+    "vm_cores": 1.62,
+    "other_cores": 4.31
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 155.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 155.055433511734,
+   "t_abs": 155.05543398857117,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.0,
+    "flink-taskmanager-759d96c765-wfbkb": 0.06666666666666667
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.017439639,
+    "flink-taskmanager-759d96c765-l4bh5": 0.017478544000000002,
+    "flink-taskmanager-759d96c765-wfbkb": 0.017923513000000002,
+    "kafka-647b767b5-r9z49": 0.218073445,
+    "mongodb-79b7cc8c98-dhkhn": 0.0055418460000000004
+   },
+   "host": {
+    "total_cores": 5.61,
+    "vm_cores": 1.07,
+    "other_cores": 4.55
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 160.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 160.04247903823853,
+   "t_abs": 160.04247951507568,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.1,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.017439639,
+    "flink-taskmanager-759d96c765-l4bh5": 0.017478544000000002,
+    "flink-taskmanager-759d96c765-wfbkb": 0.017923513000000002,
+    "kafka-647b767b5-r9z49": 0.218073445,
+    "mongodb-79b7cc8c98-dhkhn": 0.0055418460000000004
+   },
+   "host": {
+    "total_cores": 3.63,
+    "vm_cores": 0.98,
+    "other_cores": 2.66
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 165.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 165.0433804988861,
+   "t_abs": 165.04338145256042,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.1,
+    "flink-taskmanager-759d96c765-wfbkb": 0.06666666666666667
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.016246188,
+    "flink-taskmanager-759d96c765-l4bh5": 0.017478544000000002,
+    "flink-taskmanager-759d96c765-wfbkb": 0.017923513000000002,
+    "kafka-647b767b5-r9z49": 0.190840416,
+    "mongodb-79b7cc8c98-dhkhn": 0.005820546
+   },
+   "host": {
+    "total_cores": 3.69,
+    "vm_cores": 1.23,
+    "other_cores": 2.46
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 170.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 170.03368425369263,
+   "t_abs": 170.03368473052979,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.0,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.016246188,
+    "flink-taskmanager-759d96c765-l4bh5": 0.017478544000000002,
+    "flink-taskmanager-759d96c765-wfbkb": 0.017923513000000002,
+    "kafka-647b767b5-r9z49": 0.190840416,
+    "mongodb-79b7cc8c98-dhkhn": 0.005820546
+   },
+   "host": {
+    "total_cores": 3.73,
+    "vm_cores": 1.14,
+    "other_cores": 2.59
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 175.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 175.0674250125885,
+   "t_abs": 175.06742644309998,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.0,
+    "flink-taskmanager-759d96c765-wfbkb": 0.06666666666666667
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.016246188,
+    "flink-taskmanager-759d96c765-l4bh5": 0.017478544000000002,
+    "flink-taskmanager-759d96c765-wfbkb": 0.017923513000000002,
+    "kafka-647b767b5-r9z49": 0.190840416,
+    "mongodb-79b7cc8c98-dhkhn": 0.005820546
+   },
+   "host": {
+    "total_cores": 3.49,
+    "vm_cores": 0.97,
+    "other_cores": 2.52
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 180.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 180.0515582561493,
+   "t_abs": 180.0515592098236,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "input_end": 200181,
+   "input_end_t": 181.99,
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.011111111111111112,
+    "flink-taskmanager-759d96c765-wfbkb": 0.025
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.01661794,
+    "flink-taskmanager-759d96c765-l4bh5": 0.024837116000000003,
+    "flink-taskmanager-759d96c765-wfbkb": 0.017580151000000002,
+    "kafka-647b767b5-r9z49": 0.100271284,
+    "mongodb-79b7cc8c98-dhkhn": 0.0046827610000000006
+   },
+   "host": {
+    "total_cores": 3.95,
+    "vm_cores": 1.24,
+    "other_cores": 2.71
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 185.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 185.04230189323425,
+   "t_abs": 185.04230260849,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.0
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.01661794,
+    "flink-taskmanager-759d96c765-l4bh5": 0.024837116000000003,
+    "flink-taskmanager-759d96c765-wfbkb": 0.017580151000000002,
+    "kafka-647b767b5-r9z49": 0.100271284,
+    "mongodb-79b7cc8c98-dhkhn": 0.0046827610000000006
+   },
+   "host": {
+    "total_cores": 5.32,
+    "vm_cores": 0.95,
+    "other_cores": 4.37
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 190.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 190.05642819404602,
+   "t_abs": 190.05642890930176,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.01661794,
+    "flink-taskmanager-759d96c765-l4bh5": 0.024837116000000003,
+    "flink-taskmanager-759d96c765-wfbkb": 0.017580151000000002,
+    "kafka-647b767b5-r9z49": 0.100271284,
+    "mongodb-79b7cc8c98-dhkhn": 0.0046827610000000006
+   },
+   "host": {
+    "total_cores": 3.17,
+    "vm_cores": 1.05,
+    "other_cores": 2.12
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 195.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 195.0476632118225,
+   "t_abs": 195.0476634502411,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.0,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.015121835,
+    "flink-taskmanager-759d96c765-l4bh5": 0.016128739,
+    "flink-taskmanager-759d96c765-wfbkb": 0.016315298000000002,
+    "kafka-647b767b5-r9z49": 0.100271284,
+    "mongodb-79b7cc8c98-dhkhn": 0.006179912
+   },
+   "host": {
+    "total_cores": 3.31,
+    "vm_cores": 0.89,
+    "other_cores": 2.41
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 200.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 200.03722643852234,
+   "t_abs": 200.03722715377808,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.05
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.015121835,
+    "flink-taskmanager-759d96c765-l4bh5": 0.016128739,
+    "flink-taskmanager-759d96c765-wfbkb": 0.016315298000000002,
+    "kafka-647b767b5-r9z49": 0.100271284,
+    "mongodb-79b7cc8c98-dhkhn": 0.006179912
+   },
+   "host": {
+    "total_cores": 3.25,
+    "vm_cores": 0.94,
+    "other_cores": 2.31
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 205.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 205.03848552703857,
+   "t_abs": 205.03848600387573,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.13333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.015121835,
+    "flink-taskmanager-759d96c765-l4bh5": 0.016128739,
+    "flink-taskmanager-759d96c765-wfbkb": 0.016315298000000002,
+    "kafka-647b767b5-r9z49": 0.100271284,
+    "mongodb-79b7cc8c98-dhkhn": 0.006179912
+   },
+   "host": {
+    "total_cores": 3.5,
+    "vm_cores": 0.98,
+    "other_cores": 2.52
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 210.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 210.06104254722595,
+   "t_abs": 210.0610432624817,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "input_end": 231604,
+   "input_end_t": 212.18,
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.01818181818181818,
+    "flink-taskmanager-759d96c765-wfbkb": 0.017391304347826087
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.014636096000000001,
+    "flink-taskmanager-759d96c765-l4bh5": 0.015868629000000002,
+    "flink-taskmanager-759d96c765-wfbkb": 0.016315298000000002,
+    "kafka-647b767b5-r9z49": 0.170133056,
+    "mongodb-79b7cc8c98-dhkhn": 0.004909432
+   },
+   "host": {
+    "total_cores": 4.74,
+    "vm_cores": 1.38,
+    "other_cores": 3.36
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 215.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 215.0645215511322,
+   "t_abs": 215.06452202796936,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.014636096000000001,
+    "flink-taskmanager-759d96c765-l4bh5": 0.015868629000000002,
+    "flink-taskmanager-759d96c765-wfbkb": 0.016315298000000002,
+    "kafka-647b767b5-r9z49": 0.170133056,
+    "mongodb-79b7cc8c98-dhkhn": 0.004909432
+   },
+   "host": {
+    "total_cores": 6.81,
+    "vm_cores": 1.35,
+    "other_cores": 5.46
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 220.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 220.0471875667572,
+   "t_abs": 220.04718804359436,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.06666666666666667
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.014636096000000001,
+    "flink-taskmanager-759d96c765-l4bh5": 0.015868629000000002,
+    "flink-taskmanager-759d96c765-wfbkb": 0.016315298000000002,
+    "kafka-647b767b5-r9z49": 0.170133056,
+    "mongodb-79b7cc8c98-dhkhn": 0.004909432
+   },
+   "host": {
+    "total_cores": 3.73,
+    "vm_cores": 1.09,
+    "other_cores": 2.64
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 225.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 225.0719301700592,
+   "t_abs": 225.07193160057068,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.0,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.016471883,
+    "flink-taskmanager-759d96c765-l4bh5": 0.017140324000000002,
+    "flink-taskmanager-759d96c765-wfbkb": 0.017993273,
+    "kafka-647b767b5-r9z49": 0.285903175,
+    "mongodb-79b7cc8c98-dhkhn": 0.004981927000000001
+   },
+   "host": {
+    "total_cores": 4.08,
+    "vm_cores": 1.29,
+    "other_cores": 2.79
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 230.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 230.0666880607605,
+   "t_abs": 230.06668877601624,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.0,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.016471883,
+    "flink-taskmanager-759d96c765-l4bh5": 0.017140324000000002,
+    "flink-taskmanager-759d96c765-wfbkb": 0.017993273,
+    "kafka-647b767b5-r9z49": 0.285903175,
+    "mongodb-79b7cc8c98-dhkhn": 0.004981927000000001
+   },
+   "host": {
+    "total_cores": 4.59,
+    "vm_cores": 1.14,
+    "other_cores": 3.45
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 235.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 235.04950070381165,
+   "t_abs": 235.0495011806488,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.016471883,
+    "flink-taskmanager-759d96c765-l4bh5": 0.017140324000000002,
+    "flink-taskmanager-759d96c765-wfbkb": 0.017993273,
+    "kafka-647b767b5-r9z49": 0.285903175,
+    "mongodb-79b7cc8c98-dhkhn": 0.004981927000000001
+   },
+   "host": {
+    "total_cores": 3.6,
+    "vm_cores": 1.09,
+    "other_cores": 2.51
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 240.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 240.06061935424805,
+   "t_abs": 240.0606198310852,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "input_end": 279871,
+   "input_end_t": 242.09,
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.022222222222222223,
+    "flink-taskmanager-759d96c765-wfbkb": 0.017391304347826087
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.018829691000000003,
+    "flink-taskmanager-759d96c765-l4bh5": 0.016880094000000002,
+    "flink-taskmanager-759d96c765-wfbkb": 0.016689849,
+    "kafka-647b767b5-r9z49": 0.12292135100000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.0050453600000000005
+   },
+   "host": {
+    "total_cores": 4.65,
+    "vm_cores": 1.26,
+    "other_cores": 3.39
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 245.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 245.06412076950073,
+   "t_abs": 245.06412172317505,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.15,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.018829691000000003,
+    "flink-taskmanager-759d96c765-l4bh5": 0.016880094000000002,
+    "flink-taskmanager-759d96c765-wfbkb": 0.016689849,
+    "kafka-647b767b5-r9z49": 0.12292135100000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.0050453600000000005
+   },
+   "host": {
+    "total_cores": 4.89,
+    "vm_cores": 0.96,
+    "other_cores": 3.93
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 250.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 250.0420742034912,
+   "t_abs": 250.04207491874695,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.018829691000000003,
+    "flink-taskmanager-759d96c765-l4bh5": 0.016880094000000002,
+    "flink-taskmanager-759d96c765-wfbkb": 0.016689849,
+    "kafka-647b767b5-r9z49": 0.12292135100000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.0050453600000000005
+   },
+   "host": {
+    "total_cores": 3.45,
+    "vm_cores": 0.94,
+    "other_cores": 2.51
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 255.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 255.0591995716095,
+   "t_abs": 255.05920004844666,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.0,
+    "flink-taskmanager-759d96c765-wfbkb": 0.05
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.017896604,
+    "flink-taskmanager-759d96c765-l4bh5": 0.017529385,
+    "flink-taskmanager-759d96c765-wfbkb": 0.016649516,
+    "kafka-647b767b5-r9z49": 0.294543712,
+    "mongodb-79b7cc8c98-dhkhn": 0.0054332140000000004
+   },
+   "host": {
+    "total_cores": 3.56,
+    "vm_cores": 0.99,
+    "other_cores": 2.57
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 260.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 260.05564761161804,
+   "t_abs": 260.05564856529236,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.0
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.017896604,
+    "flink-taskmanager-759d96c765-l4bh5": 0.017529385,
+    "flink-taskmanager-759d96c765-wfbkb": 0.016649516,
+    "kafka-647b767b5-r9z49": 0.294543712,
+    "mongodb-79b7cc8c98-dhkhn": 0.0054332140000000004
+   },
+   "host": {
+    "total_cores": 3.61,
+    "vm_cores": 0.97,
+    "other_cores": 2.65
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 265.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 265.06648778915405,
+   "t_abs": 265.06648874282837,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.05
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.017896604,
+    "flink-taskmanager-759d96c765-l4bh5": 0.017529385,
+    "flink-taskmanager-759d96c765-wfbkb": 0.016649516,
+    "kafka-647b767b5-r9z49": 0.294543712,
+    "mongodb-79b7cc8c98-dhkhn": 0.0054332140000000004
+   },
+   "host": {
+    "total_cores": 3.76,
+    "vm_cores": 1.16,
+    "other_cores": 2.6
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 270.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 270.04349660873413,
+   "t_abs": 270.04349732398987,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "input_end": 329264,
+   "input_end_t": 272.05,
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.02,
+    "flink-taskmanager-759d96c765-wfbkb": 0.015789473684210527
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.016037244000000003,
+    "flink-taskmanager-759d96c765-l4bh5": 0.0159399,
+    "flink-taskmanager-759d96c765-wfbkb": 0.016649516,
+    "kafka-647b767b5-r9z49": 0.11432789700000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.004975526
+   },
+   "host": {
+    "total_cores": 4.9,
+    "vm_cores": 1.49,
+    "other_cores": 3.41
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 275.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 275.04746294021606,
+   "t_abs": 275.0474634170532,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.0,
+    "flink-taskmanager-759d96c765-wfbkb": 0.0
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.016037244000000003,
+    "flink-taskmanager-759d96c765-l4bh5": 0.0159399,
+    "flink-taskmanager-759d96c765-wfbkb": 0.016649516,
+    "kafka-647b767b5-r9z49": 0.11432789700000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.004975526
+   },
+   "host": {
+    "total_cores": 5.13,
+    "vm_cores": 1.47,
+    "other_cores": 3.66
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 280.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 280.0702245235443,
+   "t_abs": 280.0702254772186,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.0,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.016037244000000003,
+    "flink-taskmanager-759d96c765-l4bh5": 0.0159399,
+    "flink-taskmanager-759d96c765-wfbkb": 0.016649516,
+    "kafka-647b767b5-r9z49": 0.11432789700000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.004975526
+   },
+   "host": {
+    "total_cores": 4.66,
+    "vm_cores": 1.1,
+    "other_cores": 3.56
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 285.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 285.0848867893219,
+   "t_abs": 285.0848879814148,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.0
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.019155364,
+    "flink-taskmanager-759d96c765-l4bh5": 0.018501245,
+    "flink-taskmanager-759d96c765-wfbkb": 0.015150670000000001,
+    "kafka-647b767b5-r9z49": 0.11432789700000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.004984586
+   },
+   "host": {
+    "total_cores": 3.73,
+    "vm_cores": 1.05,
+    "other_cores": 2.68
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 290.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 290.0477123260498,
+   "t_abs": 290.04771280288696,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.019155364,
+    "flink-taskmanager-759d96c765-l4bh5": 0.018501245,
+    "flink-taskmanager-759d96c765-wfbkb": 0.015150670000000001,
+    "kafka-647b767b5-r9z49": 0.11432789700000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.004984586
+   },
+   "host": {
+    "total_cores": 3.66,
+    "vm_cores": 1.02,
+    "other_cores": 2.64
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 295.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 295.06471967697144,
+   "t_abs": 295.0647201538086,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.0,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.019155364,
+    "flink-taskmanager-759d96c765-l4bh5": 0.018501245,
+    "flink-taskmanager-759d96c765-wfbkb": 0.015150670000000001,
+    "kafka-647b767b5-r9z49": 0.11432789700000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.004984586
+   },
+   "host": {
+    "total_cores": 3.62,
+    "vm_cores": 1.08,
+    "other_cores": 2.53
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 300.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 300.05188155174255,
+   "t_abs": 300.0518822669983,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "input_end": 377849,
+   "input_end_t": 302.07,
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.02,
+    "flink-taskmanager-759d96c765-wfbkb": 0.02
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.025288179,
+    "flink-taskmanager-759d96c765-l4bh5": 0.02414339,
+    "flink-taskmanager-759d96c765-wfbkb": 0.015830402,
+    "kafka-647b767b5-r9z49": 0.24846899700000002,
+    "mongodb-79b7cc8c98-dhkhn": 0.004991995
+   },
+   "host": {
+    "total_cores": 5.14,
+    "vm_cores": 1.58,
+    "other_cores": 3.56
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 305.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 305.06561946868896,
+   "t_abs": 305.06561970710754,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.0
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.025288179,
+    "flink-taskmanager-759d96c765-l4bh5": 0.02414339,
+    "flink-taskmanager-759d96c765-wfbkb": 0.015830402,
+    "kafka-647b767b5-r9z49": 0.24846899700000002,
+    "mongodb-79b7cc8c98-dhkhn": 0.004991995
+   },
+   "host": {
+    "total_cores": 4.5,
+    "vm_cores": 0.98,
+    "other_cores": 3.52
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 310.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 310.04415345191956,
+   "t_abs": 310.0441539287567,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.025288179,
+    "flink-taskmanager-759d96c765-l4bh5": 0.02414339,
+    "flink-taskmanager-759d96c765-wfbkb": 0.015830402,
+    "kafka-647b767b5-r9z49": 0.24846899700000002,
+    "mongodb-79b7cc8c98-dhkhn": 0.004991995
+   },
+   "host": {
+    "total_cores": 3.92,
+    "vm_cores": 1.14,
+    "other_cores": 2.78
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 315.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 315.0619933605194,
+   "t_abs": 315.06199383735657,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.020815098,
+    "flink-taskmanager-759d96c765-l4bh5": 0.013679126000000002,
+    "flink-taskmanager-759d96c765-wfbkb": 0.015980585000000002,
+    "kafka-647b767b5-r9z49": 0.24878216,
+    "mongodb-79b7cc8c98-dhkhn": 0.005449751
+   },
+   "host": {
+    "total_cores": 3.78,
+    "vm_cores": 1.15,
+    "other_cores": 2.63
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 320.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 320.0692095756531,
+   "t_abs": 320.0692102909088,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.0
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.020815098,
+    "flink-taskmanager-759d96c765-l4bh5": 0.013679126000000002,
+    "flink-taskmanager-759d96c765-wfbkb": 0.015980585000000002,
+    "kafka-647b767b5-r9z49": 0.24878216,
+    "mongodb-79b7cc8c98-dhkhn": 0.005449751
+   },
+   "host": {
+    "total_cores": 3.6,
+    "vm_cores": 0.99,
+    "other_cores": 2.62
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 325.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 325.0509035587311,
+   "t_abs": 325.0509042739868,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.020815098,
+    "flink-taskmanager-759d96c765-l4bh5": 0.013679126000000002,
+    "flink-taskmanager-759d96c765-wfbkb": 0.015980585000000002,
+    "kafka-647b767b5-r9z49": 0.24878216,
+    "mongodb-79b7cc8c98-dhkhn": 0.005449751
+   },
+   "host": {
+    "total_cores": 3.67,
+    "vm_cores": 1.18,
+    "other_cores": 2.49
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 330.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 330.0506670475006,
+   "t_abs": 330.05066776275635,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "input_end": 422980,
+   "input_end_t": 332.06,
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.02631578947368421,
+    "flink-taskmanager-759d96c765-wfbkb": 0.015
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.020164941000000002,
+    "flink-taskmanager-759d96c765-l4bh5": 0.014291806,
+    "flink-taskmanager-759d96c765-wfbkb": 0.015980585000000002,
+    "kafka-647b767b5-r9z49": 0.10878159800000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.005371718
+   },
+   "host": {
+    "total_cores": 5.54,
+    "vm_cores": 1.52,
+    "other_cores": 4.02
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 335.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 335.0621135234833,
+   "t_abs": 335.0621147155762,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.0,
+    "flink-taskmanager-759d96c765-wfbkb": 0.0
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.020164941000000002,
+    "flink-taskmanager-759d96c765-l4bh5": 0.014291806,
+    "flink-taskmanager-759d96c765-wfbkb": 0.015980585000000002,
+    "kafka-647b767b5-r9z49": 0.10878159800000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.005371718
+   },
+   "host": {
+    "total_cores": 7.04,
+    "vm_cores": 1.22,
+    "other_cores": 5.83
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 340.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 340.06204533576965,
+   "t_abs": 340.0620458126068,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.06666666666666667
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.020164941000000002,
+    "flink-taskmanager-759d96c765-l4bh5": 0.014291806,
+    "flink-taskmanager-759d96c765-wfbkb": 0.015980585000000002,
+    "kafka-647b767b5-r9z49": 0.10878159800000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.005371718
+   },
+   "host": {
+    "total_cores": 4.17,
+    "vm_cores": 0.99,
+    "other_cores": 3.18
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 345.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 345.05890917778015,
+   "t_abs": 345.05891013145447,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.020528971,
+    "flink-taskmanager-759d96c765-l4bh5": 0.029297183,
+    "flink-taskmanager-759d96c765-wfbkb": 0.014323967000000002,
+    "kafka-647b767b5-r9z49": 0.258409618,
+    "mongodb-79b7cc8c98-dhkhn": 0.005036531
+   },
+   "host": {
+    "total_cores": 4.88,
+    "vm_cores": 1.0,
+    "other_cores": 3.88
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 350.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 350.0476667881012,
+   "t_abs": 350.04766726493835,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.0
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.020528971,
+    "flink-taskmanager-759d96c765-l4bh5": 0.029297183,
+    "flink-taskmanager-759d96c765-wfbkb": 0.014323967000000002,
+    "kafka-647b767b5-r9z49": 0.258409618,
+    "mongodb-79b7cc8c98-dhkhn": 0.005036531
+   },
+   "host": {
+    "total_cores": 3.92,
+    "vm_cores": 0.86,
+    "other_cores": 3.06
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 355.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 355.07249760627747,
+   "t_abs": 355.0724983215332,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.0,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.020528971,
+    "flink-taskmanager-759d96c765-l4bh5": 0.029297183,
+    "flink-taskmanager-759d96c765-wfbkb": 0.014323967000000002,
+    "kafka-647b767b5-r9z49": 0.258409618,
+    "mongodb-79b7cc8c98-dhkhn": 0.005036531
+   },
+   "host": {
+    "total_cores": 3.12,
+    "vm_cores": 0.77,
+    "other_cores": 2.36
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 360.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 360.06997776031494,
+   "t_abs": 360.0699782371521,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "input_end": 456486,
+   "input_end_t": 362.19,
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.014285714285714285,
+    "flink-taskmanager-759d96c765-wfbkb": 0.025
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.020528971,
+    "flink-taskmanager-759d96c765-l4bh5": 0.013129371,
+    "flink-taskmanager-759d96c765-wfbkb": 0.014091305,
+    "kafka-647b767b5-r9z49": 0.09526983900000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.005183671
+   },
+   "host": {
+    "total_cores": 4.66,
+    "vm_cores": 1.27,
+    "other_cores": 3.39
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 365.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 365.05161333084106,
+   "t_abs": 365.0516138076782,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.05
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.020528971,
+    "flink-taskmanager-759d96c765-l4bh5": 0.013129371,
+    "flink-taskmanager-759d96c765-wfbkb": 0.014091305,
+    "kafka-647b767b5-r9z49": 0.09526983900000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.005183671
+   },
+   "host": {
+    "total_cores": 5.2,
+    "vm_cores": 0.94,
+    "other_cores": 4.26
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 370.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 370.06120324134827,
+   "t_abs": 370.0612037181854,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.0
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.020528971,
+    "flink-taskmanager-759d96c765-l4bh5": 0.013129371,
+    "flink-taskmanager-759d96c765-wfbkb": 0.014091305,
+    "kafka-647b767b5-r9z49": 0.09526983900000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.005183671
+   },
+   "host": {
+    "total_cores": 3.65,
+    "vm_cores": 0.91,
+    "other_cores": 2.75
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 375.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 375.06750202178955,
+   "t_abs": 375.06750321388245,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.0,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.018009105,
+    "flink-taskmanager-759d96c765-l4bh5": 0.012420044000000002,
+    "flink-taskmanager-759d96c765-wfbkb": 0.012813910000000001,
+    "kafka-647b767b5-r9z49": 0.226273149,
+    "mongodb-79b7cc8c98-dhkhn": 0.0057948140000000006
+   },
+   "host": {
+    "total_cores": 3.4,
+    "vm_cores": 0.99,
+    "other_cores": 2.4
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 380.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 380.05303049087524,
+   "t_abs": 380.0530309677124,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.0,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.018009105,
+    "flink-taskmanager-759d96c765-l4bh5": 0.012420044000000002,
+    "flink-taskmanager-759d96c765-wfbkb": 0.012813910000000001,
+    "kafka-647b767b5-r9z49": 0.226273149,
+    "mongodb-79b7cc8c98-dhkhn": 0.0057948140000000006
+   },
+   "host": {
+    "total_cores": 3.22,
+    "vm_cores": 0.95,
+    "other_cores": 2.27
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 385.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 385.0620925426483,
+   "t_abs": 385.06209325790405,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.0,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.018009105,
+    "flink-taskmanager-759d96c765-l4bh5": 0.012420044000000002,
+    "flink-taskmanager-759d96c765-wfbkb": 0.012813910000000001,
+    "kafka-647b767b5-r9z49": 0.226273149,
+    "mongodb-79b7cc8c98-dhkhn": 0.0057948140000000006
+   },
+   "host": {
+    "total_cores": 3.59,
+    "vm_cores": 0.93,
+    "other_cores": 2.66
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 390.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 390.0532865524292,
+   "t_abs": 390.05328726768494,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "input_end": 476926,
+   "input_end_t": 392.03,
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.015789473684210527,
+    "flink-taskmanager-759d96c765-wfbkb": 0.01818181818181818
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.014726366000000001,
+    "flink-taskmanager-759d96c765-l4bh5": 0.01280973,
+    "flink-taskmanager-759d96c765-wfbkb": 0.012595683000000002,
+    "kafka-647b767b5-r9z49": 0.07903517900000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.0049876880000000005
+   },
+   "host": {
+    "total_cores": 4.63,
+    "vm_cores": 1.25,
+    "other_cores": 3.39
+   },
+   "state": "FAILED"
+  },
+  {
+   "t": 395.0,
+   "vertices": {
+    "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": {},
+    "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": {}
+   },
+   "consumed_total": null,
+   "t_consumed": 395.07741117477417,
+   "t_abs": 395.0774118900299,
+   "subtasks": {
+    "1f9ad02cd246b23e2f077255eeddb60e": [
+     {}
+    ],
+    "4678b24edcd99b481a38a9bc421b48ce": [
+     {},
+     {},
+     {},
+     {},
+     {},
+     {}
+    ]
+   },
+   "latency": [],
+   "jvm_cpu_load": {
+    "flink-taskmanager-759d96c765-l4bh5": 0.05,
+    "flink-taskmanager-759d96c765-wfbkb": 0.03333333333333333
+   },
+   "pod_cpu_cores": {
+    "flink-jobmanager-7dddd9976c-bfttj": 0.014726366000000001,
+    "flink-taskmanager-759d96c765-l4bh5": 0.01280973,
+    "flink-taskmanager-759d96c765-wfbkb": 0.012595683000000002,
+    "kafka-647b767b5-r9z49": 0.07903517900000001,
+    "mongodb-79b7cc8c98-dhkhn": 0.0049876880000000005
+   },
+   "host": {
+    "total_cores": 3.4,
+    "vm_cores": 1.02,
+    "other_cores": 2.38
+   },
+   "state": "FAILED"
+  }
+ ],
+ "deploy_attempts": [
+  {
+   "job_id": "6cbf72f65431edc5a6e8565ce8e076c0",
+   "deployed": true,
+   "state": "RUNNING"
+  }
+ ],
+ "job_id": "6cbf72f65431edc5a6e8565ce8e076c0",
+ "deploy_seconds": 22.982556104660034,
+ "vertices": [
+  {
+   "id": "1f9ad02cd246b23e2f077255eeddb60e",
+   "name": "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/KafkaIO.Read.ReadFromKafkaViaUnbounded/Read(KafkaUnboundedSource) -> Flat Map -> ReadSenMLSource/Read from Kafka source/Remove Kafka Metadata/ParMultiDo(Anonymous) -> ReadSenMLSource/Values/Values/Map/ParMultiDo(Anonymous) -> ETLPipeline/Parse/Map/ParMultiDo(Anonymous) -> ETLPipeline/RangeFilter/Map/ParMultiDo(Anonymous) -> ETLPipeline/Interpolate/WithKeys/AddKeys/Map/ParMultiDo(Anonymous)",
+   "parallelism": 1
+  },
+  {
+   "id": "4678b24edcd99b481a38a9bc421b48ce",
+   "name": "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatches)/ParMultiDo(GroupIntoBatches) -> ETLPipeline/Interpolate/Values/Values/Map/ParMultiDo(Anonymous) -> ETLPipeline/Interpolate/FlatMapElements/FlatMap/ParMultiDo(Anonymous) -> ETLPipeline/Annotate/Map/ParMultiDo(Anonymous) -> Serialize SenML to String/Map/ParMultiDo(Anonymous) -> (WriteStringSink/Write SenML strings to Kafka/Kafka values with default key/Map/ParMultiDo(Anonymous) -> WriteStringSink/Write SenML strings to Kafka/KafkaIO.Write/Kafka ProducerRecord/Map/ParMultiDo(Anonymous) -> WriteStringSink/Write SenML strings to Kafka/KafkaIO.Write/KafkaIO.WriteRecords/ParMultiDo(KafkaWriter), StoreStringInDBSink/MapElements/Map/ParMultiDo(Anonymous) -> StoreStringInDBSink/MongoDbIO.Write/ParDo(Write)/ParMultiDo(Write))",
+   "parallelism": 6
+  }
+ ],
+ "jobmanager_args": [
+  "jobmanager",
+  "-D",
+  "pipeline.jobvertex-parallelism-overrides=1f9ad02cd246b23e2f077255eeddb60e:1"
+ ],
+ "taskmanagers_used": [
+  "10.42.0.129:6122-b1191a",
+  "10.42.0.131:6122-573b0e"
+ ],
+ "tm_pods": [
+  [
+   "flink-taskmanager-759d96c765-l4bh5",
+   "10.42.0.131"
+  ],
+  [
+   "flink-taskmanager-759d96c765-wfbkb",
+   "10.42.0.130"
+  ]
+ ],
+ "taskmanagers_rest": [
+  {
+   "id": "10.42.0.129:6122-b1191a",
+   "path": "pekko.tcp://flink@10.42.0.129:6122/user/rpc/taskmanager_0",
+   "slots": 3
+  },
+  {
+   "id": "10.42.0.131:6122-573b0e",
+   "path": "pekko.tcp://flink@10.42.0.131:6122/user/rpc/taskmanager_0",
+   "slots": 3
+  },
+  {
+   "id": "10.42.0.130:6122-cf8b5a",
+   "path": "pekko.tcp://flink@10.42.0.130:6122/user/rpc/taskmanager_0",
+   "slots": 3
+  }
+ ],
+ "subtask_tm": {
+  "1f9ad02cd246b23e2f077255eeddb60e": {
+   "0": "10.42.0.131:6122-573b0e"
+  },
+  "4678b24edcd99b481a38a9bc421b48ce": {
+   "0": "10.42.0.131:6122-573b0e",
+   "1": "10.42.0.131:6122-573b0e",
+   "2": "10.42.0.129:6122-b1191a",
+   "3": "10.42.0.129:6122-b1191a",
+   "4": "10.42.0.129:6122-b1191a",
+   "5": "10.42.0.131:6122-573b0e"
+  }
+ },
+ "placement_log_lines": 38,
+ "placement": {
+  "Source: ReadSenMLSource/Read from Kafka source/KafkaIO.Read/": [
+   {
+    "subtask": 0,
+    "tm": "10.42.0.131:6122-573b0e",
+    "host": "10.42.0.131"
+   }
+  ],
+  "ETLPipeline/Interpolate/GroupIntoBatches/ParDo(GroupIntoBatc": [
+   {
+    "subtask": 0,
+    "tm": "10.42.0.131:6122-573b0e",
+    "host": "10.42.0.131"
+   },
+   {
+    "subtask": 1,
+    "tm": "10.42.0.131:6122-573b0e",
+    "host": "10.42.0.131"
+   },
+   {
+    "subtask": 2,
+    "tm": "10.42.0.129:6122-b1191a",
+    "host": "10.42.0.129"
+   },
+   {
+    "subtask": 3,
+    "tm": "10.42.0.129:6122-b1191a",
+    "host": "10.42.0.129"
+   },
+   {
+    "subtask": 4,
+    "tm": "10.42.0.129:6122-b1191a",
+    "host": "10.42.0.129"
+   },
+   {
+    "subtask": 5,
+    "tm": "10.42.0.131:6122-573b0e",
+    "host": "10.42.0.131"
+   }
+  ]
+ },
+ "topic_counts": {
+  "input_produced": 479527,
+  "output_written": 0,
+  "window_s": 406.82669162750244
+ },
+ "drain": {
+  "seconds": 303.0,
+  "limit_s": 300,
+  "output_after_drain": 0,
+  "input_produced": 479527
+ },
+ "final_state": "FAILED",
+ "exceptions": "org.apache.flink.runtime.JobException: Recovery is suppressed by NoRestartBackoffTimeStrategy\n\tat org.apache.flink.runtime.executiongraph.failover.flip1.ExecutionFailureHandler.handleFailure(ExecutionFailureHandler.java:176)\n\tat org.apache.flink.runtime.executiongraph.failover.flip1.ExecutionFailureHandler.getFailureHandlingResult(ExecutionFailureHandler.java:107)\n\tat org.apache.flink.runtime.scheduler.DefaultScheduler.recordTaskFailure(DefaultScheduler.java:285)\n\tat org.apache.flink.runtime.scheduler.DefaultScheduler.handleTaskFailure(DefaultScheduler.java:276)\n\tat org.apache.flink.runtime.scheduler.DefaultScheduler.onTaskFailed(DefaultScheduler.java:269)\n\tat org.apache.flink.runtime.scheduler.SchedulerBase.onTaskExecutionStateUpdate(SchedulerBase.java:764)\n\tat org.apache.flink.runtime.scheduler.SchedulerBase.updateTaskExecutionState(SchedulerBase.java:741)\n\tat org.apache.flink.runtime.scheduler.UpdateSchedulerNgOnInternalFailuresListener.notifyTaskFailure(UpdateSchedulerNgOnInternalFailuresListener.java:51)\n\tat org.apache.flink.runtime.executiongraph.DefaultExecutionGraph.notifySchedulerNgAboutInternalTaskFailure(DefaultExecutionGraph.java:1645)\n\tat org.apache.flink.runtime.executiongraph.Execution.processFail(Execution.java:1144)\n\tat org.apache.flink.runtime.executiongraph.Execution.processFail(Execution.java:1084)\n\tat org.apache.flink.runtime.executiongraph.Execution.markFailed(Execution.java:923)\n\tat org.apache.flink.runtime.executiongraph.Execution.lambda$deploy$5(Execution.java:611)\n\tat java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(Unknown Source)\n\tat java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(Unknown Source)\n\tat java.base/java.util.concurrent.CompletableFuture$Completion.run(Unknown Source)\n\tat org.apache.flink.runtime.rpc.pekko.PekkoRpcActor.lambda$handleRunAsync$4(PekkoRpcActor.java:451)\n\tat org.apache.flink.runtime.concurrent.ClassLoadingUtils.runWithContextClassLoader(ClassLoadingUtils.java:68)\n\tat org.apa",
+ "cancel_error": "HTTP 409",
+ "summary": {
+  "failed": true,
+  "final_state": "FAILED"
+ }
+}

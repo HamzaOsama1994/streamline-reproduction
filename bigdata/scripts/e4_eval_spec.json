@@ -1,0 +1,166 @@
+{
+ "out": "results/E4_eval",
+ "common": [
+  "--workload",
+  "e3t_taxi_eval",
+  "--duration",
+  "400",
+  "--warmup",
+  "150",
+  "--latency-interval",
+  "1000",
+  "--e2e",
+  "--dataset",
+  "TAXI",
+  "--drain",
+  "300",
+  "--trace-full"
+ ],
+ "note": "E4: STREAMLINE's own per-operator plans deployed with Flink's pipeline.jobvertex-parallelism-overrides (source vertex 1f9a... = v_0 forced to 1; job parallelism = v_1). Same workload/horizon/measurement as E3-T.",
+ "runs": [
+  {
+   "label": "v0plan_v0p1_v1p7_tm1s7_rep1",
+   "why": "STREAMLINE V0 own plan (8 of 11 seeds): v_0=1, v_1=7 on one TaskManager",
+   "args": [
+    "--parallelism",
+    "7",
+    "--taskmanagers",
+    "1",
+    "--slots",
+    "7",
+    "--segment-size",
+    "16384",
+    "--overrides",
+    "1f9ad02cd246b23e2f077255eeddb60e:1"
+   ]
+  },
+  {
+   "label": "v4plan_v0p1_v1p6_tm2s3_rep1",
+   "why": "STREAMLINE V4 own plan (11 of 11 seeds): v_0=1, v_1=6 on two TaskManagers",
+   "args": [
+    "--parallelism",
+    "6",
+    "--taskmanagers",
+    "2",
+    "--slots",
+    "3",
+    "--segment-size",
+    "16384",
+    "--overrides",
+    "1f9ad02cd246b23e2f077255eeddb60e:1"
+   ]
+  },
+  {
+   "label": "ctrl_v0p1_v1p2_tm2s1_rep1",
+   "why": "Control (our design): v_0=1, v_1=2, one slot per TaskManager -> hot subtasks separated by construction",
+   "args": [
+    "--parallelism",
+    "2",
+    "--taskmanagers",
+    "2",
+    "--slots",
+    "1",
+    "--segment-size",
+    "16384",
+    "--overrides",
+    "1f9ad02cd246b23e2f077255eeddb60e:1"
+   ]
+  },
+  {
+   "label": "v0plan_v0p1_v1p7_tm1s7_rep2",
+   "why": "STREAMLINE V0 own plan (8 of 11 seeds): v_0=1, v_1=7 on one TaskManager",
+   "args": [
+    "--parallelism",
+    "7",
+    "--taskmanagers",
+    "1",
+    "--slots",
+    "7",
+    "--segment-size",
+    "16384",
+    "--overrides",
+    "1f9ad02cd246b23e2f077255eeddb60e:1"
+   ]
+  },
+  {
+   "label": "v4plan_v0p1_v1p6_tm2s3_rep2",
+   "why": "STREAMLINE V4 own plan (11 of 11 seeds): v_0=1, v_1=6 on two TaskManagers",
+   "args": [
+    "--parallelism",
+    "6",
+    "--taskmanagers",
+    "2",
+    "--slots",
+    "3",
+    "--segment-size",
+    "16384",
+    "--overrides",
+    "1f9ad02cd246b23e2f077255eeddb60e:1"
+   ]
+  },
+  {
+   "label": "ctrl_v0p1_v1p2_tm2s1_rep2",
+   "why": "Control (our design): v_0=1, v_1=2, one slot per TaskManager -> hot subtasks separated by construction",
+   "args": [
+    "--parallelism",
+    "2",
+    "--taskmanagers",
+    "2",
+    "--slots",
+    "1",
+    "--segment-size",
+    "16384",
+    "--overrides",
+    "1f9ad02cd246b23e2f077255eeddb60e:1"
+   ]
+  },
+  {
+   "label": "v0plan_v0p1_v1p7_tm1s7_rep3",
+   "why": "STREAMLINE V0 own plan (8 of 11 seeds): v_0=1, v_1=7 on one TaskManager",
+   "args": [
+    "--parallelism",
+    "7",
+    "--taskmanagers",
+    "1",
+    "--slots",
+    "7",
+    "--segment-size",
+    "16384",
+    "--overrides",
+    "1f9ad02cd246b23e2f077255eeddb60e:1"
+   ]
+  },
+  {
+   "label": "v4plan_v0p1_v1p6_tm2s3_rep3",
+   "why": "STREAMLINE V4 own plan (11 of 11 seeds): v_0=1, v_1=6 on two TaskManagers",
+   "args": [
+    "--parallelism",
+    "6",
+    "--taskmanagers",
+    "2",
+    "--slots",
+    "3",
+    "--segment-size",
+    "16384",
+    "--overrides",
+    "1f9ad02cd246b23e2f077255eeddb60e:1"
+   ]
+  },
+  {
+   "label": "ctrl_v0p1_v1p2_tm2s1_rep3",
+   "why": "Control (our design): v_0=1, v_1=2, one slot per TaskManager -> hot subtasks separated by construction",
+   "args": [
+    "--parallelism",
+    "2",
+    "--taskmanagers",
+    "2",
+    "--slots",
+    "1",
+    "--segment-size",
+    "16384",
+    "--overrides",
+    "1f9ad02cd246b23e2f077255eeddb60e:1"
+   ]
+  }
+ ]
+}

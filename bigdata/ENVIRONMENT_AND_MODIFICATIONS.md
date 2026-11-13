@@ -262,3 +262,49 @@ Before packaging the repository, `git status` was run in both authors' clones.
   `etl/build/FlinkJob.jar` (08:58) and `kafkaProducer/build/KafkaProducer.jar` (09:00). Neither was rebuilt afterwards.
 - Action: the four wrapper files were restored with `git checkout --` to commit 57524e2. The clone now differs from the commit only by
   untracked files we added (replay schedules and their `.meta.json` under `data/`, build outputs), which are git-ignored or listed here.
+
+## 16. E4: per-vertex parallelism through a Flink cluster option (2026-11-13)
+
+**Why.** Beam's FlinkRunner sets one parallelism for the whole job, so STREAMLINE's per-operator plans (e.g. v_0 = 1, v_1 = 7)
+were collapsed to the maximum in E3/E3-T, and the cost result could only be stated as "not deployable" (report §5.2).
+
+**Mechanism (no code change).** Flink 1.17+ has the cluster option `pipeline.jobvertex-parallelism-overrides`
+(`VERTEXID:P,...`), present in the Flink 1.18.0 jars used here (`PipelineOptions`; applied by the `Dispatcher` to every submitted
+JobGraph, which logs "Changing job vertex ... parallelism from X to Y"). It is set as a JobManager dynamic property; the benchmark jar,
+Beam options and the authors' code are unchanged.
+
+- Vertex IDs are stable: `1f9ad02cd246b23e2f077255eeddb60e` (source chain, v_0) and `4678b24edcd99b481a38a9bc421b48ce` (Interpolate
+  through sinks, v_1) in every E1-TAXI and E3-T run at every parallelism. The job is submitted with `--parallelism = v_1` and the
+  override sets v_0 = 1.
+- `jobmanager.sh` takes the property as two arguments (`-D`, `key=value`); a single `-Dkey=value` is read as the host name and the
+  JobManager exits (first smoke attempt).
+- The JobManager restarts whenever the override changes (`scripts/run_pv_experiment.py` waits for one running, unrestarted JobManager
+  pod and for REST).
+- `taskmanager.numberOfTaskSlots` is set per run as a TaskManager dynamic property (`--slots`), so STREAMLINE's packing (several
+  subtasks on one one-CPU TaskManager) can be expressed. CPU and memory limits per TaskManager are unchanged (1 CPU, 2 GiB).
+
+**Placement follows from the plan.** In all earlier runs the busy Interpolate subtask was the last one (index p − 1; 100 runs,
+p = 1…8), because the single key "" falls into a high key group. With v_0 = 1, Flink's slot sharing puts the source subtask in slot
+group 0 together with Interpolate subtask 0, so the source and the busy subtask p − 1 share a TaskManager only if slot groups 0 and
+p − 1 land on the same TaskManager. With one slot per TaskManager and v_1 = 2 they never do (control configuration).
+
+**Smoke tests** (`results/E4_smoke/`, constant TAXI overload as E1-TAXI, 240 s, smoke only):
+- control v_0 = 1, v_1 = 2, 2 TaskManagers × 1 slot: 1,959 el/s, source on TM A, busy subtask 1 on TM B (E1-TAXI FMAX separated:
+  1,959 ± 16 el/s on 4 TaskManagers);
+- STREAMLINE V0 plan v_0 = 1, v_1 = 7, 1 TaskManager × 7 slots: 1,303 el/s, stable (E1-TAXI FD: 1,337 ± 12).
+
+**Kubernetes API port (environment, 2026-11-13).** After a Windows restart the k3d load balancer's host port 56613 fell inside a
+Hyper-V reserved range (56519–56618, `netsh int ipv4 show excludedportrange protocol=tcp`), so Docker could not publish it and
+kubectl was refused. Workaround without recreating the cluster: a TCP relay container `k3d-streamline-apiproxy` (python:3.12-slim,
+asyncio, on the `k3d-streamline` network) publishes `127.0.0.1:16443` → `k3d-streamline-serverlb:6443`, and
+`kubectl config set-cluster k3d-streamline --server=https://127.0.0.1:16443`. The relay carries only control traffic (kubectl,
+port-forwards); the measured data path (producer → Kafka → Flink) does not use it beyond the existing port-forward.
+
+**Host load.** During E4 the Notion desktop app used about 1.5 cores on the host while idle, so "other cores" was ~4.3–4.7 in the
+smoke runs against 1.4–2.4 in E3-T. It was left running (user application); every run records it (`host_other_cores_*`).
+
+**Measured grid (2026-11-13 15:45–17:19).** `scripts/run_pv_grid.py scripts/e4_eval_spec.json` (log `logs/grid_E4_eval.log`):
+V0 plan, V4 plan and control, 3 interleaved repetitions each on the E3-T workload; all 9 kept runs on AC power, override verified
+via REST, order match 1.00. One failed attempt (V4 plan rep 2, task failed during deployment; truncated trace) was re-run
+automatically and kept in `results/E4_eval/failed/`. The grid's `finally` block restored the JobManager/TaskManager args and 4
+TaskManagers (checked). Results and interpretation: `E4_RESULTS.md`; per-run table `results/E4_eval/summary.md`.
