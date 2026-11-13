@@ -1,9 +1,9 @@
 ::: front
 title: A partial reproduction of STREAMLINE: workload-aware auto-tuning of Apache Flink pipelines on a small Kubernetes cluster
-authors: Hamza Alqaruoti^a,*; Mohammad Alqaryouti^a; Noura Alrahbi^a; Sulaiman Shawabkeh^a
+authors: Hamza Alqaruoti^a; Mohammad Alqaryouti^a; Noura Alrahbi^a; Sulaiman Shawabkeh^a
 affiliation: a | The British University in Dubai, Dubai, United Arab Emirates
-corresponding: * Corresponding author. E-mail address: [[email]]
-note: AI508 Big Data Technologies and Applications, Assignment 2 (reproduction report). Module coordinator: Dr Ghada Alsuhli. Prepared in the format of Future Generation Computer Systems (Elsevier); not a published article.
+corresponding: Supervised by Dr. Ghada Alsuhli, The British University in Dubai
+note: AI508 Big Data Technologies and Applications, Assignment 2 (reproduction report). Prepared in the format of Future Generation Computer Systems (Elsevier); not a published article.
 keywords: Stream processing; Auto-tuning; Apache Flink; Reproducibility; Workload prediction; Kubernetes
 :::
 
@@ -307,7 +307,7 @@ The authors declare that they have no known competing financial interests or per
 
 # Declaration of generative AI and AI-assisted technologies in the writing process
 
-During the preparation of this work the authors used Claude (Anthropic), through Claude Code, in order to set up and debug the cluster environment, write and review the measurement, data-preparation and analysis scripts, read and audit the original authors' code, and draft and edit the documentation and this report. After using this tool, the authors reviewed and edited the content as needed, checked every reported number against the raw result files in the repository, and take full responsibility for the content of this report.
+During the preparation of this work the authors used Claude (Anthropic), including Claude Opus 5.5 accessed through Claude Code, in order to set up and debug the cluster environment, write and review the measurement, data-preparation and analysis scripts, read and audit the original authors' code, and draft and edit the documentation and this report. After using this tool, the authors reviewed and edited the content as needed, checked every reported number against the raw result files in the repository, and take full responsibility for the content of this report.
 
 # Data availability
 
@@ -317,12 +317,12 @@ All code, configuration, raw results and analysis scripts are available at https
 
 Table: Table A.1. Division of work.
 
-| Student (name, ID) | Assigned responsibility | Tasks completed | Individual outputs |
+| Student | Assigned responsibility | Tasks completed | Individual outputs |
 |---|---|---|---|
-| Hamza Alqaruoti (team leader), [[ID]] | Experiments, measurement and integration | Harness; profiling, E1, L1, E3, E3-T and E4 runs; validity controls; report integration | Harness and raw results; Section 3.4; final report |
-| Mohammad Alqaryouti, [[ID]] | Big Data framework setup | k3d cluster with Flink, Kafka and MongoDB; benchmark build; metrics collection | Kubernetes manifests; environment record (Section 3.2) |
-| Noura Alrahbi, [[ID]] | Method implementation | STREAMLINE audit and correction study; training on profiling data; mapping to Flink | Integration scripts; Sections 3.5 and 4.1 |
-| Sulaiman Shawabkeh, [[ID]] | Datasets, workload and analysis | FIT and TAXI preparation; replay schedules; statistics, figures and comparison with the original study | Data and analysis scripts; Sections 3.3 and 4–5 |
+| Hamza Alqaruoti (team lead) | Experiments, measurement and integration | Harness; profiling, E1, L1, E3, E3-T and E4 runs; validity controls; report integration | Harness and raw results; Section 3.4; final report |
+| Mohammad Alqaryouti | Big Data framework setup | k3d cluster with Flink, Kafka and MongoDB; benchmark build; metrics collection | Kubernetes manifests; environment record (Section 3.2) |
+| Noura Alrahbi | Method implementation | STREAMLINE audit and correction study; training on profiling data; mapping to Flink | Integration scripts; Sections 3.5 and 4.1 |
+| Sulaiman Shawabkeh | Datasets, workload and analysis | FIT and TAXI preparation; replay schedules; statistics, figures and comparison with the original study | Data and analysis scripts; Sections 3.3 and 4–5 |
 
 # Appendix B. Individual reflections
 
