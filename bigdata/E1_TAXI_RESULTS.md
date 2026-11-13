@@ -81,3 +81,12 @@ One small effect: on TAXI, p = 2 is 3% slower than p = 1 (1296 vs 1337, about 3 
 - The input rate (2730 el/s) is far below the paper's TAXI peaks (10,000 el/s), because one laptop cannot generate more without disturbing the measurement (§1).
 - One laptop with 1-core TaskManagers, 1 Kafka broker and job-wide parallelism only, as in E1 §5.
 - n = 3 per configuration. The placement stratification is post hoc (4 separated vs 8 co-located).
+
+## Correction (2026-11-13): CPU utilisation of used TaskManagers
+
+The column "CPU utilisation of used TMs" above divides the summed CPU of **all four** TaskManager pods by the number of
+TaskManagers hosting tasks. For p = 1, 2 and 4 the idle TaskManagers' background CPU (~0.02–0.05 core each) is therefore in the
+numerator but not the denominator, which is why FD reads above 1.0 although its busy TaskManager never exceeded its 1-CPU limit
+(max 0.99–1.00 core). Recomputed for the TaskManagers that host tasks only (`scripts/cpu_util_used_only.py`, output
+`results/cpu_util_used_only.md`): FIT FD 1.00, p = 2 1.00, p = 4 0.69, FMAX 0.36; TAXI FD 1.00, p = 2 0.99, p = 4 0.60, FMAX 0.40.
+The report (Table 4) uses the recomputed values. The FD-vs-FMAX conclusion is unchanged.

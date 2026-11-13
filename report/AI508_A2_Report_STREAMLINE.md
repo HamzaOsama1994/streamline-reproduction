@@ -11,13 +11,13 @@ keywords: Stream processing; Auto-tuning; Apache Flink; Reproducibility; Workloa
 - STREAMLINE's ETL experiments partially reproduced on Flink, Kafka and Kubernetes
 - At saturation, Flink's default had 24–32% less throughput than maximum parallelism
 - A single-key benchmark made throughput depend on random slot placement
-- Deployed as planned, STREAMLINE's one-node TAXI plan queued like Flink's default
+- STREAMLINE's one-node TAXI plan, deployed per vertex, queued like Flink's default
 - Fixing the forecaster cut job-wide emulated TAXI cost by 19% over 11 seeds
 :::
 
 # Abstract
 
-STREAMLINE auto-tunes Apache Flink pipelines: a Transformer forecasts the workload, neural and polynomial models predict operator behaviour, and NSGA-II chooses each operator's parallelism and buffer size. For its ETL pipeline on a 30-node cluster, the original study reports a 76% latency reduction against Flink's default configuration (FD) on FIT, and cost reductions of 51% and 67% against FD and maximum parallelism (FMAX) on TAXI. We partially reproduced these experiments, without the ContTune baseline and the seamless update, with the authors' unmodified code on a Kubernetes cluster with four one-core Flink TaskManagers. We built the unreleased Flink integration, harness and training data, and measured throughput, true end-to-end latency and an emulated (proxy) cost over three runs per configuration. At saturation FD processed 24% (FIT) and 32% (TAXI) less than FMAX over all runs; on FIT the gap was 33% when the two busy subtasks ran on different TaskManagers. When workload peaks exceeded FD's capacity, STREAMLINE's configurations cut median latency by about 99%, confirming the direction of the paper's 76% but not its size. The cost savings were not reproduced. Deployed as planned with per-vertex parallelism, STREAMLINE's TAXI plans reached the paper's one-node cost but queued like FD at the peak: every record has the same key, so one subtask does all the work, which STREAMLINE's models cannot represent. Our own placement-aware plan carried the peak at half FMAX's cost. Fixing two forecaster defects cut the expected emulated TAXI cost of job-wide deployment by 19% across 11 seeds.
+STREAMLINE auto-tunes Apache Flink pipelines: a Transformer forecasts the workload, neural and polynomial models predict operator behaviour, and NSGA-II chooses each operator's parallelism and buffer size. For its ETL pipeline on a 30-node cluster, the original study reports a 76% latency reduction against Flink's default configuration (FD) on FIT, and cost reductions of 51% and 67% against FD and maximum parallelism (FMAX) on TAXI. We partially reproduced these experiments, without the ContTune baseline and the seamless update, with the authors' unmodified code on a Kubernetes cluster with four one-core Flink TaskManagers. We built the unreleased Flink integration, harness and training data, and measured throughput, end-to-end latency between Kafka brokers and an emulated (proxy) cost over three runs per configuration. At saturation FD processed 24% (FIT) and 32% (TAXI) less than FMAX over all runs; on FIT the gap was 33% when the two busy subtasks ran on different TaskManagers. When peaks exceeded FD's capacity, STREAMLINE's configurations cut median latency by about 99%, confirming the direction of the paper's 76% but not its size. The cost savings were not reproduced. Deployed with their planned per-vertex parallelism, STREAMLINE's TAXI plans reached the paper's one-node cost on our cluster but queued like FD at the peak: every record has the same key, so one subtask does all the work, which STREAMLINE's models cannot represent. A hand-designed control carried the peak at half FMAX's cost. Fixing two forecaster defects cut the expected emulated TAXI cost of job-wide deployment by 19% across 11 seeds.
 
 # 1. Introduction
 
@@ -31,7 +31,7 @@ This reproduction had three objectives:
 2. **O2. Big Data experiment.** Reproduce the ETL experiment of the original §5.1.1 (FD vs FMAX vs STREAMLINE on the FIT and TAXI datasets) on a real Flink, Kafka and Kubernetes stack, and compare throughput, end-to-end latency, CPU utilisation and cost with the paper as relative outcomes.
 3. **O3. Extension.** Test whether the defects we found in the released forecaster change STREAMLINE's decisions, and the measured outcome, inside a running cluster.
 
-This is a partial reproduction. The ContTune baseline, the seamless reconfiguration mechanism (Algorithm 5 of [9]), the Yahoo Streaming Benchmark experiments and the multi-pipeline ensembles are out of scope: none of them is in the released code, and rebuilding them would have meant writing new systems rather than reproducing a published one. The paper's comparison with ContTune is therefore not tested. The authors' Beam benchmark exposes only job-wide parallelism on Flink, so we deployed STREAMLINE's per-operator plans in two ways: with one parallelism for the whole job, and as planned through a Flink cluster option. In neither case was STREAMLINE's placement of individual subtasks enforced (Section 3.5). The STATS, PRED and TRAIN pipelines were left out for time. Section 2 summarises the original study, Section 3 describes our environment and method, Section 4 reports results against the paper's, Section 5 discusses the differences, and Section 6 concludes.
+This is a partial reproduction. The ContTune baseline, the seamless reconfiguration mechanism (Algorithm 5 of [9]), the Yahoo Streaming Benchmark experiments and the multi-pipeline ensembles are out of scope: none of them is in the released code, and rebuilding them would have meant writing new systems rather than reproducing a published one. The paper's comparison with ContTune is therefore not tested. The authors' Beam benchmark exposes only job-wide parallelism on Flink, so we deployed STREAMLINE's per-operator plans in two ways: with one parallelism for the whole job, and with their planned per-vertex parallelism through a Flink cluster option. In neither case was STREAMLINE's placement of individual subtasks enforced (Section 3.5). The STATS, PRED and TRAIN pipelines were left out for time. Section 2 summarises the original study, Section 3 describes our environment and method, Section 4 reports results against the paper's, Section 5 discusses the differences, and Section 6 concludes.
 
 # 2. Original Study
 
@@ -110,7 +110,7 @@ The authors did not release their measurement setup, so we wrote one in Python. 
 
 The first 150 s of each run are discarded as JIT warm-up. Runs were interleaved across configurations and repeated three times.
 
-**Latency.** The paper used Flink latency markers [21]. We found that they mislead in this benchmark for three reasons. Their histograms are long-lived, so warm-up values persist. Each marker goes to one random downstream subtask, so at parallelism *p* a subtask's 60-marker window spans about 60·*p* seconds. And markers start at the source operator, so they miss time spent waiting in Kafka, which dominates under overload. We therefore measured **true end-to-end latency**, which Karimov et al. [22] call event-time latency because it includes the time a record waits before the system reads it: the topics use broker LogAppendTime, and the *i*-th output record's broker timestamp minus the *i*-th input record's gives each record's latency. An order check on sampled records confirmed the one-to-one matching in every run (match fraction 1.0).
+**Latency.** The paper used Flink latency markers [21]. We found that they mislead in this benchmark for three reasons. Their histograms are long-lived, so warm-up values persist. Each marker goes to one random downstream subtask, so at parallelism *p* a subtask's 60-marker window spans about 60·*p* seconds. And markers start at the source operator, so they miss time spent waiting in Kafka, which dominates under overload. We therefore measured **end-to-end latency between the Kafka brokers**. Both topics use LogAppendTime, so every record carries the time at which the broker appended it, and a record's latency is the append time of the *i*-th output record minus that of the *i*-th input record. Like the event-time latency of Karimov et al. [22], it includes the time a record waits in Kafka before Flink reads it. It excludes the producer's send path and the consumer's read path, so it is not the full producer-to-consumer latency of an application. An order check on sampled records confirmed the one-to-one matching in every run (match fraction 1.0).
 
 **Validity controls.** The cluster shares a laptop with other processes, so we logged host load per sample and checked the Windows power log per run. Runs that overlapped CPU-heavy host jobs, battery power or Modern Standby were excluded and re-measured. Battery power alone raised CPU per record by 25–40%. Eighteen runs were re-measured for these reasons, and the excluded runs are kept in separate folders.
 
@@ -128,7 +128,7 @@ The released code contains the decision layer only, so we connected it to the cl
 
 **Mapping to Flink.** Beam's FlinkRunner accepts only one parallelism for the whole job and cannot pin operators to nodes. A per-operator plan therefore became job parallelism = max over operators, TaskManagers = ⌈p/2⌉, and the chosen segment size as a TaskManager setting. Each configuration was deployed as a fresh job instead of through the seamless update.
 
-**Per-vertex deployment (E4).** Flink 1.18 has a cluster option, `pipeline.jobvertex-parallelism-overrides`, with which the JobManager overwrites the parallelism of named job vertices when a job is submitted. The vertex identifiers were the same in all our submissions. We set the option on the JobManager to give v_0 its planned parallelism, submitted the unmodified jar with v_1's parallelism, and set the number of slots per TaskManager so that the job occupied exactly the TaskManagers STREAMLINE planned. The harness checked through the REST API that every vertex ran at the requested parallelism. Flink, not STREAMLINE, still chose the slot of each subtask.
+**Per-vertex deployment (E4).** Flink 1.18 has a cluster option, `pipeline.jobvertex-parallelism-overrides`, with which the JobManager overwrites the parallelism of named job vertices when a job is submitted. We set the option on the JobManager to give v_0 its planned parallelism, submitted the unmodified jar with v_1's parallelism, and set the number of slots per TaskManager so that the job occupied exactly the TaskManagers STREAMLINE planned. The harness checked through the REST API that every vertex ran at the requested parallelism. Flink, not STREAMLINE, still chose the slot of each subtask.
 
 **Variants (O3).** V0 is the code as released. V4 fixes two forecaster defects: dropout left active at inference, and the input window fed to the network without the scaling used in training. Both load the same trained models and were run with 11 random seeds.
 
@@ -140,10 +140,10 @@ Table: Table 3. Experiments.
 |---|---|---|
 | E0 | Does the released decision layer work, and is it correct? | README examples; code audit; 2³ factorial correction study (88 runs) |
 | E1 | Capacity of FD vs FMAX | p = 1, 2, 4, 8; constant overload; 360 s; 3 reps; FIT and TAXI |
-| L1 | Does parallelism buy latency below capacity? | FD, p = 4, FMAX at ~780 el/s; true e2e latency; 3 reps |
+| L1 | Does parallelism buy latency below capacity? | FD, p = 4, FMAX at ~780 el/s; broker-to-broker e2e latency; 3 reps |
 | E3 | STREAMLINE V0 and V4 vs FD and FMAX (FIT) | Sinusoidal workload peaking at 1,599 el/s; decision on a 250 s forecast horizon; 3 reps per configuration |
 | E3-T | Same on TAXI's real arrival pattern | Mon–Fri 14:00 history; horizon Fri 14:00 – Sat 05:17 (real time), effective 279–1,752 el/s; 3 reps |
-| E4 | STREAMLINE's TAXI plans deployed as planned | Per-vertex parallelism; V0's plan, V4's plan and a placement-aware control; E3-T workload; 3 reps |
+| E4 | STREAMLINE's TAXI plans with per-vertex parallelism | Per-vertex parallelism; V0's plan, V4's plan and a placement-aware control; E3-T workload; 3 reps |
 
 # 4. Results and Comparison
 
@@ -157,26 +157,26 @@ In a 2³ factorial study on the authors' example workloads, fixing all three def
 
 ## 4.2. Capacity: FD vs FMAX (E1)
 
-Table: Table 4. Saturated throughput, mean ± SD over 3 runs (measured in this reproduction).
+Table: Table 4. Saturated throughput, mean ± SD over 3 runs (measured in this reproduction). CPU utilisation is the mean CPU use of the TaskManagers that host tasks (Kubernetes metrics API, 5 s samples after warm-up) divided by their 1-CPU limit, so 1.00 means the limit was fully used. Our harness's summary had also counted the idle TaskManagers' background CPU (0.02–0.05 cores each) and gave FD 1.06–1.12; the values here are recomputed from the per-pod samples.
 
-| Configuration | TMs | FIT throughput (el/s) | TAXI throughput (el/s) | CPU util. FIT / TAXI | Emulated cost ($/h) |
+| Configuration | TMs | FIT throughput (el/s) | TAXI throughput (el/s) | CPU utilisation, FIT / TAXI | Emulated cost ($/h) |
 |---|---|---|---|---|---|
-| FD (p = 1) | 1 | 1,115 ± 32 | 1,337 ± 12 | 1.06 / 1.10 | 0.192 |
-| p = 2 | 1 | 1,100 ± 30 | 1,296 ± 14 | 1.06 / 1.12 | 0.192 |
-| p = 4 | 2 | 1,478 ± 344 | 1,528 ± 365 | 0.71 / 0.64 | 0.384 |
+| FD (p = 1) | 1 | 1,115 ± 32 | 1,337 ± 12 | 1.00 / 1.00 | 0.192 |
+| p = 2 | 1 | 1,100 ± 30 | 1,296 ± 14 | 1.00 / 0.99 | 0.192 |
+| p = 4 | 2 | 1,478 ± 344 | 1,528 ± 365 | 0.69 / 0.60 | 0.384 |
 | FMAX (p = 8) | 4 | 1,473 ± 314 | 1,959 ± 16 | 0.36 / 0.40 | 0.768 |
 
-Every run was saturated: the offered load was 2,620–2,742 el/s and the bottleneck subtask was 100% busy in all 24 runs. FD processed 24% (FIT) and 32% (TAXI) less than FMAX. The large standard deviations at p = 4 and on FIT at p = 8 do not come from measurement noise. Fig. 1 shows their source.
-
-![Fig. 1. Saturated throughput of each run. Colour shows whether Flink placed the active source subtask and the single busy Interpolate subtask on the same one-CPU TaskManager.](fig1_throughput_placement.png){full}
+Every run was saturated: the offered load was 2,620–2,742 el/s and the bottleneck subtask was 100% busy in all 24 runs. FD processed 24% (FIT) and 32% (TAXI) less than FMAX. FD's single TaskManager ran at its CPU limit, while FMAX used 36–40% of its four. The large standard deviations at p = 4 and on FIT at p = 8 do not come from measurement noise. Fig. 1 shows their source.
 
 The ETL job keys every record with one constant key (`WithKeys.of("")`) before its Interpolate step, and the input topic has one partition. So, whatever the parallelism, one source subtask and one Interpolate subtask do all the work. Extra parallelism helps only if Flink's slot assignment puts these two on different TaskManagers, and that assignment varies from run to run. Key skew is a known limit on stream parallelism [23]; here it is total, because there is only one key.
 
 With the two subtasks separated, throughput was 1,630–1,684 el/s on FIT and 1,940–1,969 el/s on TAXI; with them co-located, every configuration fell back to FD's level. The FIT figure of −24% therefore mixes both cases. Counting separated runs only, FD is 33% (FIT) and 32% (TAXI) below FMAX, close to the paper's 34% on FIT. In one FIT run FMAX was co-located and reached 1,111 el/s, the same as FD at four times the cost. Over all 18 runs at p = 8 in this project, 3 were co-located.
 
+![Fig. 1. Saturated throughput of each run. Colour shows whether Flink placed the active source subtask and the single busy Interpolate subtask on the same one-CPU TaskManager.](fig1_throughput_placement.png){full}
+
 ## 4.3. Latency below capacity (L1)
 
-At about 780 el/s, below every configuration's capacity, true end-to-end latency was the same for FD, p = 4 and FMAX in 8 of 9 runs: p50 33–39 ms, p95 98–115 ms, p99 130–160 ms. FD therefore gives the same latency at a quarter of FMAX's cost. One FD run had a 30 s throughput stall of unknown cause; with only 20% headroom, the backlog took about 90 s to clear. Latency markers, measured in separate runs, reported multi-second p95 values at p = 4 and 8. Those values are an artefact of how markers are routed (Section 3.4).
+At about 780 el/s, below every configuration's capacity, end-to-end latency was the same for FD, p = 4 and FMAX in 8 of 9 runs: p50 33–39 ms, p95 98–115 ms, p99 130–160 ms. FD therefore gives the same latency at a quarter of FMAX's cost. One FD run had a 30 s throughput stall of unknown cause; with only 20% headroom, the backlog took about 90 s to clear. Latency markers, measured in separate runs, reported multi-second p95 values at p = 4 and 8. Those values are an artefact of how markers are routed (Section 3.4).
 
 ## 4.4. STREAMLINE in the loop on FIT (E3)
 
@@ -205,7 +205,7 @@ The forecaster was trained on the measured ingestion of Monday 00:00 to Friday 1
 
 Table: Table 6. E3-T on TAXI (measured; 3 runs per configuration). Latency is that of records entering in the horizon, given per run. Throughput is the output rate in the 60 s around the peak.
 
-| | FD | STREAMLINE p = 6 | STREAMLINE p = 7 | FMAX |
+| | FD | STREAMLINE p = 6 | STREAMLINE p = 7 | FMAX |
 |---|---|---|---|---|
 | Chosen by | baseline | V4: 11 of 11 seeds; V0: 3 of 11 | V0: 8 of 11 seeds | baseline |
 | TaskManagers; emulated cost ($/h) | 1; 0.192 | 3; 0.576 | 4; 0.768 | 4; 0.768 |
@@ -218,13 +218,13 @@ Table: Table 6. E3-T on TAXI (measured; 3 runs per configuration). Latency is th
 
 Both variants underestimated the horizon's mean (forecast means 981–1,090 vs 1,278 el/s), but their peaks (1,716–1,829 el/s) matched the actual peak. Fixing the defects cut the error from 297 ± 21 to 210 el/s (MAE). A seasonal-naive forecast, the same hours one day earlier, scored 236 el/s.
 
-Unlike on FIT, the fix changed the cost. V0 chose p = 7 on four TaskManagers in 8 of 11 seeds, V4 chose p = 6 on three in every seed, so the expected emulated deployment cost across the 11 seeds falls by 19% ($0.716 to $0.576/h) at the same latency. All six STREAMLINE runs had their busy subtasks separated and kept the median near 54 ms through the peak, while FD queued for up to 20 s. FMAX again depended on placement: its separated run matched STREAMLINE, and its two co-located runs queued like FD. Every configuration processed all records by the end of the run, because the night-time trough let the queues drain, so averaged over the horizon all delivered 1,270 el/s. All unsaturated runs showed a 0.4–1 s latency spike 290–293 s into the run that is not in the input schedule. We could not identify its cause, and it sets most of their p99 values.
+Unlike on FIT, the fix changed the cost. V0 chose p = 7 on four TaskManagers in 8 of 11 seeds, V4 chose p = 6 on three in every seed, so the expected emulated deployment cost across the 11 seeds falls by 19% ($0.716 to $0.576/h) at the same latency. All six STREAMLINE runs had their busy subtasks separated and kept the median near 54 ms through the peak, while FD queued for up to 20 s. FMAX again depended on placement: its separated run matched STREAMLINE, and its two co-located runs queued like FD. Because the night-time trough let the queues drain, all but up to four records were emitted by the end of every run, so averaged over the horizon all configurations delivered 1,270 el/s. All unsaturated runs showed a 0.4–1 s latency spike 290–293 s into the run that is not in the input schedule. We could not identify its cause, and it sets most of their p99 values.
 
-STREAMLINE's own plans were cheaper than what Flink could run. V0 packed both operators onto one TaskManager in 8 seeds ($0.192/h), the paper's single-node outcome, and V4 onto two ($0.384/h). Job-wide parallelism with two slots per TaskManager turned these into four and three TaskManagers. Section 4.6 deploys them as planned.
+STREAMLINE's own plans were cheaper than what Flink could run. V0 packed both operators onto one TaskManager in 8 seeds ($0.192/h), the paper's single-node outcome, and V4 onto two ($0.384/h). Job-wide parallelism with two slots per TaskManager turned these into four and three TaskManagers. Section 4.6 deploys them with per-vertex parallelism.
 
-## 4.6. STREAMLINE's TAXI plans deployed as planned (E4)
+## 4.6. Evaluating STREAMLINE's TAXI plans with per-vertex parallelism (E4)
 
-E4 deployed the two plans that STREAMLINE chose in E3-T with per-vertex parallelism (Section 3.5), on the same workload and with the same analysis: V0's plan in 8 of 11 seeds (v_0 = 1 and v_1 = 7 on one TaskManager) and V4's plan in every seed (v_0 = 1 and v_1 = 6 on two). As a control we added a plan of our own, which is not a STREAMLINE decision: v_1 = 2 on two TaskManagers with one slot each. The busy Interpolate subtask was the last one in all 100 runs we inspected, and v_0's subtask shares the first slot, so this plan separates the two busy subtasks by construction. Table 7 gives the results.
+E4 deployed the two plans that STREAMLINE chose in E3-T with per-vertex parallelism (Section 3.5), on the same workload and with the same analysis: V0's plan in 8 of 11 seeds (v_0 = 1 and v_1 = 7 on one TaskManager) and V4's plan in every seed (v_0 = 1 and v_1 = 6 on two). As a control we added a workload-specific, hand-designed configuration, which is neither a STREAMLINE decision nor a general scheduling method: v_1 = 2 on two TaskManagers with one slot each. The busy Interpolate subtask was the last one in all 100 runs we inspected, and v_0's subtask shares the first slot, so this plan separates the two busy subtasks by construction. Table 7 gives the results.
 
 Table: Table 7. E4 on TAXI (measured; 3 runs per configuration), with FD from E3-T for reference. Latency and throughput defined as in Table 6.
 
@@ -237,9 +237,9 @@ Table: Table 7. E4 on TAXI (measured; 3 runs per configuration), with FD from E3
 | e2e p99 (ms) | 20,581 / 25,324 / 33,390 | 18,983 / 21,995 / 29,198 | 296 / 254 / 474 | 20,517 / 17,971 / 18,810 |
 | Throughput at the peak (el/s) | 1,241–1,382 | 1,290–1,390 | 1,627–1,631 | 1,375–1,406 |
 
-Deployed as planned, STREAMLINE's plans cost what it intended: V0's plan as much as FD and 75% less than FMAX, and V4's plan 50% less than FMAX. Neither carried the peak. Both processed about 1,300 el/s at the peak while about 1,630 el/s arrived, like FD, and their median latency rose to 8–17 s. In V0's plan the source and the busy subtask share one one-core TaskManager, which ran at 97–99% of its CPU limit. In V4's plan Flink put the source and the busy subtask on the same TaskManager in all three runs. STREAMLINE's own mapping does the same, since it places v_0_0 and v_1_5 together, so enforcing it would not have helped. The control kept up with the peak at a median of 44–46 ms, no higher than STREAMLINE's job-wide configurations in E3-T (52–56 ms), at half FMAX's emulated cost and a third less than V4's job-wide deployment. Under per-vertex deployment the forecaster fix no longer saved money: V4's expected cost across the seeds was $0.384/h against V0's $0.244/h, and both queued.
+With their planned vertex parallelism and TaskManager count, STREAMLINE's plans cost what it intended: V0's plan as much as FD and 75% less than FMAX, and V4's plan 50% less than FMAX. Neither carried the peak. Both processed about 1,300 el/s at the peak while about 1,630 el/s arrived, like FD, and their median latency rose to 8–17 s. In V0's plan the source and the busy subtask share one one-core TaskManager, which ran at 97–99% of its CPU limit. In V4's plan Flink put the source and the busy subtask on the same TaskManager in all three runs. STREAMLINE's own mapping does the same, since it places v_0's subtask together with subtask 5 of v_1, so enforcing it would not have helped. The control kept up with the peak at a median of 44–46 ms, no higher than STREAMLINE's job-wide configurations in E3-T (52–56 ms), at half FMAX's emulated cost and a third less than V4's job-wide deployment. Under per-vertex deployment the forecaster fix no longer saved money: V4's expected cost across the seeds was $0.384/h against V0's $0.244/h, and both queued. These findings establish a placement-sensitive limitation under our one-core TaskManager environment; they do not establish that the same resource plans would fail on the original multicore cluster.
 
-Other processes on the host used 3.3–6.6 cores during E4, against 1.4–2.4 during E3-T and 3–5 in most other experiments. The slowest V0 and V4 runs coincide with the highest load, so the size of their queueing is sensitive to it, but the outcome is not: both already fell behind at 3.3–3.5 cores, while the control kept up at 4.7–4.9. One V4 attempt failed during task deployment and was repeated; the failed record is kept.
+Other processes on the host used 3.3–6.6 cores during E4, against 1.4–2.4 during E3-T. The slowest V0 and V4 runs coincide with the highest load, but both plans already fell behind at 3.3–3.5 cores, while the control kept up at 4.7–4.9. One V4 attempt failed during task deployment and was repeated.
 
 ## 4.7. Summary against the original study
 
@@ -251,9 +251,9 @@ Table: Table 8. The original study's ETL claims against our measurements.
 | FD throughput, TAXI | −14% (time-averaged, fluctuating load) | −32% at saturation; −15% in the 60 s around the TAXI peak; 0% over the whole horizon | Reproduced; size depends on the averaging window |
 | STREAMLINE ≈ FMAX throughput | within 1% | STREAMLINE chose FMAX-like configurations; equal when placement equal | Reproduced |
 | Latency vs FD, FIT | −76% | −99% p50 with peaks above FD capacity; 0% below capacity | Direction only; size not replicated (FD overloaded by design) |
-| FD vs FMAX latency, TAXI | < 4% difference | −8% (mean p50 of 3 runs); per run FD-like when co-located, −99% when separated | Matched on average only; set by placement |
-| Emulated cost vs baselines | −51% to −67% | Job-wide (E3, E3-T): FIT 0% vs FMAX, +300% vs FD; TAXI (V4) −25% vs FMAX, +200% vs FD. As planned (E4): TAXI V0 plan 0% vs FD and −75% vs FMAX, V4 plan −50% vs FMAX, but both queued like FD at the peak | Not reproduced: the planned cost is reached only by losing the peak |
-| CPU utilisation: FD better than FMAX | qualitative | 1.06–1.10 vs 0.36–0.40 | Reproduced |
+| FD vs FMAX latency, TAXI | < 4% difference | −8% (mean p50 of 3 runs); per run FD-like when co-located, −99% when separated | Not reproduced quantitatively; strongly placement-dependent |
+| Emulated cost vs baselines | −51% to −67% | Job-wide (E3, E3-T): FIT 0% vs FMAX, +300% vs FD; TAXI (V4) −25% vs FMAX, +200% vs FD. Per-vertex (E4): TAXI V0 plan 0% vs FD and −75% vs FMAX, V4 plan −50% vs FMAX, but both queued like FD at the peak | Not reproduced: the planned cost is reached only by losing the peak |
+| CPU utilisation: FD better than FMAX | qualitative | 1.00 vs 0.36–0.40 | Reproduced |
 
 # 5. Discussion
 
@@ -263,7 +263,7 @@ The qualitative structure of the original §5.1.1 holds on our cluster. FD runs 
 
 ## 5.2. Why the cost savings did not reproduce
 
-STREAMLINE's savings come from per-operator parallelism and from packing operators onto fewer, larger nodes. The paper's ETL plan on TAXI ran on a single 8-core node, and on our TAXI data STREAMLINE's own plan was the same in 8 of 11 seeds: one TaskManager. Beam's FlinkRunner sets one parallelism for the whole job, so in E3 and E3-T such a plan needed three or four TaskManagers. A Flink cluster option removed that obstacle without changing the benchmark (E4). The plans then ran at the cost STREAMLINE intended, but they could not carry the TAXI peak, so the cause lies in the models rather than in the deployment. Because every record has the same key, one v_1 subtask does all the work, and v_1 = 7 has no more capacity than v_1 = 1 on the same CPU. STREAMLINE learned a high capacity for high parallelism from profiling runs that spread the job over ⌈p/2⌉ one-core TaskManagers and usually separated the busy subtasks. Its features (input rate, parallelism, segment size, operator type) cannot show that packing the same parallelism onto one core removes that capacity, or which subtask is busy. Our two-TaskManager control shows that a 50% saving against FMAX at equal latency exists on this cluster. Finding it, however, needed knowledge of the key distribution and of Flink's slot assignment that STREAMLINE's models do not have, and the original study does not discuss this case.
+STREAMLINE's savings come from per-operator parallelism and from packing operators onto fewer, larger nodes. The paper's ETL plan on TAXI ran on a single 8-core node, and on our TAXI data STREAMLINE's own plan was the same in 8 of 11 seeds: one TaskManager. Beam's FlinkRunner sets one parallelism for the whole job, so in E3 and E3-T such a plan needed three or four TaskManagers. A Flink cluster option removed that obstacle without changing the benchmark (E4). The plans then ran at the cost STREAMLINE intended, but they could not carry the TAXI peak, so the cause lies in the models rather than in the deployment. Because every record has the same key, one v_1 subtask does all the work, and v_1 = 7 has no more capacity than v_1 = 1 on the same CPU. STREAMLINE learned a high capacity for high parallelism from profiling runs that spread the job over ⌈p/2⌉ one-core TaskManagers and usually separated the busy subtasks. Its features (input rate, parallelism, segment size, operator type) cannot show that packing the same parallelism onto one core removes that capacity, or which subtask is busy. Our hand-designed two-TaskManager control shows that a 50% saving against FMAX at equal latency exists on this cluster. Finding it, however, needed knowledge of the key distribution and of Flink's slot assignment that STREAMLINE's models do not have, and the original study does not discuss this case.
 
 ## 5.3. The benchmark limits what tuning can achieve
 
@@ -271,11 +271,11 @@ The single key and single partition mean that ETL's capacity is set by two subta
 
 ## 5.4. The forecaster
 
-The released forecaster has real defects, and fixing them cut its error by 64–93%. In the running system the effect was on cost, not latency: none on FIT, and on TAXI one TaskManager fewer in most seeds, a 19% lower expected emulated cost of job-wide deployment across 11 seeds. Deployed as planned, both variants' plans queued, and V4's cost more (Section 4.6). Decisions are sensitive to the forecast only near a point where the capacity model's ranking of configurations flips. On FIT that point was itself an artefact of fitting a cubic to four measured parallelism levels: the fitted curve falls from p = 7 to p = 8 although no p = 7 run was ever profiled. A seasonal-naive baseline beat the Transformer on our periodic FIT workload. On TAXI, the corrected Transformer (210 el/s) beat a seasonal-naive forecast from the previous day (236 el/s), and the released version (297 el/s) did not. The original study does not compare its forecaster with simple baselines, and we think it should.
+The released forecaster has real defects, and fixing them cut its error by 64–93%. In the running system the effect was on cost, not latency: none on FIT, and on TAXI one TaskManager fewer in most seeds, a 19% lower expected emulated cost of job-wide deployment across 11 seeds. With per-vertex parallelism, both variants' plans queued, and V4's cost more (Section 4.6). Decisions are sensitive to the forecast only near a point where the capacity model's ranking of configurations flips. On FIT that point was itself an artefact of fitting a cubic to four measured parallelism levels: the fitted curve falls from p = 7 to p = 8 although no p = 7 run was ever profiled. A seasonal-naive baseline beat the Transformer on our periodic FIT workload. On TAXI, the corrected Transformer (210 el/s) beat a seasonal-naive forecast from the previous day (236 el/s), and the released version (297 el/s) did not. The original study does not compare its forecaster with simple baselines, and we think it should.
 
 ## 5.5. Reproducibility of the artefacts
 
-The code made a reproduction possible, but several missing or under-specified pieces cost most of our effort, a pattern also reported for computer systems research in general [25]. The Flink integration, the measurement harness, the training data and the rule that turns metrics into training rows were not released. The TAXI and FIT replay scaling ("as recommended") is not specified, and neither is whether latency was measured with markers or end to end. The artefacts also contain defects: the producer silently drops 20% of the data, the benchmark's Prometheus configuration does not work outside the Flink operator because Flink 1.18 keeps the quotes around the port, and the released hyperparameters differ from the paper's Table 2. Finally, the paper ran Flink 1.19.1, but the benchmark pins 1.18. Each of these is documented in our modification log so that the next team does not have to rediscover it.
+The code made a reproduction possible, but several missing or under-specified pieces cost most of our effort, a pattern also reported for computer systems research in general [25]. The Flink integration, the measurement harness, the training data and the rule that turns metrics into training rows were not released. The TAXI and FIT replay scaling ("as recommended") is not specified, and neither is whether latency was measured with markers or end to end. The artefacts also contain defects: the producer silently drops 20% of the data, the benchmark's Prometheus configuration does not work outside the Flink operator because Flink 1.18 keeps the quotes around the port, and the released hyperparameters differ from the paper's Table 2. Finally, the paper ran Flink 1.19.1, but the benchmark pins 1.18. All are documented in our modification log.
 
 ## 5.6. Limitations and threats to validity
 
@@ -291,11 +291,9 @@ The code made a reproduction possible, but several missing or under-specified pi
 
 # 6. Conclusion
 
-We partially reproduced the ETL experiments of STREAMLINE's §5.1.1 on both datasets with the authors' unmodified code, on a real Flink, Kafka and Kubernetes stack, without the ContTune baseline or the seamless update. The parts the authors did not release (harness, Flink integration, training data) were built by us and documented. The paper's throughput and latency findings were reproduced in direction. On FIT the throughput gap was also reproduced in size when the busy subtasks were placed apart (−33% against the paper's −34%; −24% over all runs), and sizing for the forecast peak removed FD's queueing. The latency reduction was larger than the paper's because our FD was overloaded by design, so its size is not a replication. The same held on TAXI's real arrival pattern, where fixing the forecaster's defects also lowered the expected emulated cost of job-wide deployment by 19% across 11 seeds. The paper's cost savings were not reproduced. Deployed as planned through a Flink cluster option, STREAMLINE's TAXI plans reached the paper's one-node cost but queued like FD at the peak, because its models cannot see that one subtask does all the work. A placement-aware plan of our own carried the peak at half FMAX's cost, so the saving exists on our cluster, but STREAMLINE did not find it.
+We partially reproduced the ETL experiments of STREAMLINE's §5.1.1 on both datasets with the authors' unmodified code, on a real Flink, Kafka and Kubernetes stack, without the ContTune baseline or the seamless update. The parts the authors did not release (harness, Flink integration, training data) were built by us and documented. The paper's throughput and latency findings were reproduced in direction. On FIT the throughput gap was also reproduced in size when the busy subtasks were placed apart (−33% against the paper's −34%; −24% over all runs), and sizing for the forecast peak removed FD's queueing. The latency reduction was larger than the paper's because our FD was overloaded by design, so its size is not a replication. The same held on TAXI's real arrival pattern, where fixing the forecaster's defects also lowered the expected emulated cost of job-wide deployment by 19% across 11 seeds. The paper's cost savings were not reproduced. Deployed with their planned per-vertex parallelism, STREAMLINE's TAXI plans reached the paper's one-node cost but queued like FD at the peak on our one-core TaskManagers, because its models cannot see that one subtask does all the work. A hand-designed control carried the peak at half FMAX's cost, so the saving exists on our cluster, but STREAMLINE did not find it.
 
-Three lessons go beyond this paper. First, a benchmark's data distribution can cap what any tuner achieves: here a single key turned parallelism into a placement lottery. Second, measurement definitions matter as much as the system: Flink's latency markers hid queueing in Kafka and inflated tails at high parallelism, so true end-to-end latency had to be measured separately. Third, a reproduction on shared hardware needs explicit controls for host load and power state; both changed our results by 20–40% before we controlled them.
-
-The released code made this study possible, and the missing pieces explain most of the effort it took.
+Three lessons go beyond this paper. First, a benchmark's data distribution can cap what any tuner achieves: here a single key turned parallelism into a placement lottery. Second, measurement definitions matter as much as the system: Flink's latency markers hid queueing in Kafka and inflated tails at high parallelism, so latency had to be measured between the Kafka brokers instead. Third, a reproduction on shared hardware needs explicit controls for host load and power state; both changed our results by 20–40% before we controlled them.
 
 # CRediT authorship contribution statement
 
@@ -317,22 +315,12 @@ All code, configuration, raw results and analysis scripts are available at https
 
 Table: Table A.1. Division of work.
 
-| Student | Assigned responsibility | Tasks completed | Individual outputs |
+| Team member | Assigned responsibility | Tasks completed | Individual outputs |
 |---|---|---|---|
-| Hamza Alqaruoti (team lead) | Experiments, measurement and integration | Harness; profiling, E1, L1, E3, E3-T and E4 runs; validity controls; report integration | Harness and raw results; Section 3.4; final report |
-| Mohammad Alqaryouti | Big Data framework setup | k3d cluster with Flink, Kafka and MongoDB; benchmark build; metrics collection | Kubernetes manifests; environment record (Section 3.2) |
-| Noura Alrahbi | Method implementation | STREAMLINE audit and correction study; training on profiling data; mapping to Flink | Integration scripts; Sections 3.5 and 4.1 |
-| Sulaiman Shawabkeh | Datasets, workload and analysis | FIT and TAXI preparation; replay schedules; statistics, figures and comparison with the original study | Data and analysis scripts; Sections 3.3 and 4–5 |
-
-# Appendix B. Individual reflections
-
-**Hamza Alqaruoti.** [[3–5 sentences in your own words: what you did, what you learned, what you would do differently.]]
-
-**Mohammad Alqaryouti.** [[3–5 sentences in your own words: what you did, what you learned, what you would do differently.]]
-
-**Noura Alrahbi.** [[3–5 sentences in your own words: what you did, what you learned, what you would do differently.]]
-
-**Sulaiman Shawabkeh.** [[3–5 sentences in your own words: what you did, what you learned, what you would do differently.]]
+| **Hamza Alqaruoti**<br>Team lead | Experiments, measurement and integration | Measurement harness<br>Profiling, E1, L1, E3, E3-T and E4 runs<br>Validity controls (host load, power state)<br>Report integration | Harness and raw results<br>Section 3.4; final report |
+| **Mohammad Alqaryouti** | Big Data framework setup | k3d cluster with Flink, Kafka and MongoDB<br>Benchmark build<br>Metrics collection | Kubernetes manifests<br>Environment record (Section 3.2) |
+| **Noura Alrahbi** | Method implementation | STREAMLINE audit and correction study<br>Training on profiling data<br>Mapping to Flink | Integration scripts<br>Sections 3.5 and 4.1 |
+| **Sulaiman Shawabkeh** | Datasets, workload and analysis | FIT and TAXI preparation<br>Replay schedules<br>Statistics, figures and comparison with the original study | Data and analysis scripts<br>Sections 3.3, 4 and 5 |
 
 # References
 

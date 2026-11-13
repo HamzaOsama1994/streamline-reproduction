@@ -70,3 +70,12 @@ The large SDs at p = 4 and FMAX are entirely placement. FMAX rep 2 placed both h
 - Repetition 1 was measured a day after repetitions 2–3, under the later cluster configuration and slightly higher host load (§1).
 - The placement stratification is post hoc: n = 4 separated vs 8 co-located.
 - Earlier pilot data (leaky TaskManagers; 60 s warm-up design; all on battery) is excluded and kept only as documented pilot/design checks.
+
+## Correction (2026-11-13): CPU utilisation of used TaskManagers
+
+The column "CPU utilisation of used TMs" above divides the summed CPU of **all four** TaskManager pods by the number of
+TaskManagers hosting tasks. For p = 1, 2 and 4 the idle TaskManagers' background CPU (~0.02–0.05 core each) is therefore in the
+numerator but not the denominator, which is why FD reads above 1.0 although its busy TaskManager never exceeded its 1-CPU limit
+(max 0.99–1.00 core). Recomputed for the TaskManagers that host tasks only (`scripts/cpu_util_used_only.py`, output
+`results/cpu_util_used_only.md`): FIT FD 1.00, p = 2 1.00, p = 4 0.69, FMAX 0.36; TAXI FD 1.00, p = 2 0.99, p = 4 0.60, FMAX 0.40.
+The report (Table 4) uses the recomputed values. The FD-vs-FMAX conclusion is unchanged.
